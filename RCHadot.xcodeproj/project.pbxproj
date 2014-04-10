@@ -1,0 +1,675 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0980514F33274FF5B804C5D4 /* libPods-RCHadotTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 218952343D664F4D844C8275 /* libPods-RCHadotTests.a */; };
+		6EDEB44318EA499300923C26 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDEB44218EA499300923C26 /* Foundation.framework */; };
+		6EDEB44518EA499300923C26 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDEB44418EA499300923C26 /* CoreGraphics.framework */; };
+		6EDEB44718EA499300923C26 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDEB44618EA499300923C26 /* UIKit.framework */; };
+		6EDEB44D18EA499300923C26 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6EDEB44B18EA499300923C26 /* InfoPlist.strings */; };
+		6EDEB44F18EA499300923C26 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDEB44E18EA499300923C26 /* main.m */; };
+		6EDEB45318EA499300923C26 /* RCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDEB45218EA499300923C26 /* RCAppDelegate.m */; };
+		6EDEB45618EA499300923C26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EDEB45418EA499300923C26 /* Main.storyboard */; };
+		6EDEB45918EA499300923C26 /* RCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDEB45818EA499300923C26 /* RCViewController.m */; };
+		6EDEB45B18EA499300923C26 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EDEB45A18EA499300923C26 /* Images.xcassets */; };
+		6EDEB46218EA499300923C26 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDEB46118EA499300923C26 /* XCTest.framework */; };
+		6EDEB46318EA499300923C26 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDEB44218EA499300923C26 /* Foundation.framework */; };
+		6EDEB46418EA499300923C26 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDEB44618EA499300923C26 /* UIKit.framework */; };
+		6EDEB46C18EA499300923C26 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6EDEB46A18EA499300923C26 /* InfoPlist.strings */; };
+		6EDEB46E18EA499300923C26 /* RCHadotTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDEB46D18EA499300923C26 /* RCHadotTests.m */; };
+		6EDEB48518EA4A2500923C26 /* RCBot.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDEB47918EA4A2500923C26 /* RCBot.m */; };
+		6EDEB48618EA4A2500923C26 /* RCControllerTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDEB47B18EA4A2500923C26 /* RCControllerTask.m */; };
+		6EDEB48718EA4A2500923C26 /* RCModelTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDEB47E18EA4A2500923C26 /* RCModelTask.m */; };
+		6EDEB48818EA4A2500923C26 /* RCObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDEB48018EA4A2500923C26 /* RCObject.m */; };
+		6EDEB48918EA4A2500923C26 /* RCTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDEB48218EA4A2500923C26 /* RCTask.m */; };
+		6EDEB48A18EA4A2500923C26 /* RCViewTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDEB48418EA4A2500923C26 /* RCViewTask.m */; };
+		6EDEB4A618EA5D9700923C26 /* RCNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDEB4A518EA5D9700923C26 /* RCNewViewController.m */; };
+		96EB4D4D509A4B24BE5F588E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5581E9F0DD0A4528BCC62068 /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6EDEB46518EA499300923C26 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6EDEB43718EA499200923C26 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6EDEB43E18EA499300923C26;
+			remoteInfo = RCHadot;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		14AFAA95EBAF435999806950 /* Pods-RCHadotTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCHadotTests.xcconfig"; path = "Pods/Pods-RCHadotTests.xcconfig"; sourceTree = "<group>"; };
+		218952343D664F4D844C8275 /* libPods-RCHadotTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RCHadotTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5581E9F0DD0A4528BCC62068 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EDEB43F18EA499300923C26 /* RCHadot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RCHadot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EDEB44218EA499300923C26 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6EDEB44418EA499300923C26 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		6EDEB44618EA499300923C26 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		6EDEB44A18EA499300923C26 /* RCHadot-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RCHadot-Info.plist"; sourceTree = "<group>"; };
+		6EDEB44C18EA499300923C26 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6EDEB44E18EA499300923C26 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6EDEB45018EA499300923C26 /* RCHadot-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RCHadot-Prefix.pch"; sourceTree = "<group>"; };
+		6EDEB45118EA499300923C26 /* RCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCAppDelegate.h; sourceTree = "<group>"; };
+		6EDEB45218EA499300923C26 /* RCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCAppDelegate.m; sourceTree = "<group>"; };
+		6EDEB45518EA499300923C26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6EDEB45718EA499300923C26 /* RCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCViewController.h; sourceTree = "<group>"; };
+		6EDEB45818EA499300923C26 /* RCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCViewController.m; sourceTree = "<group>"; };
+		6EDEB45A18EA499300923C26 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		6EDEB46018EA499300923C26 /* RCHadotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RCHadotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EDEB46118EA499300923C26 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		6EDEB46918EA499300923C26 /* RCHadotTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RCHadotTests-Info.plist"; sourceTree = "<group>"; };
+		6EDEB46B18EA499300923C26 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6EDEB46D18EA499300923C26 /* RCHadotTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCHadotTests.m; sourceTree = "<group>"; };
+		6EDEB47818EA4A2500923C26 /* RCBot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCBot.h; sourceTree = "<group>"; };
+		6EDEB47918EA4A2500923C26 /* RCBot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCBot.m; sourceTree = "<group>"; };
+		6EDEB47A18EA4A2500923C26 /* RCControllerTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCControllerTask.h; sourceTree = "<group>"; };
+		6EDEB47B18EA4A2500923C26 /* RCControllerTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCControllerTask.m; sourceTree = "<group>"; };
+		6EDEB47C18EA4A2500923C26 /* RCHadot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCHadot.h; sourceTree = "<group>"; };
+		6EDEB47D18EA4A2500923C26 /* RCModelTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCModelTask.h; sourceTree = "<group>"; };
+		6EDEB47E18EA4A2500923C26 /* RCModelTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCModelTask.m; sourceTree = "<group>"; };
+		6EDEB47F18EA4A2500923C26 /* RCObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCObject.h; sourceTree = "<group>"; };
+		6EDEB48018EA4A2500923C26 /* RCObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCObject.m; sourceTree = "<group>"; };
+		6EDEB48118EA4A2500923C26 /* RCTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTask.h; sourceTree = "<group>"; };
+		6EDEB48218EA4A2500923C26 /* RCTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTask.m; sourceTree = "<group>"; };
+		6EDEB48318EA4A2500923C26 /* RCViewTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCViewTask.h; sourceTree = "<group>"; };
+		6EDEB48418EA4A2500923C26 /* RCViewTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCViewTask.m; sourceTree = "<group>"; };
+		6EDEB4A418EA5D9700923C26 /* RCNewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCNewViewController.h; sourceTree = "<group>"; };
+		6EDEB4A518EA5D9700923C26 /* RCNewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCNewViewController.m; sourceTree = "<group>"; };
+		6EDEB4A818EA62BC00923C26 /* RCDefaultTasks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCDefaultTasks.h; sourceTree = "<group>"; };
+		79EC0D202DD24712B890A49A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6EDEB43C18EA499300923C26 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6EDEB44518EA499300923C26 /* CoreGraphics.framework in Frameworks */,
+				6EDEB44718EA499300923C26 /* UIKit.framework in Frameworks */,
+				6EDEB44318EA499300923C26 /* Foundation.framework in Frameworks */,
+				96EB4D4D509A4B24BE5F588E /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6EDEB45D18EA499300923C26 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6EDEB46218EA499300923C26 /* XCTest.framework in Frameworks */,
+				6EDEB46418EA499300923C26 /* UIKit.framework in Frameworks */,
+				6EDEB46318EA499300923C26 /* Foundation.framework in Frameworks */,
+				0980514F33274FF5B804C5D4 /* libPods-RCHadotTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6EDEB43618EA499200923C26 = {
+			isa = PBXGroup;
+			children = (
+				6EDEB47718EA4A2500923C26 /* RCHadot */,
+				6EDEB44818EA499300923C26 /* RCHadotExample */,
+				6EDEB46718EA499300923C26 /* RCHadotTests */,
+				6EDEB44118EA499300923C26 /* Frameworks */,
+				6EDEB44018EA499300923C26 /* Products */,
+				79EC0D202DD24712B890A49A /* Pods.xcconfig */,
+				14AFAA95EBAF435999806950 /* Pods-RCHadotTests.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		6EDEB44018EA499300923C26 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6EDEB43F18EA499300923C26 /* RCHadot.app */,
+				6EDEB46018EA499300923C26 /* RCHadotTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6EDEB44118EA499300923C26 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6EDEB44218EA499300923C26 /* Foundation.framework */,
+				6EDEB44418EA499300923C26 /* CoreGraphics.framework */,
+				6EDEB44618EA499300923C26 /* UIKit.framework */,
+				6EDEB46118EA499300923C26 /* XCTest.framework */,
+				5581E9F0DD0A4528BCC62068 /* libPods.a */,
+				218952343D664F4D844C8275 /* libPods-RCHadotTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6EDEB44818EA499300923C26 /* RCHadotExample */ = {
+			isa = PBXGroup;
+			children = (
+				6EDEB4A718EA5DA500923C26 /* Controllers */,
+				6EDEB45118EA499300923C26 /* RCAppDelegate.h */,
+				6EDEB45218EA499300923C26 /* RCAppDelegate.m */,
+				6EDEB45418EA499300923C26 /* Main.storyboard */,
+				6EDEB45A18EA499300923C26 /* Images.xcassets */,
+				6EDEB44918EA499300923C26 /* Supporting Files */,
+			);
+			path = RCHadotExample;
+			sourceTree = "<group>";
+		};
+		6EDEB44918EA499300923C26 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6EDEB44A18EA499300923C26 /* RCHadot-Info.plist */,
+				6EDEB44B18EA499300923C26 /* InfoPlist.strings */,
+				6EDEB44E18EA499300923C26 /* main.m */,
+				6EDEB45018EA499300923C26 /* RCHadot-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6EDEB46718EA499300923C26 /* RCHadotTests */ = {
+			isa = PBXGroup;
+			children = (
+				6EDEB46D18EA499300923C26 /* RCHadotTests.m */,
+				6EDEB46818EA499300923C26 /* Supporting Files */,
+			);
+			path = RCHadotTests;
+			sourceTree = "<group>";
+		};
+		6EDEB46818EA499300923C26 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6EDEB46918EA499300923C26 /* RCHadotTests-Info.plist */,
+				6EDEB46A18EA499300923C26 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6EDEB47718EA4A2500923C26 /* RCHadot */ = {
+			isa = PBXGroup;
+			children = (
+				6EDEB49118EA4AC100923C26 /* RCObject */,
+				6EDEB48C18EA4A5200923C26 /* RCTasks */,
+				6EDEB48B18EA4A4500923C26 /* RCBot */,
+				6EDEB47C18EA4A2500923C26 /* RCHadot.h */,
+				6EDEB4A818EA62BC00923C26 /* RCDefaultTasks.h */,
+			);
+			path = RCHadot;
+			sourceTree = "<group>";
+		};
+		6EDEB48B18EA4A4500923C26 /* RCBot */ = {
+			isa = PBXGroup;
+			children = (
+				6EDEB47818EA4A2500923C26 /* RCBot.h */,
+				6EDEB47918EA4A2500923C26 /* RCBot.m */,
+			);
+			name = RCBot;
+			sourceTree = "<group>";
+		};
+		6EDEB48C18EA4A5200923C26 /* RCTasks */ = {
+			isa = PBXGroup;
+			children = (
+				6EDEB48E18EA4A6700923C26 /* RCModelTask */,
+				6EDEB48F18EA4A7900923C26 /* RCViewTask */,
+				6EDEB49018EA4A8D00923C26 /* RCControllerTask */,
+				6EDEB48D18EA4A5C00923C26 /* RCTask */,
+			);
+			name = RCTasks;
+			sourceTree = "<group>";
+		};
+		6EDEB48D18EA4A5C00923C26 /* RCTask */ = {
+			isa = PBXGroup;
+			children = (
+				6EDEB48118EA4A2500923C26 /* RCTask.h */,
+				6EDEB48218EA4A2500923C26 /* RCTask.m */,
+			);
+			name = RCTask;
+			sourceTree = "<group>";
+		};
+		6EDEB48E18EA4A6700923C26 /* RCModelTask */ = {
+			isa = PBXGroup;
+			children = (
+				6EDEB47D18EA4A2500923C26 /* RCModelTask.h */,
+				6EDEB47E18EA4A2500923C26 /* RCModelTask.m */,
+			);
+			name = RCModelTask;
+			sourceTree = "<group>";
+		};
+		6EDEB48F18EA4A7900923C26 /* RCViewTask */ = {
+			isa = PBXGroup;
+			children = (
+				6EDEB48318EA4A2500923C26 /* RCViewTask.h */,
+				6EDEB48418EA4A2500923C26 /* RCViewTask.m */,
+			);
+			name = RCViewTask;
+			sourceTree = "<group>";
+		};
+		6EDEB49018EA4A8D00923C26 /* RCControllerTask */ = {
+			isa = PBXGroup;
+			children = (
+				6EDEB47A18EA4A2500923C26 /* RCControllerTask.h */,
+				6EDEB47B18EA4A2500923C26 /* RCControllerTask.m */,
+			);
+			name = RCControllerTask;
+			sourceTree = "<group>";
+		};
+		6EDEB49118EA4AC100923C26 /* RCObject */ = {
+			isa = PBXGroup;
+			children = (
+				6EDEB47F18EA4A2500923C26 /* RCObject.h */,
+				6EDEB48018EA4A2500923C26 /* RCObject.m */,
+			);
+			name = RCObject;
+			sourceTree = "<group>";
+		};
+		6EDEB4A718EA5DA500923C26 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6EDEB45718EA499300923C26 /* RCViewController.h */,
+				6EDEB45818EA499300923C26 /* RCViewController.m */,
+				6EDEB4A418EA5D9700923C26 /* RCNewViewController.h */,
+				6EDEB4A518EA5D9700923C26 /* RCNewViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6EDEB43E18EA499300923C26 /* RCHadotExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6EDEB47118EA499300923C26 /* Build configuration list for PBXNativeTarget "RCHadotExample" */;
+			buildPhases = (
+				18E2AB2C0A7146748F5FEE91 /* Check Pods Manifest.lock */,
+				6EDEB43B18EA499300923C26 /* Sources */,
+				6EDEB43C18EA499300923C26 /* Frameworks */,
+				6EDEB43D18EA499300923C26 /* Resources */,
+				1CB8F6F4F6AF40F7823B5972 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RCHadotExample;
+			productName = RCHadot;
+			productReference = 6EDEB43F18EA499300923C26 /* RCHadot.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6EDEB45F18EA499300923C26 /* RCHadotTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6EDEB47418EA499300923C26 /* Build configuration list for PBXNativeTarget "RCHadotTests" */;
+			buildPhases = (
+				0B884BC4A47D4A23A3A74CB9 /* Check Pods Manifest.lock */,
+				6EDEB45C18EA499300923C26 /* Sources */,
+				6EDEB45D18EA499300923C26 /* Frameworks */,
+				6EDEB45E18EA499300923C26 /* Resources */,
+				34223EC94C9B416D846E8F24 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6EDEB46618EA499300923C26 /* PBXTargetDependency */,
+			);
+			name = RCHadotTests;
+			productName = RCHadotTests;
+			productReference = 6EDEB46018EA499300923C26 /* RCHadotTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6EDEB43718EA499200923C26 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = RC;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = RidgeCorn;
+				TargetAttributes = {
+					6EDEB45F18EA499300923C26 = {
+						TestTargetID = 6EDEB43E18EA499300923C26;
+					};
+				};
+			};
+			buildConfigurationList = 6EDEB43A18EA499200923C26 /* Build configuration list for PBXProject "RCHadot" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6EDEB43618EA499200923C26;
+			productRefGroup = 6EDEB44018EA499300923C26 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6EDEB43E18EA499300923C26 /* RCHadotExample */,
+				6EDEB45F18EA499300923C26 /* RCHadotTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6EDEB43D18EA499300923C26 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6EDEB45B18EA499300923C26 /* Images.xcassets in Resources */,
+				6EDEB44D18EA499300923C26 /* InfoPlist.strings in Resources */,
+				6EDEB45618EA499300923C26 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6EDEB45E18EA499300923C26 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6EDEB46C18EA499300923C26 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0B884BC4A47D4A23A3A74CB9 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		18E2AB2C0A7146748F5FEE91 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		1CB8F6F4F6AF40F7823B5972 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		34223EC94C9B416D846E8F24 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-RCHadotTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6EDEB43B18EA499300923C26 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6EDEB48618EA4A2500923C26 /* RCControllerTask.m in Sources */,
+				6EDEB48518EA4A2500923C26 /* RCBot.m in Sources */,
+				6EDEB48A18EA4A2500923C26 /* RCViewTask.m in Sources */,
+				6EDEB44F18EA499300923C26 /* main.m in Sources */,
+				6EDEB48918EA4A2500923C26 /* RCTask.m in Sources */,
+				6EDEB48718EA4A2500923C26 /* RCModelTask.m in Sources */,
+				6EDEB4A618EA5D9700923C26 /* RCNewViewController.m in Sources */,
+				6EDEB45318EA499300923C26 /* RCAppDelegate.m in Sources */,
+				6EDEB45918EA499300923C26 /* RCViewController.m in Sources */,
+				6EDEB48818EA4A2500923C26 /* RCObject.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6EDEB45C18EA499300923C26 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6EDEB46E18EA499300923C26 /* RCHadotTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6EDEB46618EA499300923C26 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6EDEB43E18EA499300923C26 /* RCHadotExample */;
+			targetProxy = 6EDEB46518EA499300923C26 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6EDEB44B18EA499300923C26 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6EDEB44C18EA499300923C26 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		6EDEB45418EA499300923C26 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6EDEB45518EA499300923C26 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6EDEB46A18EA499300923C26 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6EDEB46B18EA499300923C26 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6EDEB46F18EA499300923C26 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		6EDEB47018EA499300923C26 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6EDEB47218EA499300923C26 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79EC0D202DD24712B890A49A /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RCHadotExample/RCHadot-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/RCHadotExample/RCHadot-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		6EDEB47318EA499300923C26 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79EC0D202DD24712B890A49A /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RCHadotExample/RCHadot-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/RCHadotExample/RCHadot-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		6EDEB47518EA499300923C26 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14AFAA95EBAF435999806950 /* Pods-RCHadotTests.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RCHadot.app/RCHadot";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RCHadot/RCHadot-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "RCHadotTests/RCHadotTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		6EDEB47618EA499300923C26 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14AFAA95EBAF435999806950 /* Pods-RCHadotTests.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RCHadot.app/RCHadot";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RCHadot/RCHadot-Prefix.pch";
+				INFOPLIST_FILE = "RCHadotTests/RCHadotTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6EDEB43A18EA499200923C26 /* Build configuration list for PBXProject "RCHadot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6EDEB46F18EA499300923C26 /* Debug */,
+				6EDEB47018EA499300923C26 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6EDEB47118EA499300923C26 /* Build configuration list for PBXNativeTarget "RCHadotExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6EDEB47218EA499300923C26 /* Debug */,
+				6EDEB47318EA499300923C26 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6EDEB47418EA499300923C26 /* Build configuration list for PBXNativeTarget "RCHadotTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6EDEB47518EA499300923C26 /* Debug */,
+				6EDEB47618EA499300923C26 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6EDEB43718EA499200923C26 /* Project object */;
+}
