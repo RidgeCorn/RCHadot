@@ -8,6 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		0980514F33274FF5B804C5D4 /* libPods-RCHadotTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 218952343D664F4D844C8275 /* libPods-RCHadotTests.a */; };
+		6E610F4618FB6ED800247441 /* RCCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E610F4518FB6ED800247441 /* RCCache.m */; };
+		6E610F4E18FB747100247441 /* RCHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E610F4D18FB747100247441 /* RCHTTPClient.m */; };
+		6E610F5318FB7B6500247441 /* RCPList.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E610F5218FB7B6500247441 /* RCPList.m */; };
+		6E610F5718FB7DB400247441 /* RCAppConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E610F5618FB7DB400247441 /* RCAppConfig.m */; };
+		6E610F5B18FB7FF500247441 /* RCDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E610F5A18FB7FF500247441 /* RCDevice.m */; };
+		6E610F6318FBAC1100247441 /* NSManagedObject+RCStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E610F5F18FBAC1100247441 /* NSManagedObject+RCStorage.m */; };
+		6E610F6418FBAC1100247441 /* NSString+RCStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E610F6218FBAC1100247441 /* NSString+RCStorage.m */; };
+		6E610F6618FBFC1A00247441 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E610F6518FBFC1A00247441 /* CoreData.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		6E610F6918FC12E600247441 /* NSString+RCString.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E610F6818FC12E600247441 /* NSString+RCString.m */; };
+		6E610F6E18FC131A00247441 /* UIColor+RCColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E610F6D18FC131A00247441 /* UIColor+RCColor.m */; };
+		6E610F7218FC133700247441 /* UIImage+RCImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E610F7118FC133700247441 /* UIImage+RCImage.m */; };
+		6E610F7618FC13D700247441 /* RCCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E610F7518FC13D700247441 /* RCCrypto.m */; };
+		6E610F7A18FC141E00247441 /* RCMapLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E610F7918FC141E00247441 /* RCMapLocation.m */; };
+		6E610F7E18FC142900247441 /* RCNetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E610F7D18FC142900247441 /* RCNetWork.m */; };
+		6E610F8218FC145500247441 /* RCVerify.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E610F8118FC145500247441 /* RCVerify.m */; };
 		6EDEB44318EA499300923C26 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDEB44218EA499300923C26 /* Foundation.framework */; };
 		6EDEB44518EA499300923C26 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDEB44418EA499300923C26 /* CoreGraphics.framework */; };
 		6EDEB44718EA499300923C26 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDEB44618EA499300923C26 /* UIKit.framework */; };
@@ -46,7 +61,37 @@
 		14AFAA95EBAF435999806950 /* Pods-RCHadotTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCHadotTests.xcconfig"; path = "Pods/Pods-RCHadotTests.xcconfig"; sourceTree = "<group>"; };
 		218952343D664F4D844C8275 /* libPods-RCHadotTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RCHadotTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5581E9F0DD0A4528BCC62068 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		6EDEB43F18EA499300923C26 /* RCHadot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RCHadot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E610F4418FB6ED800247441 /* RCCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCCache.h; sourceTree = "<group>"; };
+		6E610F4518FB6ED800247441 /* RCCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCCache.m; sourceTree = "<group>"; };
+		6E610F4C18FB747100247441 /* RCHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCHTTPClient.h; sourceTree = "<group>"; };
+		6E610F4D18FB747100247441 /* RCHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCHTTPClient.m; sourceTree = "<group>"; };
+		6E610F5118FB7B6500247441 /* RCPList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCPList.h; sourceTree = "<group>"; };
+		6E610F5218FB7B6500247441 /* RCPList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCPList.m; sourceTree = "<group>"; };
+		6E610F5518FB7DB400247441 /* RCAppConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCAppConfig.h; sourceTree = "<group>"; };
+		6E610F5618FB7DB400247441 /* RCAppConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCAppConfig.m; sourceTree = "<group>"; };
+		6E610F5918FB7FF500247441 /* RCDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCDevice.h; sourceTree = "<group>"; };
+		6E610F5A18FB7FF500247441 /* RCDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCDevice.m; sourceTree = "<group>"; };
+		6E610F5E18FBAC1100247441 /* NSManagedObject+RCStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+RCStorage.h"; sourceTree = "<group>"; };
+		6E610F5F18FBAC1100247441 /* NSManagedObject+RCStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+RCStorage.m"; sourceTree = "<group>"; };
+		6E610F6118FBAC1100247441 /* NSString+RCStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+RCStorage.h"; sourceTree = "<group>"; };
+		6E610F6218FBAC1100247441 /* NSString+RCStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+RCStorage.m"; sourceTree = "<group>"; };
+		6E610F6518FBFC1A00247441 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		6E610F6718FC12E600247441 /* NSString+RCString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+RCString.h"; sourceTree = "<group>"; };
+		6E610F6818FC12E600247441 /* NSString+RCString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+RCString.m"; sourceTree = "<group>"; };
+		6E610F6A18FC12F800247441 /* RCAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCAdditions.h; sourceTree = "<group>"; };
+		6E610F6C18FC131A00247441 /* UIColor+RCColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+RCColor.h"; sourceTree = "<group>"; };
+		6E610F6D18FC131A00247441 /* UIColor+RCColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+RCColor.m"; sourceTree = "<group>"; };
+		6E610F7018FC133700247441 /* UIImage+RCImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RCImage.h"; sourceTree = "<group>"; };
+		6E610F7118FC133700247441 /* UIImage+RCImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RCImage.m"; sourceTree = "<group>"; };
+		6E610F7418FC13D700247441 /* RCCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCCrypto.h; sourceTree = "<group>"; };
+		6E610F7518FC13D700247441 /* RCCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCCrypto.m; sourceTree = "<group>"; };
+		6E610F7818FC141E00247441 /* RCMapLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCMapLocation.h; sourceTree = "<group>"; };
+		6E610F7918FC141E00247441 /* RCMapLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCMapLocation.m; sourceTree = "<group>"; };
+		6E610F7C18FC142900247441 /* RCNetWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCNetWork.h; sourceTree = "<group>"; };
+		6E610F7D18FC142900247441 /* RCNetWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCNetWork.m; sourceTree = "<group>"; };
+		6E610F8018FC145500247441 /* RCVerify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCVerify.h; sourceTree = "<group>"; };
+		6E610F8118FC145500247441 /* RCVerify.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCVerify.m; sourceTree = "<group>"; };
+		6EDEB43F18EA499300923C26 /* RCHadotExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RCHadotExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EDEB44218EA499300923C26 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6EDEB44418EA499300923C26 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6EDEB44618EA499300923C26 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -89,6 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E610F6618FBFC1A00247441 /* CoreData.framework in Frameworks */,
 				6EDEB44518EA499300923C26 /* CoreGraphics.framework in Frameworks */,
 				6EDEB44718EA499300923C26 /* UIKit.framework in Frameworks */,
 				6EDEB44318EA499300923C26 /* Foundation.framework in Frameworks */,
@@ -110,6 +156,137 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6E610F4318FB6EBC00247441 /* RCCache */ = {
+			isa = PBXGroup;
+			children = (
+				6E610F4418FB6ED800247441 /* RCCache.h */,
+				6E610F4518FB6ED800247441 /* RCCache.m */,
+			);
+			path = RCCache;
+			sourceTree = "<group>";
+		};
+		6E610F4B18FB747100247441 /* RCHTTPClient */ = {
+			isa = PBXGroup;
+			children = (
+				6E610F4C18FB747100247441 /* RCHTTPClient.h */,
+				6E610F4D18FB747100247441 /* RCHTTPClient.m */,
+			);
+			path = RCHTTPClient;
+			sourceTree = "<group>";
+		};
+		6E610F5018FB7B6500247441 /* RCPList */ = {
+			isa = PBXGroup;
+			children = (
+				6E610F5118FB7B6500247441 /* RCPList.h */,
+				6E610F5218FB7B6500247441 /* RCPList.m */,
+			);
+			path = RCPList;
+			sourceTree = "<group>";
+		};
+		6E610F5418FB7DB400247441 /* RCAppConfig */ = {
+			isa = PBXGroup;
+			children = (
+				6E610F5518FB7DB400247441 /* RCAppConfig.h */,
+				6E610F5618FB7DB400247441 /* RCAppConfig.m */,
+			);
+			path = RCAppConfig;
+			sourceTree = "<group>";
+		};
+		6E610F5818FB7FF500247441 /* RCDevice */ = {
+			isa = PBXGroup;
+			children = (
+				6E610F5918FB7FF500247441 /* RCDevice.h */,
+				6E610F5A18FB7FF500247441 /* RCDevice.m */,
+			);
+			path = RCDevice;
+			sourceTree = "<group>";
+		};
+		6E610F5C18FBAC1100247441 /* RCAdditions */ = {
+			isa = PBXGroup;
+			children = (
+				6E610F6A18FC12F800247441 /* RCAdditions.h */,
+				6E610F6F18FC132400247441 /* UIImage */,
+				6E610F6B18FC130000247441 /* UIColor */,
+				6E610F5D18FBAC1100247441 /* CoreData */,
+				6E610F6018FBAC1100247441 /* NSString */,
+			);
+			path = RCAdditions;
+			sourceTree = "<group>";
+		};
+		6E610F5D18FBAC1100247441 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				6E610F5E18FBAC1100247441 /* NSManagedObject+RCStorage.h */,
+				6E610F5F18FBAC1100247441 /* NSManagedObject+RCStorage.m */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		6E610F6018FBAC1100247441 /* NSString */ = {
+			isa = PBXGroup;
+			children = (
+				6E610F6118FBAC1100247441 /* NSString+RCStorage.h */,
+				6E610F6218FBAC1100247441 /* NSString+RCStorage.m */,
+				6E610F6718FC12E600247441 /* NSString+RCString.h */,
+				6E610F6818FC12E600247441 /* NSString+RCString.m */,
+			);
+			path = NSString;
+			sourceTree = "<group>";
+		};
+		6E610F6B18FC130000247441 /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				6E610F6C18FC131A00247441 /* UIColor+RCColor.h */,
+				6E610F6D18FC131A00247441 /* UIColor+RCColor.m */,
+			);
+			name = UIColor;
+			sourceTree = "<group>";
+		};
+		6E610F6F18FC132400247441 /* UIImage */ = {
+			isa = PBXGroup;
+			children = (
+				6E610F7018FC133700247441 /* UIImage+RCImage.h */,
+				6E610F7118FC133700247441 /* UIImage+RCImage.m */,
+			);
+			name = UIImage;
+			sourceTree = "<group>";
+		};
+		6E610F7318FC13D700247441 /* RCCrypto */ = {
+			isa = PBXGroup;
+			children = (
+				6E610F7418FC13D700247441 /* RCCrypto.h */,
+				6E610F7518FC13D700247441 /* RCCrypto.m */,
+			);
+			path = RCCrypto;
+			sourceTree = "<group>";
+		};
+		6E610F7718FC141E00247441 /* RCMapLocation */ = {
+			isa = PBXGroup;
+			children = (
+				6E610F7818FC141E00247441 /* RCMapLocation.h */,
+				6E610F7918FC141E00247441 /* RCMapLocation.m */,
+			);
+			path = RCMapLocation;
+			sourceTree = "<group>";
+		};
+		6E610F7B18FC142900247441 /* RCNetWork */ = {
+			isa = PBXGroup;
+			children = (
+				6E610F7C18FC142900247441 /* RCNetWork.h */,
+				6E610F7D18FC142900247441 /* RCNetWork.m */,
+			);
+			path = RCNetWork;
+			sourceTree = "<group>";
+		};
+		6E610F7F18FC145500247441 /* RCVerify */ = {
+			isa = PBXGroup;
+			children = (
+				6E610F8018FC145500247441 /* RCVerify.h */,
+				6E610F8118FC145500247441 /* RCVerify.m */,
+			);
+			path = RCVerify;
+			sourceTree = "<group>";
+		};
 		6EDEB43618EA499200923C26 = {
 			isa = PBXGroup;
 			children = (
@@ -126,7 +303,7 @@
 		6EDEB44018EA499300923C26 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6EDEB43F18EA499300923C26 /* RCHadot.app */,
+				6EDEB43F18EA499300923C26 /* RCHadotExample.app */,
 				6EDEB46018EA499300923C26 /* RCHadotTests.xctest */,
 			);
 			name = Products;
@@ -135,6 +312,7 @@
 		6EDEB44118EA499300923C26 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6E610F6518FBFC1A00247441 /* CoreData.framework */,
 				6EDEB44218EA499300923C26 /* Foundation.framework */,
 				6EDEB44418EA499300923C26 /* CoreGraphics.framework */,
 				6EDEB44618EA499300923C26 /* UIKit.framework */,
@@ -190,6 +368,16 @@
 		6EDEB47718EA4A2500923C26 /* RCHadot */ = {
 			isa = PBXGroup;
 			children = (
+				6E610F7F18FC145500247441 /* RCVerify */,
+				6E610F7B18FC142900247441 /* RCNetWork */,
+				6E610F7718FC141E00247441 /* RCMapLocation */,
+				6E610F7318FC13D700247441 /* RCCrypto */,
+				6E610F5C18FBAC1100247441 /* RCAdditions */,
+				6E610F5818FB7FF500247441 /* RCDevice */,
+				6E610F5418FB7DB400247441 /* RCAppConfig */,
+				6E610F5018FB7B6500247441 /* RCPList */,
+				6E610F4B18FB747100247441 /* RCHTTPClient */,
+				6E610F4318FB6EBC00247441 /* RCCache */,
 				6EDEB49118EA4AC100923C26 /* RCObject */,
 				6EDEB48C18EA4A5200923C26 /* RCTasks */,
 				6EDEB48B18EA4A4500923C26 /* RCBot */,
@@ -205,7 +393,7 @@
 				6EDEB47818EA4A2500923C26 /* RCBot.h */,
 				6EDEB47918EA4A2500923C26 /* RCBot.m */,
 			);
-			name = RCBot;
+			path = RCBot;
 			sourceTree = "<group>";
 		};
 		6EDEB48C18EA4A5200923C26 /* RCTasks */ = {
@@ -216,7 +404,7 @@
 				6EDEB49018EA4A8D00923C26 /* RCControllerTask */,
 				6EDEB48D18EA4A5C00923C26 /* RCTask */,
 			);
-			name = RCTasks;
+			path = RCTasks;
 			sourceTree = "<group>";
 		};
 		6EDEB48D18EA4A5C00923C26 /* RCTask */ = {
@@ -225,7 +413,7 @@
 				6EDEB48118EA4A2500923C26 /* RCTask.h */,
 				6EDEB48218EA4A2500923C26 /* RCTask.m */,
 			);
-			name = RCTask;
+			path = RCTask;
 			sourceTree = "<group>";
 		};
 		6EDEB48E18EA4A6700923C26 /* RCModelTask */ = {
@@ -234,7 +422,7 @@
 				6EDEB47D18EA4A2500923C26 /* RCModelTask.h */,
 				6EDEB47E18EA4A2500923C26 /* RCModelTask.m */,
 			);
-			name = RCModelTask;
+			path = RCModelTask;
 			sourceTree = "<group>";
 		};
 		6EDEB48F18EA4A7900923C26 /* RCViewTask */ = {
@@ -243,7 +431,7 @@
 				6EDEB48318EA4A2500923C26 /* RCViewTask.h */,
 				6EDEB48418EA4A2500923C26 /* RCViewTask.m */,
 			);
-			name = RCViewTask;
+			path = RCViewTask;
 			sourceTree = "<group>";
 		};
 		6EDEB49018EA4A8D00923C26 /* RCControllerTask */ = {
@@ -252,7 +440,7 @@
 				6EDEB47A18EA4A2500923C26 /* RCControllerTask.h */,
 				6EDEB47B18EA4A2500923C26 /* RCControllerTask.m */,
 			);
-			name = RCControllerTask;
+			path = RCControllerTask;
 			sourceTree = "<group>";
 		};
 		6EDEB49118EA4AC100923C26 /* RCObject */ = {
@@ -261,7 +449,7 @@
 				6EDEB47F18EA4A2500923C26 /* RCObject.h */,
 				6EDEB48018EA4A2500923C26 /* RCObject.m */,
 			);
-			name = RCObject;
+			path = RCObject;
 			sourceTree = "<group>";
 		};
 		6EDEB4A718EA5DA500923C26 /* Controllers */ = {
@@ -294,7 +482,7 @@
 			);
 			name = RCHadotExample;
 			productName = RCHadot;
-			productReference = 6EDEB43F18EA499300923C26 /* RCHadot.app */;
+			productReference = 6EDEB43F18EA499300923C26 /* RCHadotExample.app */;
 			productType = "com.apple.product-type.application";
 		};
 		6EDEB45F18EA499300923C26 /* RCHadotTests */ = {
@@ -440,16 +628,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E610F6318FBAC1100247441 /* NSManagedObject+RCStorage.m in Sources */,
+				6E610F7E18FC142900247441 /* RCNetWork.m in Sources */,
 				6EDEB48618EA4A2500923C26 /* RCControllerTask.m in Sources */,
+				6E610F5318FB7B6500247441 /* RCPList.m in Sources */,
+				6E610F4E18FB747100247441 /* RCHTTPClient.m in Sources */,
+				6E610F7218FC133700247441 /* UIImage+RCImage.m in Sources */,
 				6EDEB48518EA4A2500923C26 /* RCBot.m in Sources */,
 				6EDEB48A18EA4A2500923C26 /* RCViewTask.m in Sources */,
 				6EDEB44F18EA499300923C26 /* main.m in Sources */,
+				6E610F6918FC12E600247441 /* NSString+RCString.m in Sources */,
 				6EDEB48918EA4A2500923C26 /* RCTask.m in Sources */,
+				6E610F5B18FB7FF500247441 /* RCDevice.m in Sources */,
 				6EDEB48718EA4A2500923C26 /* RCModelTask.m in Sources */,
+				6E610F6418FBAC1100247441 /* NSString+RCStorage.m in Sources */,
+				6E610F7618FC13D700247441 /* RCCrypto.m in Sources */,
+				6E610F7A18FC141E00247441 /* RCMapLocation.m in Sources */,
+				6E610F5718FB7DB400247441 /* RCAppConfig.m in Sources */,
 				6EDEB4A618EA5D9700923C26 /* RCNewViewController.m in Sources */,
 				6EDEB45318EA499300923C26 /* RCAppDelegate.m in Sources */,
 				6EDEB45918EA499300923C26 /* RCViewController.m in Sources */,
 				6EDEB48818EA4A2500923C26 /* RCObject.m in Sources */,
+				6E610F6E18FC131A00247441 /* UIColor+RCColor.m in Sources */,
+				6E610F4618FB6ED800247441 /* RCCache.m in Sources */,
+				6E610F8218FC145500247441 /* RCVerify.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

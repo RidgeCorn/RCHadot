@@ -8,6 +8,7 @@
 
 #import "RCBot.h"
 #import <Routable.h>
+#import <TMCache.h>
 
 static RCBot *_sharedBot;
 

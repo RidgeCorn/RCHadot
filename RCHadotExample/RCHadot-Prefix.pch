@@ -19,5 +19,5 @@
     static NSString * const kRCControllerPop = @"kRCControllerPop";
     static NSString * const kRCViewController = @"kRCViewController";
     static NSString * const kRCNewViewController = @"kRCNewViewController";
-    #define ddLogLevel LOG_FLAG_VERBOSE
+    static int ddLogLevel = LOG_LEVEL_VERBOSE;
 #endif

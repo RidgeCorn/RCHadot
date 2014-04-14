@@ -6,20 +6,21 @@
 //  Copyright (c) 2014   RidgeCorn. All rights reserved.
 //
 
-#import "RCHadot.h"
+#import "RCCache.h"
+#import "RCTask.h"
 
 typedef NS_ENUM(NSUInteger, RCViewTaskType) {
     RCViewTaskTypeAddToView = 0,
-    RCViewTaskTypeAddSubViews,
-    RCViewTaskTypeRemoveViews,
+    RCViewTaskTypeRemoveFromSuperView,
     RCViewTaskTypeRemoveSubViews
 };
 
 @interface RCViewTask : RCTask <RCTaskHandleDelegate>
 
+@property (nonatomic) NSArray *viewTags;
 @property (nonatomic) Class viewClass;
-@property (nonatomic) NSArray *modelData;
+@property (nonatomic) NSString *modelKey;
 @property (nonatomic) RCViewTaskType type;
-@property (nonatomic) id superView;
+@property (nonatomic) id refsView;
 
 @end

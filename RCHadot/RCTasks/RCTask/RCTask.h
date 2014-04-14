@@ -8,10 +8,6 @@
 
 #import "RCObject.h"
 
-#define blockc(value, ...) ({ __VA_ARGS__;value;})
-
-#define returnc(value, ...) return blockc(value, __VA_ARGS__)
-
 @class RCTask;
 
 typedef void (^RCTaskBlock)(RCTask *task);
@@ -27,6 +23,8 @@ typedef void (^RCTaskBlock)(RCTask *task);
 - (void)handleRecord:(id)task;
 
 - (void)handleRemove:(NSString *)taskKey;
+
+- (void)handleError:(NSError *)error;
 
 @end
 
