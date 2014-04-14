@@ -14,10 +14,8 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import <ReactiveCocoa.h>
-    #import <DDLog.h>
     #import "RCHadot.h"
     static NSString * const kRCControllerPop = @"kRCControllerPop";
     static NSString * const kRCViewController = @"kRCViewController";
     static NSString * const kRCNewViewController = @"kRCNewViewController";
-    static int ddLogLevel = LOG_LEVEL_VERBOSE;
 #endif

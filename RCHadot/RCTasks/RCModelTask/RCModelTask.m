@@ -38,7 +38,7 @@
     NSArray *allFilterKeys = [_requestKeyMapping allKeys];
     for (NSString *filterKey in allFilterKeys) {
         if ( ![allParams valueForKey:filterKey]) {
-            DDLogDebug(@"NO Request Key Found (%@)", filterKey);
+//            NSLog(@"NO Request Key Found (%@)", filterKey);
         } else {
             [params setValue:[allParams valueForKey:filterKey] forKeyPath:[_requestKeyMapping valueForKey:filterKey]];
         }
@@ -122,7 +122,7 @@
         }
         [self parseData:responseObject];
     } else {
-        DDLogDebug(@"NO Response Data!");
+//        NSLog(@"NO Response Data!");
     }
 }
 
@@ -137,6 +137,6 @@
 }
 
 - (void)handleError:(NSError *)error {
-    DDLogError(@"\nError: %@", error.description);
+//    NSLog(@"\nError: %@", error.description);
 }
 @end

@@ -239,7 +239,7 @@
 				6E610F6C18FC131A00247441 /* UIColor+RCColor.h */,
 				6E610F6D18FC131A00247441 /* UIColor+RCColor.m */,
 			);
-			name = UIColor;
+			path = UIColor;
 			sourceTree = "<group>";
 		};
 		6E610F6F18FC132400247441 /* UIImage */ = {
@@ -248,7 +248,7 @@
 				6E610F7018FC133700247441 /* UIImage+RCImage.h */,
 				6E610F7118FC133700247441 /* UIImage+RCImage.m */,
 			);
-			name = UIImage;
+			path = UIImage;
 			sourceTree = "<group>";
 		};
 		6E610F7318FC13D700247441 /* RCCrypto */ = {

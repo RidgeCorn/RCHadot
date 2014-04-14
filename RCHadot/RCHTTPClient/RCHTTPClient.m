@@ -8,6 +8,7 @@
 
 #import "RCAppConfig.h"
 #import "RCHTTPClient.h"
+#import "RCObject.h"
 
 @implementation RCHTTPClient
 
