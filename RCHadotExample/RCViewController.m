@@ -16,7 +16,7 @@
 
 - (id)initWithRouterParams:(NSDictionary *)params {
     if ((self = [self initWithNibName:nil bundle:nil])) {
-        self.title = @"Modal";
+        self.title = @"Module";
     }
     return self;
 }
