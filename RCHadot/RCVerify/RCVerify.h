@@ -13,5 +13,6 @@
 + (BOOL)isDataNil:(id)data;
 + (BOOL)isFloatZero:(CGFloat)floatValue;
 + (BOOL)isDataZero:(id)data;
++ (id)safeData:(id)data;
 
 @end

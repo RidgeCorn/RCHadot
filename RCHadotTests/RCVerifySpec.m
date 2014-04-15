@@ -87,6 +87,20 @@ describe(@"RCVerify", ^{
             [[@([RCVerify isDataZero:@(-12345)]) should] equal:@(NO)];
         });
     });
+    
+    context(@"when testing nil using safeData", ^{
+        it(@"should equal to empty string", ^{
+            NSString *string = nil;
+            [[[RCVerify safeData:string] should] equal:@""];
+        });
+    });
+    
+    context(@"when testing string 'string' using safeData", ^{
+        it(@"should equal to 'string'", ^{
+            NSString *string = @"string";
+            [[[RCVerify safeData:string] should] equal:@"string"];
+        });
+    });
 });
 
 SPEC_END

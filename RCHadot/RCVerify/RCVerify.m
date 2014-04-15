@@ -11,11 +11,7 @@
 @implementation RCVerify
 
 + (BOOL)isDataNil:(id)data {
-    BOOL isDataNil = NO;
-    if (data == nil || [data isKindOfClass:[NSNull class]]) {
-        isDataNil = YES;
-    }
-    return isDataNil;
+    return (data == nil || [data isKindOfClass:[NSNull class]]);
 }
 
 + (BOOL)isFloatZero:(CGFloat)floatValue {
@@ -37,6 +33,10 @@
         isZero = [self isFloatZero:value];
     }
     return isZero;
+}
+
++ (id)safeData:(id)data {
+    return [self isDataNil:data] ? @"" : data;
 }
 
 @end
