@@ -12,4 +12,8 @@
 
 + (id)objectInMainBundlePListWithKey:(NSString *)key;
 
++ (id)objectInMainBundlePList:(NSString *)plist withKey:(NSString *)key;
+
++ (id)objectInBundle:(NSBundle *)bundle plist:(NSString *)plist withKey:(NSString *)key;
+
 @end

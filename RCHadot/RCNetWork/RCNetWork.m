@@ -28,11 +28,11 @@
     return isServerAvailable;
 }
 
-+ (BOOL) IsUsingWiFi {
++ (BOOL)IsUsingWiFi {
     return [[Reachability reachabilityForLocalWiFi] isReachableViaWiFi];
 }
 
-+ (BOOL) IsUsing3G {
++ (BOOL)IsUsing3G {
     return [[Reachability reachabilityForInternetConnection] isReachableViaWWAN];
 }
 

@@ -6,8 +6,6 @@
 //  Copyright (c) 2014   RidgeCorn. All rights reserved.
 //
 
-#import <CoreLocation/CoreLocation.h>
-#import <MapKit/MapKit.h>
 #import "RCMapLocation.h"
 #import "RCVerify.h"
 

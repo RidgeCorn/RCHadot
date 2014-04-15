@@ -6,6 +6,8 @@
 //  Copyright (c) 2014   RidgeCorn. All rights reserved.
 //
 
+#import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
 #import "RCObject.h"
 
 @interface RCMapLocation : RCObject
