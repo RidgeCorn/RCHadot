@@ -64,6 +64,8 @@
 		6E5FCDBD18FCDFA50076D5C5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E5FCDBC18FCDFA50076D5C5 /* CoreLocation.framework */; };
 		6E5FCDBE18FCDFD20076D5C5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E5FCDBC18FCDFA50076D5C5 /* CoreLocation.framework */; };
 		6E5FCDBF18FCDFD40076D5C5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E5FCDBC18FCDFA50076D5C5 /* CoreLocation.framework */; };
+		6E5FCE5518FE182E0076D5C5 /* RCMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5FCE5418FE182E0076D5C5 /* RCMapping.m */; };
+		6E5FCE5818FE21690076D5C5 /* RCMappingSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5FCE5718FE21690076D5C5 /* RCMappingSpec.m */; };
 		6E610F4618FB6ED800247441 /* RCCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E610F4518FB6ED800247441 /* RCCache.m */; };
 		6E610F4E18FB747100247441 /* RCHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E610F4D18FB747100247441 /* RCHTTPClient.m */; };
 		6E610F5318FB7B6500247441 /* RCPList.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E610F5218FB7B6500247441 /* RCPList.m */; };
@@ -149,6 +151,9 @@
 		6E5FCDB718FCDF1B0076D5C5 /* RCCryptoSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCCryptoSpec.m; sourceTree = "<group>"; };
 		6E5FCDBA18FCDF4A0076D5C5 /* RCMapLocationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCMapLocationSpec.m; sourceTree = "<group>"; };
 		6E5FCDBC18FCDFA50076D5C5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		6E5FCE5318FE182E0076D5C5 /* RCMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCMapping.h; sourceTree = "<group>"; };
+		6E5FCE5418FE182E0076D5C5 /* RCMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCMapping.m; sourceTree = "<group>"; };
+		6E5FCE5718FE21690076D5C5 /* RCMappingSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCMappingSpec.m; sourceTree = "<group>"; };
 		6E610F4418FB6ED800247441 /* RCCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCCache.h; sourceTree = "<group>"; };
 		6E610F4518FB6ED800247441 /* RCCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCCache.m; sourceTree = "<group>"; };
 		6E610F4C18FB747100247441 /* RCHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCHTTPClient.h; sourceTree = "<group>"; };
@@ -389,6 +394,23 @@
 			name = RCMapLocation;
 			sourceTree = "<group>";
 		};
+		6E5FCE5218FE17D70076D5C5 /* RCMapping */ = {
+			isa = PBXGroup;
+			children = (
+				6E5FCE5318FE182E0076D5C5 /* RCMapping.h */,
+				6E5FCE5418FE182E0076D5C5 /* RCMapping.m */,
+			);
+			path = RCMapping;
+			sourceTree = "<group>";
+		};
+		6E5FCE5618FE21450076D5C5 /* RCMapping */ = {
+			isa = PBXGroup;
+			children = (
+				6E5FCE5718FE21690076D5C5 /* RCMappingSpec.m */,
+			);
+			name = RCMapping;
+			sourceTree = "<group>";
+		};
 		6E610F4318FB6EBC00247441 /* RCCache */ = {
 			isa = PBXGroup;
 			children = (
@@ -585,6 +607,7 @@
 		6EDEB46718EA499300923C26 /* RCHadotTests */ = {
 			isa = PBXGroup;
 			children = (
+				6E5FCE5618FE21450076D5C5 /* RCMapping */,
 				6E4B541018FCCAF100DA270A /* RCVerify */,
 				6E5FCD8D18FCDCA20076D5C5 /* RCNetWork */,
 				6E5FCDB918FCDF290076D5C5 /* RCMapLocation */,
@@ -615,6 +638,7 @@
 		6EDEB47718EA4A2500923C26 /* RCHadot */ = {
 			isa = PBXGroup;
 			children = (
+				6E5FCE5218FE17D70076D5C5 /* RCMapping */,
 				6E4B540F18FCCAA500DA270A /* RCHeader */,
 				6E610F7F18FC145500247441 /* RCVerify */,
 				6E610F7B18FC142900247441 /* RCNetWork */,
@@ -903,6 +927,7 @@
 				6E5FCD7B18FCD41E0076D5C5 /* NSString+RCStorage.m in Sources */,
 				6E5FCD7F18FCD4300076D5C5 /* RCHTTPClient.m in Sources */,
 				6E5FCD7C18FCD4210076D5C5 /* NSString+RCString.m in Sources */,
+				6E5FCE5518FE182E0076D5C5 /* RCMapping.m in Sources */,
 				6E5FCD7718FCD40A0076D5C5 /* RCCrypto.m in Sources */,
 				6E5FCD8418FCD4460076D5C5 /* RCTask.m in Sources */,
 				6E5FCD7518FCD4020076D5C5 /* RCNetWork.m in Sources */,
@@ -928,6 +953,7 @@
 				6E5FCDA718FCDE2B0076D5C5 /* RCAppConfigSpec.m in Sources */,
 				6E5FCDB818FCDF1B0076D5C5 /* RCCryptoSpec.m in Sources */,
 				6E5FCD9918FCDD570076D5C5 /* RCViewTaskSpec.m in Sources */,
+				6E5FCE5818FE21690076D5C5 /* RCMappingSpec.m in Sources */,
 				6E5FCD9718FCDD490076D5C5 /* RCModelTaskSpec.m in Sources */,
 				6E5FCDAF18FCDEA00076D5C5 /* UIColor+RCColorSpec.m in Sources */,
 				6E5FCD8F18FCDCB30076D5C5 /* RCNetWorkSpec.m in Sources */,
