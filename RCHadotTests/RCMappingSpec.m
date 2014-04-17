@@ -3,7 +3,7 @@
 //  RCHadot
 //
 //  Created by Looping on 14-4-16.
-//  Copyright 2014年 RidgeCorn. All rights reserved.
+//  Copyright 2014    RidgeCorn. All rights reserved.
 //
 
 #import <Kiwi/Kiwi.h>

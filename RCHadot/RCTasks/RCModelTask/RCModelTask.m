@@ -10,27 +10,27 @@
 #import "RCHTTPClient.h"
 #import "RCCache.h"
 #import "RCBot.h"
-#import <objc/runtime.h>
-#import <CoreData+MagicalRecord.h>
-#import "NSManagedObject+RCStorage.h"
 
 @implementation RCModelTask
 
-- (NSDictionary *)propertiesFromObject:(id)object {
-    NSMutableDictionary *propertiesDictionary = [NSMutableDictionary dictionary];
-    unsigned int outCount, i;
-    objc_property_t *properties = class_copyPropertyList([object class], &outCount);
-    
-    for (i = 0; i < outCount; i++) {
-        objc_property_t property = properties[i];
-        NSString *propertyName = [[NSString alloc] initWithUTF8String:property_getName(property)];
-        id propertyValue = [object valueForKey:(NSString *)propertyName];
-        if (propertyValue) [propertiesDictionary setObject:propertyValue forKey:propertyName];
-    }
-    
-    free(properties);
-    
-    return propertiesDictionary;
+- (id)initWithKey:(NSString *)key {
+    returnc(self,
+            if(self = [super initWithKey:key]) {
+                self.delegate = self;
+            });
+}
+
+- (id)initWithKey:(NSString *)key type:(RCModelTaskType)type requestPath:(NSString *)requestPath cacheValuePaths:(NSArray *)cacheValuePaths requestKeyMapping:(NSDictionary *)requestKeyMapping responseDataKeyPath:(NSString *)responseDataKeyPath toCacheKey:(NSString *)toCacheKey {
+    returnc(self,
+            if (self = [self initWithKey:key]) {
+                _type = type;
+                _requestPath = requestPath;
+                _cacheValuePaths = cacheValuePaths;
+                _requestKeyMapping = requestKeyMapping;
+                _responseDataKeyPath = responseDataKeyPath;
+                _toCacheKey = toCacheKey;
+            }
+    );
 }
 
 - (NSDictionary *)filterParamsFromDictionary:(NSDictionary *)allParams {
@@ -40,9 +40,10 @@
         if ( ![allParams valueForKey:filterKey]) {
 //            NSLog(@"NO Request Key Found (%@)", filterKey);
         } else {
-            [params setValue:[allParams valueForKey:filterKey] forKeyPath:[_requestKeyMapping valueForKey:filterKey]];
+            [params setValue:[allParams valueForKey:filterKey] forKey:[_requestKeyMapping valueForKey:filterKey]];
         }
     }
+    
     return params;
 }
 
@@ -52,11 +53,7 @@
             if (_requestParams) {
                 [params addEntriesFromDictionary:_requestParams];
             } else {
-                [params addEntriesFromDictionary:[self propertiesFromObject:[Cache objectForKey:_userKey]]];
-                NSArray *models = [Cache objectForKey:_modelsParamsKey];
-                for (id model in models) {
-                    [params addEntriesFromDictionary:[self propertiesFromObject:model]];
-                }
+                [params addEntriesFromDictionary:[RCCache dictInCacheWithCachePaths:_cacheValuePaths]];
                 
                 params = [[self filterParamsFromDictionary:params] mutableCopy];
             }
@@ -74,6 +71,7 @@
             }];
         }
             break;
+            
         case RCModelTaskTypeLoadFromServerWithPost: {
             [HTTPClient postPath:_requestPath parameters:[self genParameters] success:^(AFHTTPRequestOperation *operation, id responseObject) {
                 [self handleRequestOperation:operation withResponse:responseObject];
@@ -82,6 +80,7 @@
             }];
         }
             break;
+            
         case RCModelTaskTypeLoadFromServerWithPut: {
             [HTTPClient putPath:_requestPath parameters:[self genParameters] success:^(AFHTTPRequestOperation *operation, id responseObject) {
                 [self handleRequestOperation:operation withResponse:responseObject];
@@ -90,6 +89,7 @@
             }];
         }
             break;
+            
         case RCModelTaskTypeLoadFromServerWithDelete: {
             [HTTPClient deletePath:_requestPath parameters:[self genParameters] success:^(AFHTTPRequestOperation *operation, id responseObject) {
                 [self handleRequestOperation:operation withResponse:responseObject];
@@ -98,15 +98,11 @@
             }];
         }
             break;
+            
         case RCModelTaskTypeLoadFromCache: {
-            if (_fromCacheKey) {
-                [self handleRequestOperation:nil withResponse:[Cache valueForKey:_fromCacheKey]];
+            if (_cacheValuePaths) {
+                [self handleRequestOperation:nil withResponse:[RCCache dictInCacheWithCachePaths:_cacheValuePaths]];
             }
-
-        }
-            break;
-        case RCModelTaskTypeLoadFromDatabase: {
-            [Cache setValue:[_toModelClass MR_findAll] forKey:_toModelsKey];
         }
             break;
             
@@ -118,25 +114,31 @@
 - (void)handleRequestOperation:(AFHTTPRequestOperation *)operation withResponse:(id)responseObject {
     if (responseObject) {
         if (_toCacheKey) {
-            [Cache setValue:responseObject forKey:_toCacheKey];
+            [Cache setObject:[self parseData:responseObject] forKey:_toCacheKey];
         }
-        [self parseData:responseObject];
     } else {
 //        NSLog(@"NO Response Data!");
     }
+    
+    self.state = RCTaskStateCompletedWithSucceeded;
 }
 
-- (void)parseData:(id)responseObject {
-    if ([responseObject isKindOfClass:[NSDictionary class]]) {
-        if ([_toModelClass isSubclassOfClass:[NSManagedObject class]]) {
-            NSManagedObject *model = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass(_toModelClass) inManagedObjectContext:[NSManagedObjectContext MR_defaultContext]];
-            [model updateFromDictionary:responseObject dateFormatter:_dateFormatter withMapping:_toModelKeyValueMapping];
-            [Cache setValue:@[model] forKey:_toModelsKey];
-        }
+- (NSDictionary *)parseData:(id)responseObject {
+    NSMutableDictionary *resData = [@{} mutableCopy];
+    NSDictionary *tmpDict = responseObject;
+    
+    if ( ![tmpDict isKindOfClass:[NSDictionary class]]) {
+        NSError *error = nil;
+        tmpDict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:&error];
     }
+    
+    [resData addEntriesFromDictionary:[tmpDict valueForKeyPath:_responseDataKeyPath]];
+
+    return resData;
 }
 
 - (void)handleError:(NSError *)error {
-//    NSLog(@"\nError: %@", error.description);
+    self.error = error;
+    self.state = RCTaskStateCompletedWithError;
 }
 @end

@@ -8,6 +8,13 @@
 
 #import "RCObject.h"
 
+typedef NS_ENUM(NSUInteger, RCTaskState) {
+    RCTaskStateRecored,
+    RCTaskStateStart,
+    RCTaskStateCompletedWithSucceeded,
+    RCTaskStateCompletedWithError
+};
+
 @class RCTask;
 
 typedef void (^RCTaskBlock)(RCTask *task);
@@ -33,5 +40,9 @@ typedef void (^RCTaskBlock)(RCTask *task);
 @property (nonatomic) NSString *key;
 @property (nonatomic, copy) RCTaskBlock runBlock;
 @property (nonatomic, weak) id <RCTaskHandleDelegate> delegate;
+@property (nonatomic) RCTaskState state;
+@property (nonatomic) NSError *error;
+
+- (id)initWithKey:(NSString *)key;
 
 @end

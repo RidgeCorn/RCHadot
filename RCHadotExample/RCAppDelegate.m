@@ -7,40 +7,17 @@
 //
 
 #import "RCAppDelegate.h"
-#import "RCControllerTask.h"
-#import "RCViewController.h"
-#import "RCNewViewController.h"
+#import "RCModelRecord.h"
+#import "RCViewRecord.h"
+#import "RCControllerRecord.h"
 
 @implementation RCAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [Bot record:blockc(task,
-                       RCControllerTask *task = [[RCControllerTask alloc] init];
-                       task.controllerClass = [RCViewController class];
-                       task.navigationController = [[UINavigationController alloc] initWithNibName:nil bundle:nil];
-                       task.options = [[UPRouterOptions alloc] init];
-                       [task.options setShouldOpenAsRootViewController:YES];
-                       task.type = RCControllerTaskTypeOpen;
-                       task.key = kRCViewController;
-                       )];
-    
-    [Bot record:blockc(task,
-                       RCControllerTask *task = [[RCControllerTask alloc] init];
-                       task.controllerClass = [RCNewViewController class];
-                       [task setAnimatedWhenStart:YES];
-                       task.type = RCControllerTaskTypeOpen;
-                       task.key = kRCNewViewController;
-                       )];
-    
-    [Bot record:blockc(task,
-                       RCControllerTask *task = [[RCControllerTask alloc] init];
-                       [task setAnimatedWhenStart:YES];
-                       task.type = RCControllerTaskTypePop;
-                       task.key = kRCControllerPop;
-                       )];
-    
-    
+    [RCModelRecord loadRecordByObject:nil];
+    [RCControllerRecord loadRecordByObject:nil];
+
     RCControllerTask *task = [Bot taskForKey:kRCViewController];
     
     [self.window setRootViewController:task.navigationController];

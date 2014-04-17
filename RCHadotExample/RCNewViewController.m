@@ -7,6 +7,7 @@
 //
 
 #import "RCNewViewController.h"
+#import "RCViewRecord.h"
 
 @interface RCNewViewController ()
 
@@ -25,7 +26,7 @@
 
 - (id)initWithRouterParams:(NSDictionary *)params {
     if ((self = [self initWithNibName:nil bundle:nil])) {
-        [self setTitle:@"New View Controller"];
+        [self setTitle:@"Weather"];
         [self.view setBackgroundColor:[UIColor orangeColor]];
     }
     return self;
@@ -34,14 +35,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.view addSubview:blockc(button,
-                                 UIButton *button = [[UIButton alloc] initWithFrame:self.view.frame];
-                                 [button setBackgroundColor:[UIColor blueColor]];
-                                 button.tag = 1001;
-                                 )];
-    ((UIButton *)[self.view viewWithTag:1001]).rac_command = [[RACCommand alloc] initWithSignalBlock:^(id _) {
-        [Bot start:kRCControllerPop];
-        return [RACSignal empty];
+    [RCViewRecord loadRecordByObject:self.view];
+    
+    [Bot start:kRCModelLoadWeather];
+    
+    RCModelTask *task = [Bot taskForKey:kRCModelLoadWeather];
+
+    [RACObserve(task, state) subscribeNext:^(NSNumber *state) {
+        if ([state isEqualToNumber: @(RCTaskStateCompletedWithSucceeded)]) {
+            [Bot start:kRCWeatherView removeAfterDone:YES];
+        }
     }];
 }
 
@@ -50,16 +53,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

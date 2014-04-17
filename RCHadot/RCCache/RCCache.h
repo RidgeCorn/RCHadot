@@ -15,4 +15,6 @@
 
 + (TMCache *)sharedTMCache;
 
++ (NSDictionary *)dictInCacheWithCachePaths:(NSArray *)cachePaths;
+
 @end

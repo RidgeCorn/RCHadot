@@ -18,4 +18,6 @@
     static NSString * const kRCControllerPop = @"kRCControllerPop";
     static NSString * const kRCViewController = @"kRCViewController";
     static NSString * const kRCNewViewController = @"kRCNewViewController";
+    static NSString * const kRCModelLoadWeather = @"kRCModelLoadWeather";
+    static NSString * const kRCWeatherView = @"kRCWeatherView";
 #endif

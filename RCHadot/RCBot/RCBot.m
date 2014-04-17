@@ -54,6 +54,8 @@ static dispatch_once_t onceToken;
             }
             
             if (task) {
+                task.state = RCTaskStateStart;
+                
                 if ([task.delegate respondsToSelector:@selector(handleStart:)]) {
                     [task.delegate handleStart:taskKey];
                 } else {
@@ -69,6 +71,7 @@ static dispatch_once_t onceToken;
 }
 
 - (BOOL)start:(NSString *)taskKey {
+//    NSLog(@"%@", taskKey);
     returnc([self start:taskKey removeAfterDone:NO]);
 }
 
@@ -84,6 +87,8 @@ static dispatch_once_t onceToken;
                 }
                 
                 record = YES;
+                
+                task.state = RCTaskStateRecored;
             } );
 }
 

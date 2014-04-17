@@ -7,7 +7,7 @@
 //
 
 #import "RCTask.h"
-#import <Routable.h>
+#import "RCControllerOptions.h"
 
 typedef NS_ENUM(NSUInteger, RCControllerTaskType) {
     RCControllerTaskTypeOpen = 0,
@@ -16,10 +16,12 @@ typedef NS_ENUM(NSUInteger, RCControllerTaskType) {
 
 @interface RCControllerTask : RCTask <RCTaskHandleDelegate>
 
-@property (nonatomic) UPRouterOptions *options;
+@property (nonatomic) RCControllerOptions *options;
 @property (nonatomic) Class controllerClass;
 @property (nonatomic) RCControllerTaskType type;
 @property (nonatomic) UINavigationController *navigationController;
 @property (nonatomic) BOOL animatedWhenStart;
+
+- (id)initWithKey:(NSString *)key Type:(RCControllerTaskType)type navigationController:(UINavigationController *)navigationController controllerClass:(Class)controllerClass animatedWhenStart:(BOOL)animatedWhenStart options:(RCControllerOptions *)options;
 
 @end

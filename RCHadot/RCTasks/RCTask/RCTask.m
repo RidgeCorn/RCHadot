@@ -10,4 +10,12 @@
 
 @implementation RCTask
 
+- (id)initWithKey:(NSString *)key {
+    returnc(self,
+            if (self = [super init]) {
+                _key = key;
+            }
+    );
+}
+
 @end

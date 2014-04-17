@@ -13,30 +13,23 @@ typedef NS_ENUM(NSUInteger, RCModelTaskType) {
     RCModelTaskTypeLoadFromServerWithPost,
     RCModelTaskTypeLoadFromServerWithPut,
     RCModelTaskTypeLoadFromServerWithDelete,
-    RCModelTaskTypeLoadFromCache,
-    RCModelTaskTypeLoadFromDatabase
+    RCModelTaskTypeLoadFromCache
 };
 
 @interface RCModelTask : RCTask <RCTaskHandleDelegate>
 
 @property (nonatomic) NSString *requestPath;
 
-@property (nonatomic) NSString *userKey;
-@property (nonatomic) NSString *modelsParamsKey;
 @property (nonatomic) NSDictionary *requestParams;
-@property (nonatomic) NSString *fromCacheKey;
+@property (nonatomic) NSArray *cacheValuePaths;
 
-@property (nonatomic) NSDictionary *requestKeyMapping; // Value means keyPath
-@property (nonatomic) NSDateFormatter *dateFormatter;
-
-@property (nonatomic) Class toModelClass;
-@property (nonatomic) NSDictionary *toModelKeyValueMapping;
-@property (nonatomic) NSString *toModelsKey;
+@property (nonatomic) NSDictionary *requestKeyMapping;
+@property (nonatomic) NSString *responseDataKeyPath;
 
 @property (nonatomic) NSString *toCacheKey;
 
 @property (nonatomic) RCModelTaskType type;
-@property (nonatomic) BOOL cacheData;
-@property (nonatomic) BOOL saveData;
+
+- (id)initWithKey:(NSString *)key type:(RCModelTaskType)type requestPath:(NSString *)requestPath cacheValuePaths:(NSArray *)cacheValuePaths requestKeyMapping:(NSDictionary *)requestKeyMapping responseDataKeyPath:(NSString *)responseDataKeyPath toCacheKey:(NSString *)toCacheKey;
 
 @end

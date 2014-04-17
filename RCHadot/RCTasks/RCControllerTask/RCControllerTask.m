@@ -15,11 +15,23 @@
 
 @implementation RCControllerTask
 
-- (id)init {
+- (id)initWithKey:(NSString *)key {
     returnc(self,
-            if(self = [super init]) {
+            if(self = [super initWithKey:key]) {
                 self.delegate = self;
             });
+}
+
+- (id)initWithKey:(NSString *)key Type:(RCControllerTaskType)type navigationController:(UINavigationController *)navigationController controllerClass:(__unsafe_unretained Class)controllerClass animatedWhenStart:(BOOL)animatedWhenStart options:(RCControllerOptions *)options {
+    returnc(self,
+            if ([self initWithKey:key]) {
+                _type = type;
+                _navigationController = navigationController;
+                _controllerClass = controllerClass;
+                _options = options;
+                _animatedWhenStart = animatedWhenStart;
+            }
+    );
 }
 
 - (void)handleRecord:(RCControllerTask *)task {
