@@ -19,8 +19,14 @@
     [mapping setObject:@"timeLabel.text" forKey:@"time"];
     [Mapping addCollection:mapping withKey:kRCWeatherView];
 
-    [Bot record:blockc(task,
-                       RCViewTask *task = [[RCViewTask alloc] initWithKey:kRCWeatherView Type:RCViewTaskTypeAddToView refsView:object viewClass:[RCWeatherView class] viewInitMethod:@"initWithOptions:" viewTags:@[@101] cacheValuePaths:@[@"kRCWeatherInfo..city", @"kRCWeatherInfo..temp", @"kRCWeatherInfo..time"] mappingCollectionKey:kRCWeatherView options:[RCViewOptions new]];
+    [Bot record:blockc(task,                       
+                       RCViewTask *task = [[RCViewTask alloc] initWithKey:kRCWeatherView Type:RCViewTaskTypeAddToView refsView:object viewClass:[RCWeatherView class] options:[RCViewOptions new]];
+                       
+                       task.options.viewInitMethod = @"initWithOptions:";
+                       task.options.viewTags = @[@101];
+                       task.options.cacheValuePaths = @[@"kRCWeatherInfo..city", @"kRCWeatherInfo..temp", @"kRCWeatherInfo..time"];
+                       task.options.mappingCollectionKey = kRCWeatherView;
+                       
                        task.options.frame = CGRectMake(0, 0, [RCDevice fullScreenWidth], [RCDevice fullScreenHeight]);
                        )];
 }

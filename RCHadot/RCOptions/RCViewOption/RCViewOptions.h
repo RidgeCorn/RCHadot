@@ -12,4 +12,9 @@
 
 @property (nonatomic) CGRect frame;
 
+@property (nonatomic) NSString *mappingCollectionKey;
+@property (nonatomic) NSArray *cacheValuePaths;
+@property (nonatomic) NSString *viewInitMethod;
+@property (nonatomic) NSArray *viewTags;
+
 @end

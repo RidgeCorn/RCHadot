@@ -20,27 +20,24 @@
             });
 }
 
-- (id)initWithKey:(NSString *)key type:(RCModelTaskType)type requestPath:(NSString *)requestPath cacheValuePaths:(NSArray *)cacheValuePaths requestKeyMapping:(NSDictionary *)requestKeyMapping responseDataKeyPath:(NSString *)responseDataKeyPath toCacheKey:(NSString *)toCacheKey {
+- (id)initWithKey:(NSString *)key type:(RCModelTaskType)type requestPath:(NSString *)requestPath options:(RCModelOptions *)options {
     returnc(self,
             if (self = [self initWithKey:key]) {
                 _type = type;
                 _requestPath = requestPath;
-                _cacheValuePaths = cacheValuePaths;
-                _requestKeyMapping = requestKeyMapping;
-                _responseDataKeyPath = responseDataKeyPath;
-                _toCacheKey = toCacheKey;
+                _options = options;
             }
     );
 }
 
 - (NSDictionary *)filterParamsFromDictionary:(NSDictionary *)allParams {
     NSMutableDictionary *params = [@{} mutableCopy];
-    NSArray *allFilterKeys = [_requestKeyMapping allKeys];
+    NSArray *allFilterKeys = [_options.requestKeyMapping allKeys];
     for (NSString *filterKey in allFilterKeys) {
         if ( ![allParams valueForKey:filterKey]) {
 //            NSLog(@"NO Request Key Found (%@)", filterKey);
         } else {
-            [params setValue:[allParams valueForKey:filterKey] forKey:[_requestKeyMapping valueForKey:filterKey]];
+            [params setValue:[allParams valueForKey:filterKey] forKey:[_options.requestKeyMapping valueForKey:filterKey]];
         }
     }
     
@@ -50,10 +47,10 @@
 - (NSDictionary *)genParameters {
     returnc(params,
             NSMutableDictionary *params = [@{} mutableCopy];
-            if (_requestParams) {
-                [params addEntriesFromDictionary:_requestParams];
+            if (_options.requestParams) {
+                [params addEntriesFromDictionary:_options.requestParams];
             } else {
-                [params addEntriesFromDictionary:[RCCache dictInCacheWithCachePaths:_cacheValuePaths]];
+                [params addEntriesFromDictionary:[RCCache dictInCacheWithCachePaths:_options.cacheValuePaths]];
                 
                 params = [[self filterParamsFromDictionary:params] mutableCopy];
             }
@@ -100,8 +97,8 @@
             break;
             
         case RCModelTaskTypeLoadFromCache: {
-            if (_cacheValuePaths) {
-                [self handleRequestOperation:nil withResponse:[RCCache dictInCacheWithCachePaths:_cacheValuePaths]];
+            if (_options.cacheValuePaths) {
+                [self handleRequestOperation:nil withResponse:[RCCache dictInCacheWithCachePaths:_options.cacheValuePaths]];
             }
         }
             break;
@@ -113,8 +110,8 @@
 
 - (void)handleRequestOperation:(AFHTTPRequestOperation *)operation withResponse:(id)responseObject {
     if (responseObject) {
-        if (_toCacheKey) {
-            [Cache setObject:[self parseData:responseObject] forKey:_toCacheKey];
+        if (_options.toCacheKey) {
+            [Cache setObject:[self parseData:responseObject] forKey:_options.toCacheKey];
         }
     } else {
 //        NSLog(@"NO Response Data!");
@@ -132,7 +129,7 @@
         tmpDict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:&error];
     }
     
-    [resData addEntriesFromDictionary:[tmpDict valueForKeyPath:_responseDataKeyPath]];
+    [resData addEntriesFromDictionary:[tmpDict valueForKeyPath:_options.responseDataKeyPath]];
 
     return resData;
 }

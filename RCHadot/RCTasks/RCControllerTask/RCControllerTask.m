@@ -22,14 +22,13 @@
             });
 }
 
-- (id)initWithKey:(NSString *)key Type:(RCControllerTaskType)type navigationController:(UINavigationController *)navigationController controllerClass:(__unsafe_unretained Class)controllerClass animatedWhenStart:(BOOL)animatedWhenStart options:(RCControllerOptions *)options {
+- (id)initWithKey:(NSString *)key Type:(RCControllerTaskType)type navigationController:(UINavigationController *)navigationController controllerClass:(__unsafe_unretained Class)controllerClass options:(RCControllerOptions *)options {
     returnc(self,
             if ([self initWithKey:key]) {
                 _type = type;
                 _navigationController = navigationController;
                 _controllerClass = controllerClass;
                 _options = options;
-                _animatedWhenStart = animatedWhenStart;
             }
     );
 }
@@ -54,9 +53,9 @@
 
 - (void)handleStart:(NSString *)taskKey {
     if (self.type == RCControllerTaskTypeOpen) {
-        [[Routable sharedRouter] open:taskKey animated:_animatedWhenStart];
+        [[Routable sharedRouter] open:taskKey animated:_options.animatedWhenStart];
     } else {
-        [[Routable sharedRouter] pop:_animatedWhenStart];
+        [[Routable sharedRouter] pop:_options.animatedWhenStart];
     }
 }
 

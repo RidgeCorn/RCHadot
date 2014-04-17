@@ -20,16 +20,12 @@
             });
 }
 
-- (id)initWithKey:(NSString *)key Type:(RCViewTaskType)type refsView:(id)refsView viewClass:(Class)viewClass viewInitMethod:(NSString *)viewInitMethod viewTags:(NSArray *)viewTags cacheValuePaths:(NSArray *)cacheValuePaths mappingCollectionKey:(NSString *)mappingCollectionKey options:(RCViewOptions *)options {
+- (id)initWithKey:(NSString *)key Type:(RCViewTaskType)type refsView:(id)refsView viewClass:(Class)viewClass options:(RCViewOptions *)options {
     returnc(self,
             if (self = [self initWithKey:key]) {
                 _type = type;
                 _refsView = refsView;
                 _viewClass = viewClass;
-                _viewInitMethod = viewInitMethod;
-                _viewTags = viewTags;
-                _cacheValuePaths = cacheValuePaths;
-                _mappingCollectionKey = mappingCollectionKey;
                 _options = options;
             }
     );
@@ -42,7 +38,7 @@
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
     switch (task.type) {
         case RCViewTaskTypeAddToView: {
-            SEL VIEW_INIT_SELECTOR = sel_registerName(_viewInitMethod ? [_viewInitMethod UTF8String ]: "initWithOptions:");
+            SEL VIEW_INIT_SELECTOR = sel_registerName(_options.viewInitMethod ? [_options.viewInitMethod UTF8String ]: "initWithOptions:");
             id view = nil;
             
             if (task.viewClass) {
@@ -52,8 +48,8 @@
             if (_refsView && [view respondsToSelector:VIEW_INIT_SELECTOR]) {
                 NSInteger tag = 0;
                 
-                if ([_viewTags count]) {
-                    tag = [_viewTags[0] integerValue];
+                if ([_options.viewTags count]) {
+                    tag = [_options.viewTags[0] integerValue];
                 }
                 
                 id tmpView = nil;
@@ -65,10 +61,10 @@
                 [_refsView addSubview: [view performSelector:VIEW_INIT_SELECTOR withObject: _options]];
 
                 if (tag) {
-                    [view setTag:[_viewTags[0] integerValue]];
+                    [view setTag:[_options.viewTags[0] integerValue]];
                 }
                 
-                [RCDisplay displayData:[RCCache dictInCacheWithCachePaths:_cacheValuePaths] inView:view withMapping:[Mapping collectionForKey:_mappingCollectionKey]];
+                [RCDisplay displayData:[RCCache dictInCacheWithCachePaths:_options.cacheValuePaths] inView:view withMapping:[Mapping collectionForKey:_options.mappingCollectionKey]];
                 }
         }
             break;
@@ -81,8 +77,8 @@
             break;
             
         case RCViewTaskTypeRemoveSubViews: {
-            if (_viewTags && _refsView) {
-                for (NSNumber *tag in _viewTags) {
+            if (_options.viewTags && _refsView) {
+                for (NSNumber *tag in _options.viewTags) {
                     [[_refsView viewWithTag:[tag integerValue]] removeFromSuperview];
                 }
             }

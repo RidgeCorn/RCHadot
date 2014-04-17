@@ -10,4 +10,12 @@
 
 @interface RCModelOptions : RCOptions
 
+@property (nonatomic) NSDictionary *requestParams;
+@property (nonatomic) NSArray *cacheValuePaths;
+
+@property (nonatomic) NSDictionary *requestKeyMapping;
+@property (nonatomic) NSString *responseDataKeyPath;
+
+@property (nonatomic) NSString *toCacheKey;
+
 @end

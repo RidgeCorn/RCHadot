@@ -18,15 +18,11 @@ typedef NS_ENUM(NSUInteger, RCViewTaskType) {
 
 @interface RCViewTask : RCTask <RCTaskHandleDelegate>
 
-@property (nonatomic) NSArray *viewTags;
 @property (nonatomic) Class viewClass;
-@property (nonatomic) NSString *mappingCollectionKey;
-@property (nonatomic) NSArray *cacheValuePaths;
-@property (nonatomic) NSString *viewInitMethod;
 @property (nonatomic) RCViewTaskType type;
 @property (nonatomic) id refsView;
 @property (nonatomic) RCViewOptions *options;
 
-- (id)initWithKey:(NSString *)key Type:(RCViewTaskType)type refsView:(id)refsView viewClass:(Class)viewClass viewInitMethod:(NSString *)viewInitMethod viewTags:(NSArray *)viewTags cacheValuePaths:(NSArray *)cacheValuePaths mappingCollectionKey:(NSString *)mappingCollectionKey options:(RCViewOptions *)options;
+- (id)initWithKey:(NSString *)key Type:(RCViewTaskType)type refsView:(id)refsView viewClass:(Class)viewClass options:(RCViewOptions *)options;
 
 @end

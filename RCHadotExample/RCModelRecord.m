@@ -13,7 +13,10 @@
 
 + (void)loadRecordByObject:(id)object {
     [Bot record:blockc(task,
-                       RCModelTask *task = [[RCModelTask alloc] initWithKey:kRCModelLoadWeather type:RCModelTaskTypeLoadFromServerWithGet requestPath:@"data/sk/101210101.html" cacheValuePaths:nil requestKeyMapping:nil responseDataKeyPath:@"weatherinfo" toCacheKey:@"kRCWeatherInfo"];                       
+                       RCModelTask *task = [[RCModelTask alloc] initWithKey:kRCModelLoadWeather type:RCModelTaskTypeLoadFromServerWithGet requestPath:@"data/sk/101210101.html" options:[RCModelOptions new]];
+                       
+                       task.options.responseDataKeyPath = @"weatherinfo";
+                       task.options.toCacheKey = @"kRCWeatherInfo";
                        )];
     
 }

@@ -10,4 +10,6 @@
 
 @interface RCControllerOptions : UPRouterOptions
 
+@property (nonatomic) BOOL animatedWhenStart;
+
 @end

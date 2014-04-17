@@ -20,8 +20,7 @@ typedef NS_ENUM(NSUInteger, RCControllerTaskType) {
 @property (nonatomic) Class controllerClass;
 @property (nonatomic) RCControllerTaskType type;
 @property (nonatomic) UINavigationController *navigationController;
-@property (nonatomic) BOOL animatedWhenStart;
 
-- (id)initWithKey:(NSString *)key Type:(RCControllerTaskType)type navigationController:(UINavigationController *)navigationController controllerClass:(Class)controllerClass animatedWhenStart:(BOOL)animatedWhenStart options:(RCControllerOptions *)options;
+- (id)initWithKey:(NSString *)key Type:(RCControllerTaskType)type navigationController:(UINavigationController *)navigationController controllerClass:(Class)controllerClass options:(RCControllerOptions *)options;
 
 @end
