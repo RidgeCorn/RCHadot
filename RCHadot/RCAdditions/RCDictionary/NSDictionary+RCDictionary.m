@@ -21,9 +21,15 @@
         NSArray *keys = [keyPath componentsSeparatedByString:separator ?: @""];
         value = self;
         
-        for (NSString *key in keys) {            
-            if ( !(value = [value valueForKeyPath:key])) {
-                break;
+        for (NSString *key in keys) {
+            if ([key hasPrefix:@"@"]) {
+                if ( !(value = [value objectAtIndex:[key integerValue]])) {
+                    break;
+                }
+            } else {
+                if ( !(value = [value valueForKeyPath:key])) {
+                    break;
+                }
             }
         }
     }

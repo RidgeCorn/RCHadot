@@ -8,6 +8,12 @@
 
 #import "RCOptions.h"
 
+typedef NS_ENUM(NSUInteger, RCModelOptionsStorageType) {
+    RCModelOptionsStorageTypeWrite,
+    RCModelOptionsStorageTypeAppend,
+//    RCModelOptionsStorageTypeUpdate
+};
+
 @interface RCModelOptions : RCOptions
 
 @property (nonatomic) NSDictionary *requestParams;
@@ -17,5 +23,7 @@
 @property (nonatomic) NSString *responseDataKeyPath;
 
 @property (nonatomic) NSString *toCacheKey;
+
+@property (nonatomic) RCModelOptionsStorageType storageType;
 
 @end

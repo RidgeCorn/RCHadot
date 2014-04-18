@@ -111,7 +111,7 @@
 - (void)handleRequestOperation:(AFHTTPRequestOperation *)operation withResponse:(id)responseObject {
     if (responseObject) {
         if (_options.toCacheKey) {
-            [Cache setObject:[self parseData:responseObject] forKey:_options.toCacheKey];
+            [RCCache setObject:[self parseData:responseObject] forKey:_options.toCacheKey withType:_options.storageType];
         }
     } else {
 //        NSLog(@"NO Response Data!");

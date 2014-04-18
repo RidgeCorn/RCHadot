@@ -44,4 +44,38 @@
             );
 }
 
++ (void)setObject:(id<NSCoding>)object forKey:(NSString *)key withType:(RCModelOptionsStorageType)type {
+    switch (type) {
+        case RCModelOptionsStorageTypeWrite: {
+            [Cache setObject:object forKey:key];
+        }
+            break;
+        case RCModelOptionsStorageTypeAppend: {
+            id value = [Cache objectForKey:key];
+            if (value) {
+                value = [self appendData:object to:value];
+                [Cache setObject:value forKey:key];
+            } else {
+                [Cache setObject:object forKey:key];
+            }
+        }
+            break;
+        default:
+            break;
+    }
+}
+
++ (id)appendData:(id)object to:(id)value {
+    returnc(value,
+            if ([value isKindOfClass:[NSArray class]] && [object isKindOfClass:[NSArray class]]) {
+                value = [NSMutableArray arrayWithArray:value];
+                [value addObjectsFromArray:object];
+            } else if ([value isKindOfClass:[NSDictionary class]] && [object isKindOfClass:[NSDictionary class]]) {
+                value = [NSMutableDictionary dictionaryWithDictionary:value];
+                [value addEntriesFromDictionary:object];
+            }
+            );
+    
+}
+
 @end

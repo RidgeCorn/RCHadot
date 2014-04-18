@@ -8,6 +8,7 @@
 
 #import "RCObject.h"
 #import <TMCache.h>
+#import "RCModelOptions.h"
 
 #define Cache [RCCache sharedTMCache]
 
@@ -16,5 +17,7 @@
 + (TMCache *)sharedTMCache;
 
 + (NSDictionary *)dictInCacheWithCachePaths:(NSArray *)cachePaths;
+
++ (void)setObject:(id <NSCoding>)object forKey:(NSString *)key withType:(RCModelOptionsStorageType)type;
 
 @end
