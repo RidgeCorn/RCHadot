@@ -40,6 +40,8 @@
 	</array>
 	<key>RCDefaultAPIBaseURL</key>
 	<string>www.weather.com.cn</string>
+	<key>RCApplicationThemeKey</key>
+	<string>SkyBlue.NUI</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

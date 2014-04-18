@@ -114,6 +114,9 @@
 		6EAB91EF18FFCA360087C20E /* RCModelOptionsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAB91EE18FFCA360087C20E /* RCModelOptionsSpec.m */; };
 		6EAB91F118FFCA500087C20E /* RCViewOptionsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAB91F018FFCA500087C20E /* RCViewOptionsSpec.m */; };
 		6EAB91F318FFCA650087C20E /* RCControllerOptionsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAB91F218FFCA650087C20E /* RCControllerOptionsSpec.m */; };
+		6EAB91F718FFCDA60087C20E /* RCStyleSheets.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAB91F618FFCDA60087C20E /* RCStyleSheets.m */; };
+		6EAB91FB18FFD6D50087C20E /* RCStyleSheetsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAB91FA18FFD6D50087C20E /* RCStyleSheetsSpec.m */; };
+		6EAB91FC18FFD7D30087C20E /* RCStyleSheets.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAB91F618FFCDA60087C20E /* RCStyleSheets.m */; };
 		6EDEB44318EA499300923C26 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDEB44218EA499300923C26 /* Foundation.framework */; };
 		6EDEB44518EA499300923C26 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDEB44418EA499300923C26 /* CoreGraphics.framework */; };
 		6EDEB44718EA499300923C26 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDEB44618EA499300923C26 /* UIKit.framework */; };
@@ -239,6 +242,9 @@
 		6EAB91EE18FFCA360087C20E /* RCModelOptionsSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCModelOptionsSpec.m; sourceTree = "<group>"; };
 		6EAB91F018FFCA500087C20E /* RCViewOptionsSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCViewOptionsSpec.m; sourceTree = "<group>"; };
 		6EAB91F218FFCA650087C20E /* RCControllerOptionsSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCControllerOptionsSpec.m; sourceTree = "<group>"; };
+		6EAB91F518FFCDA60087C20E /* RCStyleSheets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCStyleSheets.h; sourceTree = "<group>"; };
+		6EAB91F618FFCDA60087C20E /* RCStyleSheets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCStyleSheets.m; sourceTree = "<group>"; };
+		6EAB91FA18FFD6D50087C20E /* RCStyleSheetsSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCStyleSheetsSpec.m; sourceTree = "<group>"; };
 		6EDEB43F18EA499300923C26 /* RCHadotExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RCHadotExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EDEB44218EA499300923C26 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6EDEB44418EA499300923C26 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -743,6 +749,23 @@
 			name = RCRecord;
 			sourceTree = "<group>";
 		};
+		6EAB91F418FFCD050087C20E /* RCStyleSheets */ = {
+			isa = PBXGroup;
+			children = (
+				6EAB91F518FFCDA60087C20E /* RCStyleSheets.h */,
+				6EAB91F618FFCDA60087C20E /* RCStyleSheets.m */,
+			);
+			path = RCStyleSheets;
+			sourceTree = "<group>";
+		};
+		6EAB91F918FFD6AB0087C20E /* RCStyleSheets */ = {
+			isa = PBXGroup;
+			children = (
+				6EAB91FA18FFD6D50087C20E /* RCStyleSheetsSpec.m */,
+			);
+			name = RCStyleSheets;
+			sourceTree = "<group>";
+		};
 		6EDEB43618EA499200923C26 = {
 			isa = PBXGroup;
 			children = (
@@ -808,6 +831,7 @@
 		6EDEB46718EA499300923C26 /* RCHadotTests */ = {
 			isa = PBXGroup;
 			children = (
+				6EAB91F918FFD6AB0087C20E /* RCStyleSheets */,
 				6EAB91E718FFC9900087C20E /* RCOptions */,
 				6EAB91E918FFC9DE0087C20E /* RCRecord */,
 				6E5FCE5E18FE2C2C0076D5C5 /* RCDisplay */,
@@ -843,6 +867,7 @@
 			isa = PBXGroup;
 			children = (
 				6E4B540F18FCCAA500DA270A /* RCHeader */,
+				6EAB91F418FFCD050087C20E /* RCStyleSheets */,
 				6EAB91D218FFA3830087C20E /* RCOptions */,
 				6EAB917718FE6C650087C20E /* RCRecord */,
 				6E5FCE5A18FE27950076D5C5 /* RCDisplay */,
@@ -1139,6 +1164,7 @@
 				6EAB91D518FFA3B80087C20E /* RCOptions.m in Sources */,
 				6E5FCD7718FCD40A0076D5C5 /* RCCrypto.m in Sources */,
 				6E5FCD8418FCD4460076D5C5 /* RCTask.m in Sources */,
+				6EAB91F718FFCDA60087C20E /* RCStyleSheets.m in Sources */,
 				6E5FCD7518FCD4020076D5C5 /* RCNetWork.m in Sources */,
 				6E5FCD8218FCD43E0076D5C5 /* RCViewTask.m in Sources */,
 				6E5FCD7118FCCCE30076D5C5 /* RCVerify.m in Sources */,
@@ -1171,6 +1197,7 @@
 				6EAB91EB18FFCA020087C20E /* RCRecordSpec.m in Sources */,
 				6E5FCD9718FCDD490076D5C5 /* RCModelTaskSpec.m in Sources */,
 				6E5FCDAF18FCDEA00076D5C5 /* UIColor+RCColorSpec.m in Sources */,
+				6EAB91FB18FFD6D50087C20E /* RCStyleSheetsSpec.m in Sources */,
 				6E5FCE6818FE32020076D5C5 /* NSDictionary+RCDictionarySpec.m in Sources */,
 				6EAB91F318FFCA650087C20E /* RCControllerOptionsSpec.m in Sources */,
 				6E5FCD8F18FCDCB30076D5C5 /* RCNetWorkSpec.m in Sources */,
@@ -1218,6 +1245,7 @@
 				6EAB91E618FFAA8F0087C20E /* RCOptions.m in Sources */,
 				6EAB91B118FED6400087C20E /* RCCache.m in Sources */,
 				6EAB91D118FF860C0087C20E /* RCWeatherView.m in Sources */,
+				6EAB91FC18FFD7D30087C20E /* RCStyleSheets.m in Sources */,
 				6EAB91B318FED6400087C20E /* RCObject.m in Sources */,
 				6EAB91B518FED6400087C20E /* RCModelTask.m in Sources */,
 				6EAB91B718FED6400087C20E /* RCViewTask.m in Sources */,

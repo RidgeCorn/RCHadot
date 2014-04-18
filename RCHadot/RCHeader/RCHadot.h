@@ -10,6 +10,7 @@
 
 #import "RCMapping.h"
 #import "RCDisplay.h"
+#import "RCStyleSheets.h"
 
 #import "RCBot.h"
 #import "RCTask.h"

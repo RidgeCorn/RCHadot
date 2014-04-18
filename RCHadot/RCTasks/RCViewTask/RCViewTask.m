@@ -10,6 +10,7 @@
 #import "RCBot.h"
 #import "RCMapping.h"
 #import "RCDisplay.h"
+#import "RCStyleSheets.h"
 
 @implementation RCViewTask
 
@@ -62,6 +63,10 @@
 
                 if (tag) {
                     [view setTag:[_options.viewTags[0] integerValue]];
+                }
+                
+                if (_options.styleSheetsKey) {
+                    [view setNuiClass:_options.styleSheetsKey];
                 }
                 
                 [RCDisplay displayData:[RCCache dictInCacheWithCachePaths:_options.cacheValuePaths] inView:view withMapping:[Mapping collectionForKey:_options.mappingCollectionKey]];

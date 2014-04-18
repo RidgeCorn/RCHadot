@@ -104,4 +104,12 @@
     return [RCPList objectInMainBundlePListWithKey:kCFBundleShortVersionString];
 }
 
++ (NSString *)applicationTintColorString {
+    return [RCPList objectInMainBundlePListWithKey:kRCApplicationTintColor];
+}
+
++ (NSString *)applicationThemeKey {
+    return [RCPList objectInMainBundlePListWithKey:kRCApplicationThemeKey];
+}
+
 @end

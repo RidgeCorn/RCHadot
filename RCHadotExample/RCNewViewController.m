@@ -8,6 +8,7 @@
 
 #import "RCNewViewController.h"
 #import "RCViewRecord.h"
+#import "RCStyleSheets.h"
 
 @interface RCNewViewController ()
 
@@ -35,6 +36,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     [RCViewRecord loadRecordByObject:self.view];
     
     [Bot start:kRCModelLoadWeather];

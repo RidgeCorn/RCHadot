@@ -16,5 +16,6 @@
 @property (nonatomic) NSArray *cacheValuePaths;
 @property (nonatomic) NSString *viewInitMethod;
 @property (nonatomic) NSArray *viewTags;
+@property (nonatomic) NSString *styleSheetsKey;
 
 @end

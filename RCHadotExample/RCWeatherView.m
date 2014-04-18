@@ -31,12 +31,15 @@
 
 - (void)configSubviews {
     _cityLabel = [UILabel new];
+    [_cityLabel setNuiClass:[RCStyleSheets genStyleClassInView:_cityLabel withNames:@[@"LargeLabel"]]];
     [self addSubview:_cityLabel];
     
     _tempLabel = [UILabel new];
+    [_tempLabel setNuiClass:[RCStyleSheets genStyleClassInView:_cityLabel withNames:@[]]];
     [self addSubview:_tempLabel];
     
     _timeLabel = [UILabel new];
+    [_timeLabel setNuiClass:[RCStyleSheets genStyleClassInView:_cityLabel withNames:@[@"SmallLabel"]]];
     [self addSubview:_timeLabel];
 }
 

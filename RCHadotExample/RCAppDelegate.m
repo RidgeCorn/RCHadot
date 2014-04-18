@@ -10,11 +10,15 @@
 #import "RCModelRecord.h"
 #import "RCViewRecord.h"
 #import "RCControllerRecord.h"
+#import "RCStyleSheets.h"
+#import "RCAppConfig.h"
 
 @implementation RCAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [RCStyleSheets initWithThemeKey:[RCAppConfig applicationThemeKey]];
+
     [RCModelRecord loadRecordByObject:nil];
     [RCControllerRecord loadRecordByObject:nil];
 

@@ -38,4 +38,9 @@
 - (NSString *)stringByTrimmingWhitespaceAndNewline {
     return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet ]];
 }
+
+- (NSString *)stringByAppendingString:(NSString *)aString withSeparator:(NSString *)sString {
+    return (aString && [aString length]) ? [self stringByAppendingFormat:@"%@%@", sString, aString] : self;
+}
+
 @end

@@ -26,6 +26,7 @@
                        task.options.viewTags = @[@101];
                        task.options.cacheValuePaths = @[@"kRCWeatherInfo..city", @"kRCWeatherInfo..temp", @"kRCWeatherInfo..time"];
                        task.options.mappingCollectionKey = kRCWeatherView;
+                       task.options.styleSheetsKey = @"View";
                        
                        task.options.frame = CGRectMake(0, 0, [RCDevice fullScreenWidth], [RCDevice fullScreenHeight]);
                        )];

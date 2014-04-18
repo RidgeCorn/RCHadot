@@ -17,4 +17,6 @@
 - (NSString *)stringByTrimmingWhitespace;
 - (NSString *)stringByTrimmingWhitespaceAndNewline;
 
+- (NSString *)stringByAppendingString:(NSString *)aString withSeparator:(NSString *)sString;
+
 @end
