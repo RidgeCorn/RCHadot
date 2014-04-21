@@ -129,7 +129,7 @@
         tmpDict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:&error];
     }
     
-    [resData addEntriesFromDictionary:[tmpDict valueForKeyPath:_options.responseDataKeyPath]];
+    [resData addEntriesFromDictionary:_options.responseDataKeyPath && [_options.responseDataKeyPath length] ? [tmpDict valueForKeyPath:_options.responseDataKeyPath] : tmpDict];
 
     return resData;
 }
