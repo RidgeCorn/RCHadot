@@ -69,7 +69,7 @@
                     [view setNuiClass:_options.styleSheetsKey];
                 }
                 
-                [RCDisplay displayData:[RCCache dictInCacheWithCachePaths:_options.cacheValuePaths] inView:view withMapping:[Mapping collectionForKey:_options.mappingCollectionKey]];
+                [RCDisplay displayData:[RCCacheHelper dictInCacheWithCachePaths:_options.cacheValuePaths] inView:view withMapping:[Mapping collectionForKey:_options.mappingCollectionKey]];
                 }
         }
             break;

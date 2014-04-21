@@ -8,7 +8,7 @@
 
 #import "RCModelTask.h"
 #import "RCHTTPClient.h"
-#import "RCCache.h"
+#import "RCCacheHelper.h"
 #import "RCBot.h"
 
 @implementation RCModelTask
@@ -50,7 +50,7 @@
             if (_options.requestParams) {
                 [params addEntriesFromDictionary:_options.requestParams];
             } else {
-                [params addEntriesFromDictionary:[RCCache dictInCacheWithCachePaths:_options.cacheValuePaths]];
+                [params addEntriesFromDictionary:[RCCacheHelper dictInCacheWithCachePaths:_options.cacheValuePaths]];
                 
                 params = [[self filterParamsFromDictionary:params] mutableCopy];
             }
@@ -98,7 +98,7 @@
             
         case RCModelTaskTypeLoadFromCache: {
             if (_options.cacheValuePaths) {
-                [self handleRequestOperation:nil withResponse:[RCCache dictInCacheWithCachePaths:_options.cacheValuePaths]];
+                [self handleRequestOperation:nil withResponse:[RCCacheHelper dictInCacheWithCachePaths:_options.cacheValuePaths]];
             }
         }
             break;
@@ -111,7 +111,7 @@
 - (void)handleRequestOperation:(AFHTTPRequestOperation *)operation withResponse:(id)responseObject {
     if (responseObject) {
         if (_options.toCacheKey) {
-            [RCCache setObject:[self parseData:responseObject] forKey:_options.toCacheKey withType:_options.storageType];
+            [RCCacheHelper setObject:[self parseData:responseObject] forKey:_options.toCacheKey withType:_options.storageType];
         }
     } else {
 //        NSLog(@"NO Response Data!");

@@ -12,4 +12,5 @@ pod 'NUI'
 
 target :RCHadotTests, :exclusive => true do
     pod 'Kiwi/XCTest'
+    pod 'JSONModel'
 end

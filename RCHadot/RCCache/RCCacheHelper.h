@@ -1,5 +1,5 @@
 //
-//  RCCache.h
+//  RCCacheHelper.h
 //  RCHadot
 //
 //  Created by Looping on 14-4-14.
@@ -10,11 +10,11 @@
 #import <TMCache.h>
 #import "RCModelOptions.h"
 
-#define Cache [RCCache sharedTMCache]
+#define Cache [TMCache sharedCache]
 
-@interface RCCache : RCObject
+@interface RCCacheHelper : RCObject
 
-+ (TMCache *)sharedTMCache;
++ (NSString *)keyPrefixForClass:(Class)cls;
 
 + (NSDictionary *)dictInCacheWithCachePaths:(NSArray *)cachePaths;
 

@@ -1,18 +1,20 @@
 //
-//  RCCache.m
+//  RCCacheHelper.m
 //  RCHadot
 //
 //  Created by Looping on 14-4-14.
 //  Copyright (c) 2014   RidgeCorn. All rights reserved.
 //
 
-#import "RCCache.h"
+#import "RCCacheHelper.h"
 #import "NSDictionary+RCDictionary.h"
 
-@implementation RCCache
+@implementation RCCacheHelper
 
-+ (TMCache *)sharedTMCache {
-    returnc([TMCache sharedCache]);
++ (NSString *)keyPrefixForClass:(Class)cls {
+    returnc(keyPrefix,
+            NSString *keyPrefix = [NSString stringWithFormat:@"__%@_(managedByRCHadot)_", NSStringFromClass(cls)];
+            );
 }
 
 + (NSDictionary *)dictInCacheWithCachePaths:(NSArray *)cachePaths {

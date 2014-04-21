@@ -6,7 +6,7 @@
 //  Copyright (c) 2014   RidgeCorn. All rights reserved.
 //
 
-#import "RCCache.h"
+#import "RCCacheHelper.h"
 #import "RCTask.h"
 #import "RCViewOptions.h"
 

@@ -7,7 +7,7 @@
 //
 
 #import "RCDevice.h"
-#import "RCCache.h"
+#import "RCCacheHelper.h"
 #import "RCMapping.h"
 #import "RCDisplay.h"
 #import "RCStyleSheets.h"

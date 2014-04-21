@@ -7,9 +7,9 @@
 //
 
 #import <Kiwi/Kiwi.h>
-#import "RCCache.h"
+#import "RCCacheHelper.h"
 
-SPEC_BEGIN(RCCacheSpec)
+SPEC_BEGIN(RCCacheHelperSpec)
 
 describe(@"RCCache", ^{
     context(@"when testing dictInCacheWithCachePaths", ^{
@@ -47,7 +47,7 @@ describe(@"RCCache", ^{
                                       @"user0.name": @"looping"
                                       };
 
-            [[[RCCache dictInCacheWithCachePaths:@[@"appName.", @"users..user0.name", @"posts..post0.content"]] should] equal:resDict];
+            [[[RCCacheHelper dictInCacheWithCachePaths:@[@"appName.", @"users..user0.name", @"posts..post0.content"]] should] equal:resDict];
         });
     });
     
@@ -86,7 +86,7 @@ describe(@"RCCache", ^{
                                       @"users.@0.name": @"looping"
                                       };
             
-            [[[RCCache dictInCacheWithCachePaths:@[@"appName.", @"users..users.@0.name", @"posts..posts.@0.content"]] should] equal:resDict];
+            [[[RCCacheHelper dictInCacheWithCachePaths:@[@"appName.", @"users..users.@0.name", @"posts..posts.@0.content"]] should] equal:resDict];
         });
     });
 
@@ -96,7 +96,7 @@ describe(@"RCCache", ^{
             NSString *key = @"key";
             RCModelOptionsStorageType type = RCModelOptionsStorageTypeWrite;
             
-            [RCCache setObject:string forKey:key withType:type];
+            [RCCacheHelper setObject:string forKey:key withType:type];
             
             [[[Cache objectForKey:key] should] equal:string];
         });
@@ -108,7 +108,7 @@ describe(@"RCCache", ^{
             NSString *key = @"key";
             RCModelOptionsStorageType type = RCModelOptionsStorageTypeWrite;
             
-            [RCCache setObject:array forKey:key withType:type];
+            [RCCacheHelper setObject:array forKey:key withType:type];
             
             [[[Cache objectForKey:key] should] equal:array];
         });
@@ -121,7 +121,7 @@ describe(@"RCCache", ^{
             RCModelOptionsStorageType type = RCModelOptionsStorageTypeAppend;
             NSArray *theNewArray = @[@"a", @"b", @"c", @"d"];
             
-            [RCCache setObject:array forKey:key withType:type];
+            [RCCacheHelper setObject:array forKey:key withType:type];
 
             [[[Cache objectForKey:key] should] equal:theNewArray];
         });
@@ -133,7 +133,7 @@ describe(@"RCCache", ^{
             NSString *key = @"key";
             RCModelOptionsStorageType type = RCModelOptionsStorageTypeWrite;
             
-            [RCCache setObject:dict forKey:key withType:type];
+            [RCCacheHelper setObject:dict forKey:key withType:type];
             
             [[[Cache objectForKey:key] should] equal:dict];
         });
@@ -146,7 +146,7 @@ describe(@"RCCache", ^{
             RCModelOptionsStorageType type = RCModelOptionsStorageTypeAppend;
             NSDictionary *theNewDict = @{@"key":@"value", @"newKey":@"newValue"};
             
-            [RCCache setObject:dict forKey:key withType:type];
+            [RCCacheHelper setObject:dict forKey:key withType:type];
 
             [[[Cache objectForKey:key] should] equal:theNewDict];
         });
