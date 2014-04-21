@@ -1,9 +1,9 @@
 //
-//  RCCacheSpec.m
+//  RCCacheHelperSpec.m
 //  RCHadot
 //
 //  Created by Looping on 14-4-15.
-//  Copyright (c) 2014   RidgeCorn. All rights reserved.
+//  Copyright (c) 2014    RidgeCorn. All rights reserved.
 //
 
 #import <Kiwi/Kiwi.h>
@@ -11,7 +11,7 @@
 
 SPEC_BEGIN(RCCacheHelperSpec)
 
-describe(@"RCCache", ^{
+describe(@"RCCacheHelper", ^{
     context(@"when testing dictInCacheWithCachePaths", ^{
         it(@"should be done", ^{
             NSDictionary *users = @{

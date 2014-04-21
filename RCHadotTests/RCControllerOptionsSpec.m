@@ -1,5 +1,5 @@
 //
-//  RCControllerOptionsSpec.m
+//  RCControllerTaskOptionsSpec.m
 //  RCHadot
 //
 //  Created by Looping on 14-4-17.
@@ -7,12 +7,12 @@
 //
 
 #import <Kiwi/Kiwi.h>
-#import "RCControllerOptions.h"
+#import "RCControllerTaskOptions.h"
 
 
-SPEC_BEGIN(RCControllerOptionsSpec)
+SPEC_BEGIN(RCControllerTaskOptionsSpec)
 
-describe(@"RCControllerOptions", ^{
+describe(@"RCControllerTaskOptions", ^{
 
 });
 

@@ -1,5 +1,5 @@
 //
-//  RCViewOptionsSpec.m
+//  RCViewTaskOptionsSpec.m
 //  RCHadot
 //
 //  Created by Looping on 14-4-17.
@@ -7,12 +7,12 @@
 //
 
 #import <Kiwi/Kiwi.h>
-#import "RCViewOptions.h"
+#import "RCViewTaskOptions.h"
 
 
-SPEC_BEGIN(RCViewOptionsSpec)
+SPEC_BEGIN(RCViewTaskOptionsSpec)
 
-describe(@"RCViewOptions", ^{
+describe(@"RCViewTaskOptions", ^{
 
 });
 

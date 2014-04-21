@@ -3,21 +3,21 @@
 //  RCHadot
 //
 //  Created by Looping on 14-3-29.
-//  Copyright (c) 2014   RidgeCorn. All rights reserved.
+//  Copyright (c) 2014    RidgeCorn. All rights reserved.
 //
 
 #import "RCAppDelegate.h"
 #import "RCModelRecord.h"
 #import "RCViewRecord.h"
 #import "RCControllerRecord.h"
-#import "RCStyleSheets.h"
-#import "RCAppConfig.h"
+#import "RCStyleSheetsHelper.h"
+#import "RCAppConfigHelper.h"
 
 @implementation RCAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [RCStyleSheets initWithThemeKey:[RCAppConfig applicationThemeKey]];
+    [RCStyleSheetsHelper initWithThemeKey:[RCAppConfigHelper applicationThemeKey]];
 
     [RCModelRecord loadRecordByObject:nil];
     [RCControllerRecord loadRecordByObject:nil];

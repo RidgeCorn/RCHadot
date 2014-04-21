@@ -20,7 +20,7 @@
     [Mapping addCollection:mapping withKey:kRCWeatherView];
 
     [Bot record:blockc(task,                       
-                       RCViewTask *task = [[RCViewTask alloc] initWithKey:kRCWeatherView Type:RCViewTaskTypeAddToView refsView:object viewClass:[RCWeatherView class] options:[RCViewOptions new]];
+                       RCViewTask *task = [[RCViewTask alloc] initWithKey:kRCWeatherView Type:RCViewTaskTypeAddToView refsView:object viewClass:[RCWeatherView class] options:[RCViewTaskOptions new]];
                        
                        task.options.viewInitMethod = @"initWithOptions:";
                        task.options.viewTags = @[@101];
@@ -28,7 +28,7 @@
                        task.options.mappingCollectionKey = kRCWeatherView;
                        task.options.styleSheetsKey = @"View";
                        
-                       task.options.frame = CGRectMake(0, 0, [RCDevice fullScreenWidth], [RCDevice fullScreenHeight]);
+                       task.options.frame = CGRectMake(0, 0, [RCDeviceHelper fullScreenWidth], [RCDeviceHelper fullScreenHeight]);
                        )];
 }
 

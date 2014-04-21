@@ -10,7 +10,7 @@
 
 @implementation RCWeatherView
 
-- (id)initWithOptions:(RCViewOptions *)options {
+- (id)initWithOptions:(RCViewTaskOptions *)options {
     if (self = [self initWithFrame:options.frame]) {
 
     }
@@ -31,15 +31,15 @@
 
 - (void)configSubviews {
     _cityLabel = [UILabel new];
-    [_cityLabel setNuiClass:[RCStyleSheets genStyleClassInView:_cityLabel withNames:@[@"LargeLabel"]]];
+    [_cityLabel setNuiClass:[RCStyleSheetsHelper genStyleClassInView:_cityLabel withNames:@[@"LargeLabel"]]];
     [self addSubview:_cityLabel];
     
     _tempLabel = [UILabel new];
-    [_tempLabel setNuiClass:[RCStyleSheets genStyleClassInView:_cityLabel withNames:@[]]];
+    [_tempLabel setNuiClass:[RCStyleSheetsHelper genStyleClassInView:_cityLabel withNames:@[]]];
     [self addSubview:_tempLabel];
     
     _timeLabel = [UILabel new];
-    [_timeLabel setNuiClass:[RCStyleSheets genStyleClassInView:_cityLabel withNames:@[@"SmallLabel"]]];
+    [_timeLabel setNuiClass:[RCStyleSheetsHelper genStyleClassInView:_cityLabel withNames:@[@"SmallLabel"]]];
     [self addSubview:_timeLabel];
 }
 

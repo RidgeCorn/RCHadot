@@ -14,14 +14,14 @@
 
 + (void)loadRecordByObject:(id)object {
     [Bot record:blockc(task,
-                       RCControllerTask *task = [[RCControllerTask alloc] initWithKey:kRCViewController Type:RCControllerTaskTypeOpen navigationController:[UINavigationController new] controllerClass:[RCViewController class] options:[RCControllerOptions new]];
+                       RCControllerTask *task = [[RCControllerTask alloc] initWithKey:kRCViewController Type:RCControllerTaskTypeOpen navigationController:[UINavigationController new] controllerClass:[RCViewController class] options:[RCControllerTaskOptions new]];
 
                        task.options.animatedWhenStart = YES;
                        task.options.shouldOpenAsRootViewController = YES;
                        )];
     
     [Bot record:blockc(task,
-                       RCControllerTask *task = [[RCControllerTask alloc] initWithKey:kRCNewViewController Type:RCControllerTaskTypeOpen navigationController:nil controllerClass:[RCNewViewController class] options:[RCControllerOptions new]];
+                       RCControllerTask *task = [[RCControllerTask alloc] initWithKey:kRCNewViewController Type:RCControllerTaskTypeOpen navigationController:nil controllerClass:[RCNewViewController class] options:[RCControllerTaskOptions new]];
                        
                        task.options.animatedWhenStart = YES;
                        ) ];

@@ -1,5 +1,5 @@
 //
-//  RCModelOptionsSpec.m
+//  RCModelTaskOptionsSpec.m
 //  RCHadot
 //
 //  Created by Looping on 14-4-17.
@@ -7,12 +7,12 @@
 //
 
 #import <Kiwi/Kiwi.h>
-#import "RCModelOptions.h"
+#import "RCModelTaskOptions.h"
 
 
-SPEC_BEGIN(RCModelOptionsSpec)
+SPEC_BEGIN(RCModelTaskOptionsSpec)
 
-describe(@"RCModelOptions", ^{
+describe(@"RCModelTaskOptions", ^{
 
 });
 
