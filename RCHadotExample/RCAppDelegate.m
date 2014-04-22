@@ -22,7 +22,7 @@
     [RCModelRecord loadRecordByObject:nil];
     [RCControllerRecord loadRecordByObject:nil];
 
-    RCControllerTask *task = [Bot taskForKey:kRCViewController];
+    RCControllerTask *task = (RCControllerTask *)[Bot taskForKey:kRCViewController];
     
     [self.window setRootViewController:task.navigationController];
     [self.window makeKeyAndVisible];

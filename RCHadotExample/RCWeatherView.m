@@ -7,12 +7,21 @@
 //
 
 #import "RCWeatherView.h"
+#import "RCWeather.h"
+
+@interface RCWeatherView ()
+
+@property (nonatomic) RCWeather *weather;
+
+@end
 
 @implementation RCWeatherView
 
 - (id)initWithOptions:(RCViewTaskOptions *)options {
     if (self = [self initWithFrame:options.frame]) {
-
+        _weather = options.model;
+        
+        [self configSubviews];
     }
     
     return self;
@@ -20,10 +29,8 @@
 
 - (id)initWithFrame:(CGRect)frame
 {
-    self = [super initWithFrame:frame];
-    
-    if (self) {
-        [self configSubviews];
+    if (self = [super initWithFrame:frame]) {
+
     }
     
     return self;
@@ -31,14 +38,17 @@
 
 - (void)configSubviews {
     _cityLabel = [UILabel new];
+    _cityLabel.text = _weather.city;
     [_cityLabel setNuiClass:[RCStyleSheetsHelper genStyleClassInView:_cityLabel withNames:@[@"LargeLabel"]]];
     [self addSubview:_cityLabel];
     
     _tempLabel = [UILabel new];
+    _tempLabel.text = [_weather.temp stringValue];
     [_tempLabel setNuiClass:[RCStyleSheetsHelper genStyleClassInView:_cityLabel withNames:@[]]];
     [self addSubview:_tempLabel];
     
     _timeLabel = [UILabel new];
+    _timeLabel.text = _weather.updateTime;
     [_timeLabel setNuiClass:[RCStyleSheetsHelper genStyleClassInView:_cityLabel withNames:@[@"SmallLabel"]]];
     [self addSubview:_timeLabel];
 }

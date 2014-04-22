@@ -9,8 +9,9 @@ pod 'MagicalRecord'
 pod 'Reachability'
 pod 'Base64nl'
 pod 'NUI'
+pod 'JSONModel'
+pod 'Mantle'
 
 target :RCHadotTests, :exclusive => true do
     pod 'Kiwi/XCTest'
-    pod 'JSONModel'
 end

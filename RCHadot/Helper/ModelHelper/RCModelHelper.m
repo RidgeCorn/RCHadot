@@ -8,11 +8,8 @@
 
 #import "RCModelHelper.h"
 #import "RCCacheHelper.h"
-#import "RCObject.h"
-
-static RCModelHelper *_sharedModelHelper;
-
-static dispatch_once_t onceToken;
+#import <JSONModel.h>
+#import <Mantle.h>
 
 @interface RCModelHelper ()
 
@@ -20,20 +17,43 @@ static dispatch_once_t onceToken;
 
 @implementation RCModelHelper
 
-+ (id)sharedModelHelper {
-    returnc(_sharedModelHelper,
-            dispatch_once(&onceToken, ^{
-                _sharedModelHelper = [[RCModelHelper alloc] init];
-            })
-            );
++ (NSString *)modelCacheKeyWithDataCacheKey:(NSString *)key {
+    return [NSStringFromClass(self.class) stringByAppendingFormat:@"_%@", key ?: @""];
 }
 
-- (void)cacheModel:(id)model forKey:(NSString *)key {
-    [Cache setObject:model forKey:[[RCCacheHelper keyPrefixForClass:self.class] stringByAppendingString: key]];
++ (void)cacheModel:(id)model forKey:(NSString *)key {
+    [RCCacheHelper setObject:model forKey:[self modelCacheKeyWithDataCacheKey:key]];
 }
 
-- (id)modelForCacheKey:(NSString *)key {
-    returnc([Cache objectForKey:[[RCCacheHelper keyPrefixForClass:self.class] stringByAppendingString: key]]);
++ (id)modelForCacheKey:(NSString *)key {
+    returnc([RCCacheHelper objectForKey:[self modelCacheKeyWithDataCacheKey:key]]);
+}
+
++ (id)modelClass:(Class)cls initWithDictionary:(NSDictionary *)dict error:(NSError**)err {
+    id model;
+    
+    if ([cls isSubclassOfClass:[JSONModel class]]) {
+        model = [[cls alloc] initWithDictionary:dict error:err];
+    } else if ([cls isSubclassOfClass:[MTLModel class]]) {
+        model = [MTLJSONAdapter modelOfClass:cls fromJSONDictionary:dict error:err];
+    } else {
+        *err = [NSError errorWithDomain:[NSStringFromClass(self.class) stringByAppendingString:@"_RCModelTaskError"] code:404 userInfo:@{NSLocalizedDescriptionKey: @"Model Class NOT Support"}];
+    }
+
+    return model;
+}
+
++ (NSDictionary *)parseData:(id)responseObject withKey:(NSString *)key error:(NSError **)err {
+    NSMutableDictionary *resData = [@{} mutableCopy];
+    NSDictionary *tmpDict = responseObject;
+    
+    if ( ![tmpDict isKindOfClass:[NSDictionary class]]) {
+        tmpDict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:err];
+    }
+    
+    [resData addEntriesFromDictionary:(key && [key length]) ? [tmpDict valueForKeyPath:key] : tmpDict];
+    
+    return resData;
 }
 
 @end

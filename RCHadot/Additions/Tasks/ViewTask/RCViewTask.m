@@ -8,9 +8,10 @@
 
 #import "RCViewTask.h"
 #import "RCBot.h"
-#import "RCMapping.h"
+#import "RCMappingHelper.h"
 #import "RCDisplayHelper.h"
 #import "RCStyleSheetsHelper.h"
+#import "RCModelHelper.h"
 
 @implementation RCViewTask
 
@@ -33,7 +34,7 @@
 }
 
 - (void)handleStart:(NSString *)taskKey {
-    RCViewTask *task = [Bot taskForKey:taskKey];
+    RCViewTask *task = (RCViewTask *)[Bot taskForKey:taskKey];
     
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
@@ -59,6 +60,10 @@
                     [tmpView removeFromSuperview];
                 }
                 
+                if (_options.fromCacheModel)  {
+                    _options.model = [RCModelHelper modelForCacheKey:_options.fromCacheKey];
+                }
+                
                 [_refsView addSubview: [view performSelector:VIEW_INIT_SELECTOR withObject: _options]];
 
                 if (tag) {
@@ -69,8 +74,8 @@
                     [view setNuiClass:_options.styleSheetsKey];
                 }
                 
-                [RCDisplayHelper displayData:[RCCacheHelper dictInCacheWithCachePaths:_options.cacheValuePaths] inView:view withMapping:[Mapping collectionForKey:_options.mappingCollectionKey]];
-                }
+                [RCDisplayHelper displayData:[RCCacheHelper dictInCacheWithCachePaths:_options.cacheValuePaths] inView:view withMapping:[RCMappingHelper collectionForKey:_options.mappingCollectionKey]];
+            }
         }
             break;
             

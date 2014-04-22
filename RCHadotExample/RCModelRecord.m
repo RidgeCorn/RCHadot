@@ -8,6 +8,7 @@
 
 #import "RCModelRecord.h"
 #import "RCModelTask.h"
+#import "RCWeather.h"
 
 @implementation RCModelRecord
 
@@ -16,7 +17,8 @@
                        RCModelTask *task = [[RCModelTask alloc] initWithKey:kRCModelLoadWeather type:RCModelTaskTypeLoadFromServerWithGet requestPath:@"data/sk/101210101.html" options:[RCModelTaskOptions new]];
                        
                        task.options.responseDataKeyPath = @"weatherinfo";
-                       task.options.toCacheKey = @"kRCWeatherInfo";
+                       task.options.toCacheKey = kRCModelLoadWeather;
+                       task.options.toModelClass = [RCWeather class];
                        )];
     
 }

@@ -17,3 +17,4 @@
 #import "RCCacheHelper.h"
 #import "RCCryptoHelper.h"
 #import "RCDisplayHelper.h"
+#import "RCMappingHelper.h"

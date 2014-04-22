@@ -36,12 +36,18 @@ static dispatch_once_t onceToken;
     returnc([[self alloc] init]);
 }
 
+#pragma mark - Task Cache Key
+
++ (NSString *)taskCacheKeyWithTaskKey:(NSString *)key {
+    return key ? [[RCCacheHelper keyPrefixForClass:self.class] stringByAppendingString:key] : nil;
+}
+
 #pragma mark - Start Task
 - (BOOL)start:(NSString *)key removeAfterDone:(BOOL)removeAfterDone {
     returnc(called,
             BOOL called = NO;
             RCTask *task = nil;
-            NSString *taskKey = key ? [[RCCacheHelper keyPrefixForClass:self.class] stringByAppendingString:key] : nil;
+            NSString *taskKey = [RCBot taskCacheKeyWithTaskKey:key];
             
             if (taskKey) {
                 task = [Cache objectForKey:taskKey];
@@ -71,9 +77,9 @@ static dispatch_once_t onceToken;
 - (BOOL)record:(RCTask *)task {
     returnc(record,
             BOOL record = NO;
-            NSString *taskKey = task.key ? [[RCCacheHelper keyPrefixForClass:self.class] stringByAppendingString:task.key] : nil;
+            NSString *taskKey = [RCBot taskCacheKeyWithTaskKey:task.key];
 
-            if ( !([Cache objectForKey:taskKey] && [[Cache objectForKey:taskKey] isEqual:task])) {
+            if (taskKey && !([Cache objectForKey:taskKey] && [[Cache objectForKey:taskKey] isEqual:task])) {
                 [Cache setObject:task forKey:taskKey];
                 
                 if ([task.delegate respondsToSelector:@selector(handleRecord:)]) {
@@ -87,7 +93,7 @@ static dispatch_once_t onceToken;
 }
 
 - (void)remove:(NSString *)key {
-    NSString *taskKey = key ? [[RCCacheHelper keyPrefixForClass:self.class] stringByAppendingString:key] : nil;
+    NSString *taskKey = [RCBot taskCacheKeyWithTaskKey:key];
 
     RCTask *task = [Cache objectForKey:taskKey];
     
@@ -95,13 +101,14 @@ static dispatch_once_t onceToken;
         [task.delegate handleRemove:taskKey];
     }
     
+    task.delegate = nil;
     task = nil;
     
     [Cache removeObjectForKey:taskKey];
 }
 
 - (id)taskForKey:(NSString *)key {
-    NSString *taskKey = key ? [[RCCacheHelper keyPrefixForClass:self.class] stringByAppendingString:key] : nil;
+    NSString *taskKey = [RCBot taskCacheKeyWithTaskKey:key];
 
     returnc([Cache objectForKey:taskKey]);
 }

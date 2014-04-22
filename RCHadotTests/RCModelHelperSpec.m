@@ -9,6 +9,9 @@
 #import <Kiwi/Kiwi.h>
 #import "RCModelHelper.h"
 #import <JSONModel.h>
+#import <Mantle.h>
+#import "RCJSONModelTest.h"
+#import "RCMTLModelTest.h"
 
 SPEC_BEGIN(RCModelHelperSpec)
 
@@ -17,9 +20,9 @@ describe(@"RCModelHelper", ^{
         it(@"should be done", ^{
             NSString *model = @"modelCache";
             
-            [ModelHelper cacheModel:model forKey:model];
+            [RCModelHelper cacheModel:model forKey:model];
             
-            [[[ModelHelper modelForCacheKey:model] should] equal:model];
+            [[[RCModelHelper modelForCacheKey:model] should] equal:model];
         });
     });
     
@@ -28,20 +31,55 @@ describe(@"RCModelHelper", ^{
             NSArray *model = @[];
             NSString *key = @"modelCache";
             
-            [ModelHelper cacheModel:model forKey:key];
+            [RCModelHelper cacheModel:model forKey:key];
             
-            [[[ModelHelper modelForCacheKey:key] should] equal:model];
+            [[[RCModelHelper modelForCacheKey:key] should] equal:model];
         });
     });
     
-    context(@"when test setModelObject 'JSONModel' forKey 'modelCache'", ^{
+    context(@"when test setModelObject 'RCJSONModelTest' forKey 'modelCache'", ^{
         it(@"should be done", ^{
-            JSONModel *model = [[JSONModel alloc] init];
+            RCJSONModelTest *model = [[RCJSONModelTest alloc] init];
             NSString *key = @"modelCache";
             
-            [ModelHelper cacheModel:model forKey:key];
+            [RCModelHelper cacheModel:model forKey:key];
             
-            [[[ModelHelper modelForCacheKey:key] should] equal:model];
+            [[[RCModelHelper modelForCacheKey:key] should] equal:model];
+        });
+    });
+    
+    context(@"when test setModelObject 'RCMTLModelTest' forKey 'modelCache'", ^{
+        it(@"should be done", ^{
+            RCMTLModelTest *model = [[RCMTLModelTest alloc] init];
+            NSString *key = @"modelCache";
+            
+            [RCModelHelper cacheModel:model forKey:key];
+            
+            [[[RCModelHelper modelForCacheKey:key] should] equal:model];
+        });
+    });
+    
+    context(@"when test modelClass 'RCJSONModelTest' initWithDictionary '@{@'name': @'looping'}' err", ^{
+        it(@"should be done", ^{
+            NSString *username = @"looping";
+            NSDictionary *dict = @{@"username": username};
+            NSError *err = nil;
+            
+            [[((RCJSONModelTest *)[RCModelHelper modelClass:[RCJSONModelTest class] initWithDictionary:dict error:&err]).name should] equal:username];
+            
+            [[err should] beNil];
+        });
+    });
+    
+    context(@"when test modelClass 'RCMTLModelTest' initWithDictionary '@{@'name': @'looping'}' err", ^{
+        it(@"should be done", ^{
+            NSString *username = @"looping";
+            NSDictionary *dict = @{@"username": username};
+            NSError *err = nil;
+            
+            [[((RCMTLModelTest *)[RCModelHelper modelClass:[RCMTLModelTest class] initWithDictionary:dict error:&err]).name should] equal:username];
+            
+            [[err should] beNil];
         });
     });
 });

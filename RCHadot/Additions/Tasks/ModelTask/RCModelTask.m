@@ -9,6 +9,7 @@
 #import "RCModelTask.h"
 #import "RCHTTPClient.h"
 #import "RCCacheHelper.h"
+#import "RCModelHelper.h"
 #import "RCBot.h"
 
 @implementation RCModelTask
@@ -65,11 +66,16 @@
 }
 
 - (void)handleStart:(NSString *)taskKey {
-    RCModelTask *task = [Bot taskForKey:taskKey];
+    RCModelTask *task = (RCModelTask *)[Bot taskForKey:taskKey];
+    
     switch (task.type) {
         case RCModelTaskTypeLoadFromServerWithGet: {
             [HTTPClient getPath:_requestPath parameters:[self genParameters] success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                [self handleRequestOperation:operation withResponse:responseObject];
+                NSError *err = nil;
+
+                [self handleRequestOperation:operation withResponse:responseObject error:&err];
+                
+                [self handleError:err];
             } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                 [self handleError:error];
             }];
@@ -78,7 +84,11 @@
             
         case RCModelTaskTypeLoadFromServerWithPost: {
             [HTTPClient postPath:_requestPath parameters:[self genParameters] success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                [self handleRequestOperation:operation withResponse:responseObject];
+                NSError *err = nil;
+
+                [self handleRequestOperation:operation withResponse:responseObject error:&err];
+                
+                [self handleError:err];
             } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                 [self handleError:error];
             }];
@@ -87,7 +97,11 @@
             
         case RCModelTaskTypeLoadFromServerWithPut: {
             [HTTPClient putPath:_requestPath parameters:[self genParameters] success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                [self handleRequestOperation:operation withResponse:responseObject];
+                NSError *err = nil;
+
+                [self handleRequestOperation:operation withResponse:responseObject error:&err];
+                
+                [self handleError:err];
             } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                 [self handleError:error];
             }];
@@ -96,7 +110,11 @@
             
         case RCModelTaskTypeLoadFromServerWithDelete: {
             [HTTPClient deletePath:_requestPath parameters:[self genParameters] success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                [self handleRequestOperation:operation withResponse:responseObject];
+                NSError *err = nil;
+
+                [self handleRequestOperation:operation withResponse:responseObject error:&err];
+                
+                [self handleError:err];
             } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                 [self handleError:error];
             }];
@@ -105,7 +123,11 @@
             
         case RCModelTaskTypeLoadFromCache: {
             if (_options.cacheValuePaths) {
-                [self handleRequestOperation:nil withResponse:[RCCacheHelper dictInCacheWithCachePaths:_options.cacheValuePaths]];
+                NSError *err = nil;
+                
+                [self handleRequestOperation:nil withResponse:[RCCacheHelper dictInCacheWithCachePaths:_options.cacheValuePaths] error:&err];
+                
+                [self handleError:err];
             }
         }
             break;
@@ -115,34 +137,27 @@
     }
 }
 
-- (void)handleRequestOperation:(AFHTTPRequestOperation *)operation withResponse:(id)responseObject {
+- (void)handleRequestOperation:(AFHTTPRequestOperation *)operation withResponse:(id)responseObject error:(NSError**)err {
     if (responseObject) {
         if (_options.toCacheKey) {
-            [RCCacheHelper setObject:[self parseData:responseObject] forKey:_options.toCacheKey withType:_options.storageType];
+            NSDictionary *dict = [RCModelHelper parseData:responseObject withKey:_options.responseDataKeyPath error:err];
+            [RCCacheHelper setObject:dict forKey:_options.toCacheKey withType:_options.storageType];
+            
+            if (_options.toModelClass && !*err) {
+                [RCCacheHelper setObject:[RCModelHelper modelClass:_options.toModelClass initWithDictionary:dict error:err] forKey:[RCModelHelper modelCacheKeyWithDataCacheKey: _options.toCacheKey] withType:_options.storageType];
+            }
         }
     } else {
 //        NSLog(@"NO Response Data!");
     }
-    
-    self.state = RCTaskStateCompletedWithSucceeded;
-}
-
-- (NSDictionary *)parseData:(id)responseObject {
-    NSMutableDictionary *resData = [@{} mutableCopy];
-    NSDictionary *tmpDict = responseObject;
-    
-    if ( ![tmpDict isKindOfClass:[NSDictionary class]]) {
-        NSError *error = nil;
-        tmpDict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:&error];
-    }
-    
-    [resData addEntriesFromDictionary:_options.responseDataKeyPath && [_options.responseDataKeyPath length] ? [tmpDict valueForKeyPath:_options.responseDataKeyPath] : tmpDict];
-
-    return resData;
 }
 
 - (void)handleError:(NSError *)error {
-    self.error = error;
-    self.state = RCTaskStateCompletedWithError;
+    if (error) {
+        self.error = error;
+        self.state = RCTaskStateCompletedWithError;
+    } else {
+        self.state = RCTaskStateCompletedWithSucceeded;
+    }
 }
 @end

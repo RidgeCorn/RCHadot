@@ -65,8 +65,8 @@
 		6E5FCDBD18FCDFA50076D5C5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E5FCDBC18FCDFA50076D5C5 /* CoreLocation.framework */; };
 		6E5FCDBE18FCDFD20076D5C5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E5FCDBC18FCDFA50076D5C5 /* CoreLocation.framework */; };
 		6E5FCDBF18FCDFD40076D5C5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E5FCDBC18FCDFA50076D5C5 /* CoreLocation.framework */; };
-		6E5FCE5518FE182E0076D5C5 /* RCMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5FCE5418FE182E0076D5C5 /* RCMapping.m */; };
-		6E5FCE5818FE21690076D5C5 /* RCMappingSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5FCE5718FE21690076D5C5 /* RCMappingSpec.m */; };
+		6E5FCE5518FE182E0076D5C5 /* RCMappingHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5FCE5418FE182E0076D5C5 /* RCMappingHelper.m */; };
+		6E5FCE5818FE21690076D5C5 /* MappingHelperSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5FCE5718FE21690076D5C5 /* MappingHelperSpec.m */; };
 		6E5FCE5D18FE27DA0076D5C5 /* RCDisplayHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5FCE5C18FE27DA0076D5C5 /* RCDisplayHelper.m */; };
 		6E5FCE6518FE31C00076D5C5 /* NSDictionary+RCDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5FCE6418FE31C00076D5C5 /* NSDictionary+RCDictionary.m */; };
 		6E5FCE6818FE32020076D5C5 /* NSDictionary+RCDictionarySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5FCE6718FE32020076D5C5 /* NSDictionary+RCDictionarySpec.m */; };
@@ -83,7 +83,7 @@
 		6EAB918918FED5460087C20E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EDEB45418EA499300923C26 /* Main.storyboard */; };
 		6EAB918E18FED6400087C20E /* RCRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAB917918FE6C8B0087C20E /* RCRecord.m */; };
 		6EAB919018FED6400087C20E /* RCDisplayHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5FCE5C18FE27DA0076D5C5 /* RCDisplayHelper.m */; };
-		6EAB919218FED6400087C20E /* RCMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5FCE5418FE182E0076D5C5 /* RCMapping.m */; };
+		6EAB919218FED6400087C20E /* RCMappingHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5FCE5418FE182E0076D5C5 /* RCMappingHelper.m */; };
 		6EAB919418FED6400087C20E /* RCVerifyHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E610F8118FC145500247441 /* RCVerifyHelper.m */; };
 		6EAB919618FED6400087C20E /* RCNetWorkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E610F7D18FC142900247441 /* RCNetWorkHelper.m */; };
 		6EAB919818FED6400087C20E /* RCMapLocationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E610F7918FC141E00247441 /* RCMapLocationHelper.m */; };
@@ -131,6 +131,9 @@
 		6EDEB45918EA499300923C26 /* RCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDEB45818EA499300923C26 /* RCViewController.m */; };
 		6EDEB45B18EA499300923C26 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EDEB45A18EA499300923C26 /* Images.xcassets */; };
 		6EDEB4A618EA5D9700923C26 /* RCNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDEB4A518EA5D9700923C26 /* RCNewViewController.m */; };
+		6EED807819061CD000AF3DF0 /* RCJSONModelTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EED807719061CD000AF3DF0 /* RCJSONModelTest.m */; };
+		6EED807B19061CEA00AF3DF0 /* RCMTLModelTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EED807A19061CEA00AF3DF0 /* RCMTLModelTest.m */; };
+		6EED80801906497000AF3DF0 /* RCWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EED807F1906497000AF3DF0 /* RCWeather.m */; };
 		96EB4D4D509A4B24BE5F588E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5581E9F0DD0A4528BCC62068 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -190,9 +193,9 @@
 		6E5FCDB718FCDF1B0076D5C5 /* RCCryptoHelperSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCCryptoHelperSpec.m; sourceTree = "<group>"; };
 		6E5FCDBA18FCDF4A0076D5C5 /* RCMapLocationHelperSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCMapLocationHelperSpec.m; sourceTree = "<group>"; };
 		6E5FCDBC18FCDFA50076D5C5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		6E5FCE5318FE182E0076D5C5 /* RCMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCMapping.h; sourceTree = "<group>"; };
-		6E5FCE5418FE182E0076D5C5 /* RCMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCMapping.m; sourceTree = "<group>"; };
-		6E5FCE5718FE21690076D5C5 /* RCMappingSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCMappingSpec.m; sourceTree = "<group>"; };
+		6E5FCE5318FE182E0076D5C5 /* RCMappingHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCMappingHelper.h; sourceTree = "<group>"; };
+		6E5FCE5418FE182E0076D5C5 /* RCMappingHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCMappingHelper.m; sourceTree = "<group>"; };
+		6E5FCE5718FE21690076D5C5 /* MappingHelperSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MappingHelperSpec.m; sourceTree = "<group>"; };
 		6E5FCE5B18FE27DA0076D5C5 /* RCDisplayHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCDisplayHelper.h; sourceTree = "<group>"; };
 		6E5FCE5C18FE27DA0076D5C5 /* RCDisplayHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCDisplayHelper.m; sourceTree = "<group>"; };
 		6E5FCE6318FE31C00076D5C5 /* NSDictionary+RCDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+RCDictionary.h"; sourceTree = "<group>"; };
@@ -294,6 +297,12 @@
 		6EDEB48418EA4A2500923C26 /* RCViewTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCViewTask.m; sourceTree = "<group>"; };
 		6EDEB4A418EA5D9700923C26 /* RCNewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCNewViewController.h; sourceTree = "<group>"; };
 		6EDEB4A518EA5D9700923C26 /* RCNewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCNewViewController.m; sourceTree = "<group>"; };
+		6EED807619061CD000AF3DF0 /* RCJSONModelTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCJSONModelTest.h; sourceTree = "<group>"; };
+		6EED807719061CD000AF3DF0 /* RCJSONModelTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCJSONModelTest.m; sourceTree = "<group>"; };
+		6EED807919061CEA00AF3DF0 /* RCMTLModelTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCMTLModelTest.h; sourceTree = "<group>"; };
+		6EED807A19061CEA00AF3DF0 /* RCMTLModelTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCMTLModelTest.m; sourceTree = "<group>"; };
+		6EED807E1906497000AF3DF0 /* RCWeather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCWeather.h; sourceTree = "<group>"; };
+		6EED807F1906497000AF3DF0 /* RCWeather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCWeather.m; sourceTree = "<group>"; };
 		79EC0D202DD24712B890A49A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -351,7 +360,6 @@
 				6E3B698B1905408B002ABF12 /* Options */,
 				6E3B698919053F78002ABF12 /* Task */,
 				6EAB91E918FFC9DE0087C20E /* Record */,
-				6E5FCE5618FE21450076D5C5 /* Mapping */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -378,6 +386,7 @@
 		6E3B698819053C07002ABF12 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				6E5FCE5618FE21450076D5C5 /* MappingHelper */,
 				6E5FCD8618FCD4B30076D5C5 /* PListHelper */,
 				6E3B698A19053FB0002ABF12 /* CacheHelper */,
 				6E5FCDA518FCDDFF0076D5C5 /* AppConfigHelper */,
@@ -487,6 +496,10 @@
 		6E5FCD9F18FCDDAC0076D5C5 /* ModelHelper */ = {
 			isa = PBXGroup;
 			children = (
+				6EED807619061CD000AF3DF0 /* RCJSONModelTest.h */,
+				6EED807719061CD000AF3DF0 /* RCJSONModelTest.m */,
+				6EED807919061CEA00AF3DF0 /* RCMTLModelTest.h */,
+				6EED807A19061CEA00AF3DF0 /* RCMTLModelTest.m */,
 				6E9BF6A91905071400DED4E2 /* RCModelHelperSpec.m */,
 			);
 			name = ModelHelper;
@@ -545,21 +558,12 @@
 			name = MapLocationHelper;
 			sourceTree = "<group>";
 		};
-		6E5FCE5218FE17D70076D5C5 /* Mapping */ = {
+		6E5FCE5618FE21450076D5C5 /* MappingHelper */ = {
 			isa = PBXGroup;
 			children = (
-				6E5FCE5318FE182E0076D5C5 /* RCMapping.h */,
-				6E5FCE5418FE182E0076D5C5 /* RCMapping.m */,
+				6E5FCE5718FE21690076D5C5 /* MappingHelperSpec.m */,
 			);
-			path = Mapping;
-			sourceTree = "<group>";
-		};
-		6E5FCE5618FE21450076D5C5 /* Mapping */ = {
-			isa = PBXGroup;
-			children = (
-				6E5FCE5718FE21690076D5C5 /* RCMappingSpec.m */,
-			);
-			name = Mapping;
+			name = MappingHelper;
 			sourceTree = "<group>";
 		};
 		6E5FCE5A18FE27950076D5C5 /* DisplayHelper */ = {
@@ -732,6 +736,7 @@
 		6E9BF6AB190512BF00DED4E2 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				6EED807C1906422500AF3DF0 /* MappingHelper */,
 				6E9BF6A41905023000DED4E2 /* ModelHelper */,
 				6EAB91F418FFCD050087C20E /* StyleSheetsHelper */,
 				6E610F5418FB7DB400247441 /* AppConfigHelper */,
@@ -757,7 +762,6 @@
 				6EAB91D218FFA3830087C20E /* Options */,
 				6EDEB48C18EA4A5200923C26 /* Task */,
 				6EAB917718FE6C650087C20E /* Record */,
-				6E5FCE5218FE17D70076D5C5 /* Mapping */,
 				6E9BF6B119051D7B00DED4E2 /* RCCore.h */,
 			);
 			path = Core;
@@ -971,6 +975,7 @@
 				6EAB918818FED5100087C20E /* Resources */,
 				6EAB918418FE6D7E0087C20E /* AppDelegate */,
 				6EAB917618FE6BE70087C20E /* TaskRecord */,
+				6EED807D1906494E00AF3DF0 /* Models */,
 				6EAB91CE18FF85DC0087C20E /* Views */,
 				6EDEB4A718EA5DA500923C26 /* Controllers */,
 				6EDEB44918EA499300923C26 /* Supporting Files */,
@@ -1085,6 +1090,24 @@
 				6EDEB4A518EA5D9700923C26 /* RCNewViewController.m */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		6EED807C1906422500AF3DF0 /* MappingHelper */ = {
+			isa = PBXGroup;
+			children = (
+				6E5FCE5318FE182E0076D5C5 /* RCMappingHelper.h */,
+				6E5FCE5418FE182E0076D5C5 /* RCMappingHelper.m */,
+			);
+			path = MappingHelper;
+			sourceTree = "<group>";
+		};
+		6EED807D1906494E00AF3DF0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6EED807E1906497000AF3DF0 /* RCWeather.h */,
+				6EED807F1906497000AF3DF0 /* RCWeather.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1282,7 +1305,7 @@
 				6E9BF6B619051FB300DED4E2 /* RCCache.m in Sources */,
 				6E5FCD7C18FCD4210076D5C5 /* NSString+RCString.m in Sources */,
 				6EAB917A18FE6C8B0087C20E /* RCRecord.m in Sources */,
-				6E5FCE5518FE182E0076D5C5 /* RCMapping.m in Sources */,
+				6E5FCE5518FE182E0076D5C5 /* RCMappingHelper.m in Sources */,
 				6EAB91D518FFA3B80087C20E /* RCOptions.m in Sources */,
 				6E5FCD7718FCD40A0076D5C5 /* RCCryptoHelper.m in Sources */,
 				6E5FCD8418FCD4460076D5C5 /* RCTask.m in Sources */,
@@ -1316,10 +1339,11 @@
 				6E5FCDB818FCDF1B0076D5C5 /* RCCryptoHelperSpec.m in Sources */,
 				6E5FCD9918FCDD570076D5C5 /* RCViewTaskSpec.m in Sources */,
 				6E3B698E190540EC002ABF12 /* RCCacheSpec.m in Sources */,
-				6E5FCE5818FE21690076D5C5 /* RCMappingSpec.m in Sources */,
+				6E5FCE5818FE21690076D5C5 /* MappingHelperSpec.m in Sources */,
 				6EAB91EB18FFCA020087C20E /* RCRecordSpec.m in Sources */,
 				6E5FCD9718FCDD490076D5C5 /* RCModelTaskSpec.m in Sources */,
 				6E5FCDAF18FCDEA00076D5C5 /* UIColor+RCColorSpec.m in Sources */,
+				6EED807819061CD000AF3DF0 /* RCJSONModelTest.m in Sources */,
 				6EAB91FB18FFD6D50087C20E /* StyleSheetsHelperSpec.m in Sources */,
 				6E5FCE6818FE32020076D5C5 /* NSDictionary+RCDictionarySpec.m in Sources */,
 				6EAB91F318FFCA650087C20E /* RCControllerOptionsSpec.m in Sources */,
@@ -1339,6 +1363,7 @@
 				6E4B541218FCCB0200DA270A /* RCVerifyHelperSpec.m in Sources */,
 				6E5FCD9218FCDCEE0076D5C5 /* RCBotSpec.m in Sources */,
 				6E5FCDB118FCDEC70076D5C5 /* NSManagedObject+RCStorageSpec.m in Sources */,
+				6EED807B19061CEA00AF3DF0 /* RCMTLModelTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1349,8 +1374,9 @@
 				6E3B698F19054954002ABF12 /* RCCache.m in Sources */,
 				6EAB918E18FED6400087C20E /* RCRecord.m in Sources */,
 				6EAB919018FED6400087C20E /* RCDisplayHelper.m in Sources */,
+				6EED80801906497000AF3DF0 /* RCWeather.m in Sources */,
 				6EAB91E518FFAA8C0087C20E /* RCViewTaskOptions.m in Sources */,
-				6EAB919218FED6400087C20E /* RCMapping.m in Sources */,
+				6EAB919218FED6400087C20E /* RCMappingHelper.m in Sources */,
 				6EAB919418FED6400087C20E /* RCVerifyHelper.m in Sources */,
 				6EAB91E418FFAA880087C20E /* RCControllerTaskOptions.m in Sources */,
 				6EAB919618FED6400087C20E /* RCNetWorkHelper.m in Sources */,

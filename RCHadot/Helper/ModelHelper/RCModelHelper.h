@@ -8,13 +8,15 @@
 
 #import "RCObject.h"
 
-#define ModelHelper [RCModelHelper sharedModelHelper]
-
 @interface RCModelHelper : RCObject
 
-+ (id)sharedModelHelper;
++ (NSString *)modelCacheKeyWithDataCacheKey:(NSString *)key;
 
-- (void)cacheModel:(id)model forKey:(NSString *)key;
-- (id)modelForCacheKey:(NSString *)key;
++ (void)cacheModel:(id)model forKey:(NSString *)key;
++ (id)modelForCacheKey:(NSString *)key;
+
++ (id)modelClass:(Class)cls initWithDictionary:(NSDictionary *)dict error:(NSError**)err;
+
++ (NSDictionary *)parseData:(id)responseObject withKey:(NSString *)key error:(NSError **)err;
 
 @end

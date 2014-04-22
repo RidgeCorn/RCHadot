@@ -41,7 +41,7 @@
     
     [Bot start:kRCModelLoadWeather];
     
-    RCModelTask *task = [Bot taskForKey:kRCModelLoadWeather];
+    RCModelTask *task = (RCModelTask *)[Bot taskForKey:kRCModelLoadWeather];
 
     [RACObserve(task, state) subscribeNext:^(NSNumber *state) {
         if ([state isEqualToNumber: @(RCTaskStateCompletedWithSucceeded)]) {

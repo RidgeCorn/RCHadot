@@ -21,8 +21,9 @@ typedef NS_ENUM(NSUInteger, RCModelOptionsStorageType) {
 
 @property (nonatomic) NSDictionary *requestKeyMapping;
 @property (nonatomic) NSString *responseDataKeyPath;
-
 @property (nonatomic) NSString *toCacheKey;
+
+@property (nonatomic) Class toModelClass;
 
 @property (nonatomic) RCModelOptionsStorageType storageType;
 

@@ -24,7 +24,7 @@ describe(@"RCCacheHelper", ^{
                                             @"email": @"contact@ridgecorn.com"
                                             }
                                     };
-            [Cache setObject:users forKey:@"users"];
+            [RCCacheHelper setObject:users forKey:@"users"];
 
             NSDictionary *posts = @{
                                     @"post0": @{
@@ -36,10 +36,10 @@ describe(@"RCCacheHelper", ^{
                                             @"date": @"1397628298",
                                             }
                                     };
-            [Cache setObject:posts forKey:@"posts"];
+            [RCCacheHelper setObject:posts forKey:@"posts"];
 
             NSString *appName = @"RCHadot";
-            [Cache setObject:appName forKey:@"appName"];
+            [RCCacheHelper setObject:appName forKey:@"appName"];
 
             NSDictionary *resDict = @{
                                       @"appName": @"RCHadot",
@@ -63,7 +63,7 @@ describe(@"RCCacheHelper", ^{
                                                     @"email": @"contact@ridgecorn.com"
                                                     }]
                                     };
-            [Cache setObject:users forKey:@"users"];
+            [RCCacheHelper setObject:users forKey:@"users"];
             
             NSDictionary *posts = @{
                                     @"posts": @[@{
@@ -75,10 +75,10 @@ describe(@"RCCacheHelper", ^{
                                                     @"date": @"1397628298",
                                                     }]
                                     };
-            [Cache setObject:posts forKey:@"posts"];
+            [RCCacheHelper setObject:posts forKey:@"posts"];
             
             NSString *appName = @"RCHadot";
-            [Cache setObject:appName forKey:@"appName"];
+            [RCCacheHelper setObject:appName forKey:@"appName"];
             
             NSDictionary *resDict = @{
                                       @"appName": @"RCHadot",
@@ -98,7 +98,7 @@ describe(@"RCCacheHelper", ^{
             
             [RCCacheHelper setObject:string forKey:key withType:type];
             
-            [[[Cache objectForKey:key] should] equal:string];
+            [[[RCCacheHelper objectForKey:key] should] equal:string];
         });
     });
 
@@ -110,7 +110,7 @@ describe(@"RCCacheHelper", ^{
             
             [RCCacheHelper setObject:array forKey:key withType:type];
             
-            [[[Cache objectForKey:key] should] equal:array];
+            [[[RCCacheHelper objectForKey:key] should] equal:array];
         });
     });
     
@@ -123,7 +123,7 @@ describe(@"RCCacheHelper", ^{
             
             [RCCacheHelper setObject:array forKey:key withType:type];
 
-            [[[Cache objectForKey:key] should] equal:theNewArray];
+            [[[RCCacheHelper objectForKey:key] should] equal:theNewArray];
         });
     });
     
@@ -135,7 +135,7 @@ describe(@"RCCacheHelper", ^{
             
             [RCCacheHelper setObject:dict forKey:key withType:type];
             
-            [[[Cache objectForKey:key] should] equal:dict];
+            [[[RCCacheHelper objectForKey:key] should] equal:dict];
         });
     });
     
@@ -148,7 +148,25 @@ describe(@"RCCacheHelper", ^{
             
             [RCCacheHelper setObject:dict forKey:key withType:type];
 
-            [[[Cache objectForKey:key] should] equal:theNewDict];
+            [[[RCCacheHelper objectForKey:key] should] equal:theNewDict];
+        });
+    });
+    
+    context(@"when testing keyPrefixForString 'stringKey'", ^{
+        it(@"should equal '__stringKey_(managedByRCHadot)_'", ^{
+            NSString *key = @"stringKey";
+            NSString *retKey = @"__stringKey_(managedByRCHadot)_";
+
+            [[[RCCacheHelper keyPrefixForString:key] should] equal:retKey];
+        });
+    });
+    
+    context(@"when testing keyPrefixForClass 'NSString'", ^{
+        it(@"should equal '____NSCFConstantString_(managedByRCHadot)_'", ^{
+            NSString *key = @"stringKey";
+            NSString *retKey = @"____NSCFConstantString_(managedByRCHadot)_";
+            
+            [[[RCCacheHelper keyPrefixForClass:key.class] should] equal:retKey];
         });
     });
 });

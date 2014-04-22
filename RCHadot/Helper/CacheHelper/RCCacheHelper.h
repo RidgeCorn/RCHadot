@@ -18,8 +18,14 @@
 
 + (NSString *)keyPrefixForClass:(Class)cls;
 
++ (NSString *)keyPrefixForString:(NSString *)string;
+
 + (NSDictionary *)dictInCacheWithCachePaths:(NSArray *)cachePaths;
 
 + (void)setObject:(id <NSCoding>)object forKey:(NSString *)key withType:(RCModelOptionsStorageType)type;
+
++ (void)setObject:(id<NSCoding>)object forKey:(NSString *)key;
+
++ (id)objectForKey:(NSString *)key;
 
 @end

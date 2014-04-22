@@ -1,5 +1,5 @@
 //
-//  RCMappingSpec.m
+//  RCMappingHelperSpec.m
 //  RCHadot
 //
 //  Created by Looping on 14-4-16.
@@ -7,25 +7,20 @@
 //
 
 #import <Kiwi/Kiwi.h>
-#import "RCMapping.h"
+#import "RCMappingHelper.h"
 
 
-SPEC_BEGIN(RCMappingSpec)
+SPEC_BEGIN(RCMappingHelperSpec)
 
-describe(@"RCMapping", ^{
-    context(@"when call sharedMapping", ^{
-        it(@"should not be nil", ^{
-            [[Mapping should] beNonNil];
-        });
-    });
+describe(@"RCMappingHelper", ^{
     
     context(@"when add collection with key 'kRCModelUsers'", ^{
         it(@"should be done", ^{
             NSString *key = @"kRCModelUsers";
             NSMutableDictionary *collection = [@{@"key": @"value"} mutableCopy];
-            [Mapping addCollection:collection withKey:key];
+            [RCMappingHelper addCollection:collection withKey:key];
             
-            [[[Mapping collectionForKey:key] should] equal:collection];
+            [[[RCMappingHelper collectionForKey:key] should] equal:collection];
         });
     });
     
@@ -34,9 +29,9 @@ describe(@"RCMapping", ^{
             NSString *key = @"userView.nameLabel.text";
             NSString *value = @"result.username";
             NSString *collectionKey = @"kRCModelUsers";
-            [Mapping setValue:value forKey:key withCollectionKey:collectionKey];
+            [RCMappingHelper setValue:value forKey:key withCollectionKey:collectionKey];
             
-            [[[Mapping valueForKey:key withCollectionKey:collectionKey] should] equal:value];
+            [[[RCMappingHelper valueForKey:key withCollectionKey:collectionKey] should] equal:value];
         });
     });
 });

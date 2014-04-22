@@ -17,30 +17,38 @@
             );
 }
 
++ (NSString *)keyPrefixForString:(NSString *)string {
+    returnc(keyPrefix,
+            NSString *keyPrefix = [NSString stringWithFormat:@"__%@_(managedByRCHadot)_", string];
+            );
+}
+
 + (NSDictionary *)dictInCacheWithCachePaths:(NSArray *)cachePaths {
     returnc(dict,
-            NSMutableDictionary *dict = [@{} mutableCopy];
+            NSMutableDictionary *dict = [@{} mutableCopy];NSString *valuePathKey;
+            
             if (cachePaths) {
                 for (NSString *key in cachePaths) {
                     NSInteger dotLocation = [key rangeOfString:@"."].location;
 
                     if (dotLocation == NSNotFound) {
                         if (key) {
-                            [dict setValue:[Cache objectForKey:key] forKey:key];
+                            [dict setValue:[Cache objectForKey:[[self keyPrefixForString:key] stringByAppendingString:key]] forKey:key];
                         }
                     } else {
-                        NSString *cacheKey = [key substringToIndex:dotLocation];
+                       valuePathKey = [key substringToIndex:dotLocation];
+                        NSString *cacheKey = [[self keyPrefixForString:valuePathKey] stringByAppendingString:valuePathKey];
                         
                         id value = [Cache objectForKey:cacheKey];
                         
                         if ([value isKindOfClass:[NSDictionary class]]) {
-                            NSString *valuePathKey = [key substringFromIndex:dotLocation + 2];
+                            valuePathKey = [key substringFromIndex:dotLocation + 2];
                             NSString *sepatator = [key substringWithRange:NSMakeRange(dotLocation + 1, 1)];
                             
                             [dict setValue:[value valueForKeyPath:valuePathKey separatedString:sepatator] forKey:valuePathKey];
                             
                         } else {
-                            [dict setValue:value forKey:cacheKey];
+                            [dict setValue:value forKey:valuePathKey];
                         }
                     }
                 }
@@ -49,24 +57,35 @@
 }
 
 + (void)setObject:(id<NSCoding>)object forKey:(NSString *)key withType:(RCModelOptionsStorageType)type {
+    NSString *cacheKey = [[self keyPrefixForString:key] stringByAppendingString:key];
+
     switch (type) {
         case RCModelOptionsStorageTypeWrite: {
-            [Cache setObject:object forKey:key];
+            [Cache setObject:object forKey:cacheKey];
         }
             break;
         case RCModelOptionsStorageTypeAppend: {
-            id value = [Cache objectForKey:key];
+            id value = [Cache objectForKey:cacheKey];
+            
             if (value) {
                 value = [self appendData:object to:value];
-                [Cache setObject:value forKey:key];
+                [Cache setObject:value forKey:cacheKey];
             } else {
-                [Cache setObject:object forKey:key];
+                [Cache setObject:object forKey:cacheKey];
             }
         }
             break;
         default:
             break;
     }
+}
+
++ (void)setObject:(id<NSCoding>)object forKey:(NSString *)key {
+    [self setObject:object forKey:key withType:RCModelOptionsStorageTypeWrite];
+}
+
++ (id)objectForKey:(NSString *)key {
+    return [Cache objectForKey:[[self keyPrefixForString:key] stringByAppendingString:key]];
 }
 
 + (id)appendData:(id)object to:(id)value {
@@ -79,7 +98,6 @@
                 [value addEntriesFromDictionary:object];
             }
             );
-    
 }
 
 @end
