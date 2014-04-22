@@ -14,7 +14,7 @@ typedef NS_ENUM(NSUInteger, RCControllerTaskType) {
     RCControllerTaskTypePop
 };
 
-@interface RCControllerTask : RCTask
+@interface RCControllerTask : RCTask <RCTaskHandleDelegate>
 
 @property (nonatomic) RCControllerTaskOptions *options;
 @property (nonatomic) Class controllerClass;

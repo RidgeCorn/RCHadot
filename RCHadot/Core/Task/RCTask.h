@@ -19,7 +19,7 @@ typedef NS_ENUM(NSUInteger, RCTaskState) {
 
 typedef void (^RCTaskBlock)(RCTask *task);
 
-@protocol RCTaskHandleDelegate <NSObject, NSCopying, NSCoding>
+@protocol RCTaskHandleDelegate <NSObject>
 
 @required
 
@@ -35,7 +35,7 @@ typedef void (^RCTaskBlock)(RCTask *task);
 
 @end
 
-@interface RCTask : RCObject <RCTaskHandleDelegate>
+@interface RCTask : RCObject <NSCopying, NSCoding>
 
 @property (nonatomic) NSString *key;
 @property (nonatomic, copy) RCTaskBlock runBlock;
@@ -43,6 +43,6 @@ typedef void (^RCTaskBlock)(RCTask *task);
 @property (nonatomic) RCTaskState state;
 @property (nonatomic) NSError *error;
 
-- (id <RCTaskHandleDelegate>)initWithKey:(NSString *)key;
+- (id)initWithKey:(NSString *)key;
 
 @end

@@ -17,7 +17,7 @@ typedef NS_ENUM(NSUInteger, RCModelTaskType) {
     RCModelTaskTypeLoadFromCache
 };
 
-@interface RCModelTask : RCTask
+@interface RCModelTask : RCTask <RCTaskHandleDelegate>
 
 @property (nonatomic) RCModelTaskType type;
 @property (nonatomic) NSString *requestPath;

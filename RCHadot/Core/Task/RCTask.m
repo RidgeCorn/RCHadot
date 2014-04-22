@@ -18,10 +18,6 @@
             );
 }
 
-- (void)handleStart:(NSString *)taskKey {
-    
-}
-
 #pragma mark - NSCopying, NSCoding
 - (instancetype)copyWithZone:(NSZone *)zone {
     return [NSKeyedUnarchiver unarchiveObjectWithData:

@@ -16,7 +16,7 @@ typedef NS_ENUM(NSUInteger, RCViewTaskType) {
     RCViewTaskTypeRemoveSubViews
 };
 
-@interface RCViewTask : RCTask
+@interface RCViewTask : RCTask <RCTaskHandleDelegate>
 
 @property (nonatomic) Class viewClass;
 @property (nonatomic) RCViewTaskType type;

@@ -52,21 +52,25 @@ static dispatch_once_t onceToken;
             if (taskKey) {
                 task = [Cache objectForKey:taskKey];
             }
-            
+
             if (task) {
                 task.state = RCTaskStateStart;
                 
                 if ([task.delegate respondsToSelector:@selector(handleStart:)]) {
                     [task.delegate handleStart:key];
                 } else {
-                    @throw [NSException exceptionWithName:@"Required Method NOT implemented" reason:@"Required Method 'handleStart:' in protocol not implemented" userInfo:nil];
+                    if (task.delegate) {
+                        @throw [NSException exceptionWithName:@"Required Method NOT implemented" reason:@"Required Method 'handleStart:' in protocol not implemented." userInfo:nil];
+                    } else {
+                        @throw [NSException exceptionWithName:@"Delegate NOT setted" reason:@"RCTask's delegate <RCTaskHandleDelegate> has not be setted." userInfo:nil];
+                    }
                 }
                 
                 called = YES;
             }
             
             if(called && removeAfterDone) {
-                [self remove:taskKey];
+                [self remove:key];
             } );
 }
 
@@ -107,7 +111,7 @@ static dispatch_once_t onceToken;
     [Cache removeObjectForKey:taskKey];
 }
 
-- (id)taskForKey:(NSString *)key {
+- (id <RCTaskHandleDelegate>)taskForKey:(NSString *)key {
     NSString *taskKey = [RCBot taskCacheKeyWithTaskKey:key];
 
     returnc([Cache objectForKey:taskKey]);

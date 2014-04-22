@@ -13,7 +13,17 @@
 SPEC_BEGIN(RCObjectSpec)
 
 describe(@"RCObject", ^{
-
+    context(@"when new RCObject", ^{
+        it(@"should exist", ^{
+            [[[RCObject new] should] beNonNil];
+        });
+    });
+    
+    context(@"when alloc init RCObject", ^{
+        it(@"should exist", ^{
+            [[[[RCObject alloc] init] should] beNonNil];
+        });
+    });
 });
 
 SPEC_END

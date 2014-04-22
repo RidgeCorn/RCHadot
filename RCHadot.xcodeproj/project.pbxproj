@@ -134,6 +134,7 @@
 		6EED807819061CD000AF3DF0 /* RCJSONModelTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EED807719061CD000AF3DF0 /* RCJSONModelTest.m */; };
 		6EED807B19061CEA00AF3DF0 /* RCMTLModelTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EED807A19061CEA00AF3DF0 /* RCMTLModelTest.m */; };
 		6EED80801906497000AF3DF0 /* RCWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EED807F1906497000AF3DF0 /* RCWeather.m */; };
+		6EED8083190683A000AF3DF0 /* RCBotTaskTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EED8082190683A000AF3DF0 /* RCBotTaskTest.m */; };
 		96EB4D4D509A4B24BE5F588E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5581E9F0DD0A4528BCC62068 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -303,6 +304,8 @@
 		6EED807A19061CEA00AF3DF0 /* RCMTLModelTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCMTLModelTest.m; sourceTree = "<group>"; };
 		6EED807E1906497000AF3DF0 /* RCWeather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCWeather.h; sourceTree = "<group>"; };
 		6EED807F1906497000AF3DF0 /* RCWeather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCWeather.m; sourceTree = "<group>"; };
+		6EED8081190683A000AF3DF0 /* RCBotTaskTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCBotTaskTest.h; sourceTree = "<group>"; };
+		6EED8082190683A000AF3DF0 /* RCBotTaskTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCBotTaskTest.m; sourceTree = "<group>"; };
 		79EC0D202DD24712B890A49A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -470,6 +473,8 @@
 		6E5FCD9018FCDCCE0076D5C5 /* Bot */ = {
 			isa = PBXGroup;
 			children = (
+				6EED8081190683A000AF3DF0 /* RCBotTaskTest.h */,
+				6EED8082190683A000AF3DF0 /* RCBotTaskTest.m */,
 				6E5FCD9118FCDCEE0076D5C5 /* RCBotSpec.m */,
 			);
 			name = Bot;
@@ -1362,6 +1367,7 @@
 				6EAB91F118FFCA500087C20E /* RCViewOptionsSpec.m in Sources */,
 				6E4B541218FCCB0200DA270A /* RCVerifyHelperSpec.m in Sources */,
 				6E5FCD9218FCDCEE0076D5C5 /* RCBotSpec.m in Sources */,
+				6EED8083190683A000AF3DF0 /* RCBotTaskTest.m in Sources */,
 				6E5FCDB118FCDEC70076D5C5 /* NSManagedObject+RCStorageSpec.m in Sources */,
 				6EED807B19061CEA00AF3DF0 /* RCMTLModelTest.m in Sources */,
 			);
