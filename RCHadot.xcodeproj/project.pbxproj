@@ -44,7 +44,6 @@
 		6E5FCD8518FCD44C0076D5C5 /* RCBot.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDEB47918EA4A2500923C26 /* RCBot.m */; };
 		6E5FCD8818FCD4BF0076D5C5 /* RCPListHelperSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5FCD8718FCD4BF0076D5C5 /* RCPListHelperSpec.m */; };
 		6E5FCD8A18FCD88F0076D5C5 /* RCPListHelperTests.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E5FCD8918FCD88F0076D5C5 /* RCPListHelperTests.plist */; };
-		6E5FCD8C18FCD8DD0076D5C5 /* RCHadotTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6EDEB46918EA499300923C26 /* RCHadotTests-Info.plist */; };
 		6E5FCD8F18FCDCB30076D5C5 /* RCNetWorkHelperSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5FCD8E18FCDCB30076D5C5 /* RCNetWorkHelperSpec.m */; };
 		6E5FCD9218FCDCEE0076D5C5 /* RCBotSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5FCD9118FCDCEE0076D5C5 /* RCBotSpec.m */; };
 		6E5FCD9518FCDD0F0076D5C5 /* RCTaskSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5FCD9418FCDD0F0076D5C5 /* RCTaskSpec.m */; };
@@ -165,6 +164,8 @@
 		6E3B698319053114002ABF12 /* RCDefaultTasks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCDefaultTasks.h; sourceTree = "<group>"; };
 		6E3B69841905315E002ABF12 /* RCDefaultTaskOptions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCDefaultTaskOptions.h; sourceTree = "<group>"; };
 		6E3B698D190540EC002ABF12 /* RCCacheSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCCacheSpec.m; sourceTree = "<group>"; };
+		6E3B69901905799B002ABF12 /* RCHadotTests-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RCHadotTests-Prefix.pch"; sourceTree = "<group>"; };
+		6E3B699219057A66002ABF12 /* RCHadot-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RCHadot-Prefix.pch"; sourceTree = "<group>"; };
 		6E4B53ED18FCCA1100DA270A /* libRCHadot.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRCHadot.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E4B53FA18FCCA1100DA270A /* RCHadotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RCHadotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E4B541118FCCB0200DA270A /* RCVerifyHelperSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCVerifyHelperSpec.m; sourceTree = "<group>"; };
@@ -414,6 +415,14 @@
 				6EAB91EC18FFCA240087C20E /* RCOptionsSpec.m */,
 			);
 			name = Options;
+			sourceTree = "<group>";
+		};
+		6E3B699119057A4F002ABF12 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6E3B699219057A66002ABF12 /* RCHadot-Prefix.pch */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		6E4B540F18FCCAA500DA270A /* Header */ = {
@@ -994,6 +1003,7 @@
 		6EDEB46818EA499300923C26 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6E3B69901905799B002ABF12 /* RCHadotTests-Prefix.pch */,
 				6EDEB46918EA499300923C26 /* RCHadotTests-Info.plist */,
 				6EDEB46A18EA499300923C26 /* InfoPlist.strings */,
 			);
@@ -1007,6 +1017,7 @@
 				6E9BF6AD190516B500DED4E2 /* Core */,
 				6E610F5C18FBAC1100247441 /* Additions */,
 				6E9BF6AB190512BF00DED4E2 /* Helper */,
+				6E3B699119057A4F002ABF12 /* Supporting Files */,
 			);
 			path = RCHadot;
 			sourceTree = "<group>";
@@ -1175,7 +1186,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E5FCD8C18FCD8DD0076D5C5 /* RCHadotTests-Info.plist in Resources */,
 				6E5FCD8A18FCD88F0076D5C5 /* RCPListHelperTests.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1456,7 +1466,7 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "RCHadot/RCHadot-Prefix.pch";
+				GCC_PREFIX_HEADER = "RCHadotTests/RCHadotTests-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1477,7 +1487,7 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "RCHadot/RCHadot-Prefix.pch";
+				GCC_PREFIX_HEADER = "RCHadotTests/RCHadotTests-Prefix.pch";
 				INFOPLIST_FILE = "RCHadotTests/RCHadotTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
@@ -1516,7 +1526,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -1548,7 +1558,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
