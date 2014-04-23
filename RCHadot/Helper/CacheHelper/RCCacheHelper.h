@@ -16,10 +16,6 @@
 
 @interface RCCacheHelper : RCObject
 
-+ (NSString *)keyPrefixForClass:(Class)cls;
-
-+ (NSString *)keyPrefixForString:(NSString *)string;
-
 + (NSDictionary *)dictInCacheWithCachePaths:(NSArray *)cachePaths;
 
 + (void)setObject:(id <NSCoding>)object forKey:(NSString *)key withType:(RCModelOptionsStorageType)type;

@@ -18,3 +18,5 @@
 #import "RCCryptoHelper.h"
 #import "RCDisplayHelper.h"
 #import "RCMappingHelper.h"
+#import "RCLevelDBHelper.h"
+#import "RCTaskTestHelper.h"

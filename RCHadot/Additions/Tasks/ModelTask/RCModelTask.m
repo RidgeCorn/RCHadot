@@ -11,31 +11,40 @@
 #import "RCCacheHelper.h"
 #import "RCModelHelper.h"
 #import "RCBot.h"
+#import "RCLogger.h"
 
 @implementation RCModelTask
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
-    returnc(self,
-            if(self = [super init]) {
-                self.delegate = self;
-            });
+    NSString *key = [aDecoder decodeObjectForKey:@"key"];
+    
+    if(self = [self initWithKey:key]) {
+        
+    }
+    
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [aCoder encodeObject:self.key forKey:@"key"];
 }
 
 - (id)initWithKey:(NSString *)key {
-    returnc(self,
-            if(self = [super initWithKey:key]) {
-                self.delegate = self;
-            });
+    if(self = [super initWithKey:key]) {
+        self.delegate = self;
+    }
+    
+    return self;
 }
 
 - (id)initWithKey:(NSString *)key type:(RCModelTaskType)type requestPath:(NSString *)requestPath options:(RCModelTaskOptions *)options {
-    returnc(self,
-            if (self = [self initWithKey:key]) {
-                _type = type;
-                _requestPath = requestPath;
-                _options = options;
-            }
-    );
+    if (self = [self initWithKey:key]) {
+        _type = type;
+        _requestPath = requestPath;
+        _options = options;
+    }
+    
+    return self;
 }
 
 - (NSDictionary *)filterParamsFromDictionary:(NSDictionary *)allParams {
@@ -43,7 +52,7 @@
     NSArray *allFilterKeys = [_options.requestKeyMapping allKeys];
     for (NSString *filterKey in allFilterKeys) {
         if ( ![allParams valueForKey:filterKey]) {
-//            NSLog(@"NO Request Key Found (%@)", filterKey);
+            RCLog(@"NO Request Key Found (%@)", filterKey);
         } else {
             [params setValue:[allParams valueForKey:filterKey] forKey:[_options.requestKeyMapping valueForKey:filterKey]];
         }
@@ -53,16 +62,16 @@
 }
 
 - (NSDictionary *)genParameters {
-    returnc(params,
-            NSMutableDictionary *params = [@{} mutableCopy];
-            if (_options.requestParams) {
-                [params addEntriesFromDictionary:_options.requestParams];
-            } else {
-                [params addEntriesFromDictionary:[RCCacheHelper dictInCacheWithCachePaths:_options.cacheValuePaths]];
-                
-                params = [[self filterParamsFromDictionary:params] mutableCopy];
-            }
-            );
+    NSMutableDictionary *params = [@{} mutableCopy];
+    if (_options.requestParams) {
+        [params addEntriesFromDictionary:_options.requestParams];
+    } else {
+        [params addEntriesFromDictionary:[RCCacheHelper dictInCacheWithCachePaths:_options.cacheValuePaths]];
+        
+        params = [[self filterParamsFromDictionary:params] mutableCopy];
+    }
+    
+    return params;
 }
 
 - (void)handleStart:(NSString *)taskKey {
@@ -148,7 +157,7 @@
             }
         }
     } else {
-//        NSLog(@"NO Response Data!");
+            RCLog(@"NO Response Data!");
     }
 }
 

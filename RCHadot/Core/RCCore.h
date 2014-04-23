@@ -7,6 +7,8 @@
 //
 
 #import "RCObject.h"
+#import "RCLogger.h"
+#import "RCLevelDB.h"
 #import "RCCache.h"
 #import "RCBot.h"
 #import "RCOptions.h"

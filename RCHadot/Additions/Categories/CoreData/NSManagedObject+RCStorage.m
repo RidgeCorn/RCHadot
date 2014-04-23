@@ -27,6 +27,7 @@
 //
 
 #import "NSManagedObject+RCStorage.h"
+#import "RCLogger.h"
 
 @implementation NSManagedObject (RCStorage)
 
@@ -114,7 +115,7 @@
                     
                 case NSUndefinedAttributeType:
                 default:
-//                    NSLog(@"NSUndefinedAttributeType");
+                        RCLog(@"NSUndefinedAttributeType");
                     break;
             }
             
@@ -141,7 +142,7 @@
     id dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
     
     if (error) {
-        NSLog(@"Error: %@", error.description);
+        RCLog(@"Error: %@", error.description);
     } else {
         [self updateFromDictionary:dict dateFormatter:dateFormatter withMapping:mapping];
     }

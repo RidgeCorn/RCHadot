@@ -7,6 +7,7 @@
 //
 
 #import "NSDictionary+RCDictionary.h"
+#import "RCLogger.h"
 
 @implementation NSDictionary (RCDictionary)
 
@@ -42,7 +43,7 @@
     NSArray *allFilterKeys = [mapping allKeys];
     for (NSString *filterKey in allFilterKeys) {
         if ( ![self valueForKey:filterKey]) {
-            //            NSLog(@"NO Request Key Found (%@)", filterKey);
+            RCLog(@"NO Request Key Found (%@)", filterKey);
         } else {
             [params setValue:[self valueForKey:filterKey] forKey:[mapping valueForKey:filterKey]];
         }

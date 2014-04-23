@@ -11,11 +11,11 @@
 @implementation RCTask
 
 - (id)initWithKey:(NSString *)key {
-    returnc(self,
-            if (self = [super init]) {
-                _key = key;
-            }
-            );
+    if (self = [super init]) {
+        _key = key;
+    }
+    
+    return self;
 }
 
 #pragma mark - NSCopying, NSCoding

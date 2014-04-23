@@ -26,7 +26,7 @@
 }
 
 + (id)modelForCacheKey:(NSString *)key {
-    returnc([RCCacheHelper objectForKey:[self modelCacheKeyWithDataCacheKey:key]]);
+    return [RCCacheHelper objectForKey:[self modelCacheKeyWithDataCacheKey:key]];
 }
 
 + (id)modelClass:(Class)cls initWithDictionary:(NSDictionary *)dict error:(NSError**)err {

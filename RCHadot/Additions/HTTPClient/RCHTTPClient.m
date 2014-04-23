@@ -13,14 +13,15 @@
 @implementation RCHTTPClient
 
 + (RCHTTPClient *)sharedClient {
-    returnc(_sharedClient,
-            static RCHTTPClient *_sharedClient = nil;
-            static dispatch_once_t onceToken;
-            dispatch_once(&onceToken, ^{
-                _sharedClient = [[RCHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:[RCAppConfigHelper apiBaseHTTPURLString]]];
-                [_sharedClient setUserAgent:[RCAppConfigHelper userAgent]];
-            });
-    );
+    static RCHTTPClient *_sharedClient = nil;
+    static dispatch_once_t onceToken;
+    
+    dispatch_once(&onceToken, ^{
+        _sharedClient = [[RCHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:[RCAppConfigHelper apiBaseHTTPURLString]]];
+        [_sharedClient setUserAgent:[RCAppConfigHelper userAgent]];
+    });
+    
+    return _sharedClient;
 }
 
 - (void)setUserAgent:(NSString *)userAgent {

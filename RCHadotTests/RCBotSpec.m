@@ -51,6 +51,22 @@ describe(@"RCBot", ^{
         });
     });
     
+    context(@"when test allTaskKeys", ^{
+        it(@"should equal @[taskKey]", ^{
+            NSString *taskKey = @"taskKey";
+            
+            [[[Bot allTaskKeys] should] equal:@[taskKey]];
+        });
+    });
+    
+    context(@"when test allTasks", ^{
+        it(@"should equal @[[Bot taskForKey:taskKey]]", ^{
+            NSString *taskKey = @"taskKey";
+            
+            [[[Bot allTasks] should] equal:@[[Bot taskForKey:taskKey]]];
+        });
+    });
+
     context(@"when remove RCBotTaskTest with key 'taskKey'", ^{
         it(@"should be gone", ^{
             NSString *taskKey = @"taskKey";

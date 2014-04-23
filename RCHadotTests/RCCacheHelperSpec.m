@@ -151,24 +151,6 @@ describe(@"RCCacheHelper", ^{
             [[[RCCacheHelper objectForKey:key] should] equal:theNewDict];
         });
     });
-    
-    context(@"when testing keyPrefixForString 'stringKey'", ^{
-        it(@"should equal '__stringKey_(managedByRCHadot)_'", ^{
-            NSString *key = @"stringKey";
-            NSString *retKey = @"__stringKey_(managedByRCHadot)_";
-
-            [[[RCCacheHelper keyPrefixForString:key] should] equal:retKey];
-        });
-    });
-    
-    context(@"when testing keyPrefixForClass 'NSString'", ^{
-        it(@"should equal '____NSCFConstantString_(managedByRCHadot)_'", ^{
-            NSString *key = @"stringKey";
-            NSString *retKey = @"____NSCFConstantString_(managedByRCHadot)_";
-            
-            [[[RCCacheHelper keyPrefixForClass:key.class] should] equal:retKey];
-        });
-    });
 });
 
 SPEC_END

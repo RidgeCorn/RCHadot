@@ -14,23 +14,37 @@
 
 
 @implementation RCControllerTask
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    NSString *key = [aDecoder decodeObjectForKey:@"key"];
+    
+    if(self = [self initWithKey:key]) {
+        
+    }
+    
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [aCoder encodeObject:self.key forKey:@"key"];
+}
 
 - (id)initWithKey:(NSString *)key {
-    returnc(self,
-            if(self = [super initWithKey:key]) {
-                self.delegate = self;
-            });
+    if(self = [super initWithKey:key]) {
+        self.delegate = self;
+    }
+    
+    return self;
 }
 
 - (id)initWithKey:(NSString *)key Type:(RCControllerTaskType)type navigationController:(UINavigationController *)navigationController controllerClass:(__unsafe_unretained Class)controllerClass options:(RCControllerTaskOptions *)options {
-    returnc(self,
-            if ([self initWithKey:key]) {
-                _type = type;
-                _navigationController = navigationController;
-                _controllerClass = controllerClass;
-                _options = options;
-            }
-    );
+    if ([self initWithKey:key]) {
+        _type = type;
+        _navigationController = navigationController;
+        _controllerClass = controllerClass;
+        _options = options;
+    }
+    
+    return self;
 }
 
 - (void)handleRecord:(RCControllerTask *)task {

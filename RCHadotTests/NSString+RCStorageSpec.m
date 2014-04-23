@@ -32,6 +32,25 @@ describe(@"NSString+RCStorage", ^{
             [[theNewString should] equal:retString];
         });
     });
+    
+    
+    context(@"when testing keyPrefixForString 'stringKey'", ^{
+        it(@"should equal '__stringKey_(managedByRCHadot)_stringKey'", ^{
+            NSString *key = @"stringKey";
+            NSString *retKey = @"__stringKey_(managedByRCHadot)_stringKey";
+            
+            [[[key addKeyPrefixForString:key] should] equal:retKey];
+        });
+    });
+    
+    context(@"when testing keyPrefixForClass 'NSString'", ^{
+        it(@"should equal '____NSCFConstantString_(managedByRCHadot)_stringKey'", ^{
+            NSString *key = @"stringKey";
+            NSString *retKey = @"____NSCFConstantString_(managedByRCHadot)_stringKey";
+            
+            [[[key addKeyPrefixForClass:key.class] should] equal:retKey];
+        });
+    });
 });
 
 SPEC_END

@@ -10,8 +10,6 @@
 
 #define blockc(value, ...) ({ __VA_ARGS__;value;})
 
-#define returnc(value, ...) return blockc(value, __VA_ARGS__)
-
 @interface RCObject : NSObject
 
 @end

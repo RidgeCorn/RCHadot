@@ -17,6 +17,9 @@
 
 + (instancetype)newBot;
 
+- (NSArray *)allTaskKeys;
+- (NSArray *)allTasks;
+
 - (void)remove:(NSString *)taskKey;
 
 - (BOOL)start:(NSString *)taskKey removeAfterDone:(BOOL)removeAfterDone;

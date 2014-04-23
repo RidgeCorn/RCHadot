@@ -33,4 +33,7 @@
 - (NSString *)convertFromUnderscoreCaseToCamelCase;
 - (NSString *)convertFromCamelCaseToUnderscoreCase;
 
+- (NSString *)addKeyPrefixForClass:(Class)cls;
+- (NSString *)addKeyPrefixForString:(NSString *)string;
+
 @end

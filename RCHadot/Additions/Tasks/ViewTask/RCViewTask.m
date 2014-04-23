@@ -15,22 +15,34 @@
 
 @implementation RCViewTask
 
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    NSString *key = [aDecoder decodeObjectForKey:@"key"];
+    
+    if(self = [self initWithKey:key]) {
+        
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [aCoder encodeObject:self.key forKey:@"key"];
+}
+
 - (id)initWithKey:(NSString *)key {
-    returnc(self,
-            if(self = [super initWithKey:key]) {
-                self.delegate = self;
-            });
+    if(self = [super initWithKey:key]) {
+        self.delegate = self;
+    }
+    return self;
 }
 
 - (id)initWithKey:(NSString *)key Type:(RCViewTaskType)type refsView:(id)refsView viewClass:(Class)viewClass options:(RCViewTaskOptions *)options {
-    returnc(self,
-            if (self = [self initWithKey:key]) {
-                _type = type;
-                _refsView = refsView;
-                _viewClass = viewClass;
-                _options = options;
-            }
-    );
+    if (self = [self initWithKey:key]) {
+        _type = type;
+        _refsView = refsView;
+        _viewClass = viewClass;
+        _options = options;
+    }
+    return self;
 }
 
 - (void)handleStart:(NSString *)taskKey {

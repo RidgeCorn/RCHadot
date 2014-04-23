@@ -7,99 +7,111 @@
 //
 
 #import "RCBot.h"
-#import "RCCacheHelper.h"
 #import <Routable.h>
 #import "RCStyleSheetsHelper.h"
-
-static RCBot *_sharedBot;
-
-static dispatch_once_t onceToken;
+#import "RCTask.h"
+#import "RCLogger.h"
 
 @interface RCBot()
+
+@property (nonatomic) NSMutableDictionary *tasks;
 
 @end
 
 @implementation RCBot
 
 #pragma mark - Init Bot
+- (id)init {
+    if (self = [super init]) {
+        _tasks = [@{} mutableCopy];
+    }
+    
+    return self;
+}
 
 + (instancetype)sharedBot {
-    returnc(_sharedBot,
-            dispatch_once(&onceToken, ^{
+    static RCBot *_sharedBot;
+    static dispatch_once_t onceToken;
+    
+    dispatch_once(&onceToken, ^{
         _sharedBot = [self newBot];
-    }); );
+    });
+    
+    return _sharedBot;
 }
 
 #pragma mark New Bot
 
 + (instancetype)newBot {
-    returnc([[self alloc] init]);
+    return [[self alloc] init];
 }
 
-#pragma mark - Task Cache Key
+#pragma mark - allTask
 
-+ (NSString *)taskCacheKeyWithTaskKey:(NSString *)key {
-    return key ? [[RCCacheHelper keyPrefixForClass:self.class] stringByAppendingString:key] : nil;
+- (NSArray *)allTaskKeys {
+    return [_tasks allKeys];
+}
+
+- (NSArray *)allTasks {
+    return [_tasks allValues];
 }
 
 #pragma mark - Start Task
-- (BOOL)start:(NSString *)key removeAfterDone:(BOOL)removeAfterDone {
-    returnc(called,
-            BOOL called = NO;
-            RCTask *task = nil;
-            NSString *taskKey = [RCBot taskCacheKeyWithTaskKey:key];
-            
-            if (taskKey) {
-                task = [Cache objectForKey:taskKey];
+- (BOOL)start:(NSString *)taskKey removeAfterDone:(BOOL)removeAfterDone {
+    BOOL called = NO;
+    RCTask *task = nil;
+    
+    if (taskKey) {
+        task = [_tasks objectForKey:taskKey];
+    }
+    
+    if (task) {
+        task.state = RCTaskStateStart;
+        
+        if ([task.delegate respondsToSelector:@selector(handleStart:)]) {
+            [task.delegate handleStart:taskKey];
+        } else {
+            if (task.delegate) {
+                @throw [NSException exceptionWithName:@"Required Method NOT implemented" reason:@"Required Method 'handleStart:' in protocol not implemented." userInfo:nil];
+            } else {
+                @throw [NSException exceptionWithName:@"Delegate NOT setted" reason:@"RCTask's delegate <RCTaskHandleDelegate> has not be setted." userInfo:nil];
             }
-
-            if (task) {
-                task.state = RCTaskStateStart;
-                
-                if ([task.delegate respondsToSelector:@selector(handleStart:)]) {
-                    [task.delegate handleStart:key];
-                } else {
-                    if (task.delegate) {
-                        @throw [NSException exceptionWithName:@"Required Method NOT implemented" reason:@"Required Method 'handleStart:' in protocol not implemented." userInfo:nil];
-                    } else {
-                        @throw [NSException exceptionWithName:@"Delegate NOT setted" reason:@"RCTask's delegate <RCTaskHandleDelegate> has not be setted." userInfo:nil];
-                    }
-                }
-                
-                called = YES;
-            }
-            
-            if(called && removeAfterDone) {
-                [self remove:key];
-            } );
+        }
+        
+        called = YES;
+    }
+    
+    if(called && removeAfterDone) {
+        [self remove:taskKey];
+    }
+    return called;
 }
 
 - (BOOL)start:(NSString *)taskKey {
-    returnc([self start:taskKey removeAfterDone:NO]);
+    return [self start:taskKey removeAfterDone:NO];
 }
 
 - (BOOL)record:(RCTask *)task {
-    returnc(record,
-            BOOL record = NO;
-            NSString *taskKey = [RCBot taskCacheKeyWithTaskKey:task.key];
-
-            if (taskKey && !([Cache objectForKey:taskKey] && [[Cache objectForKey:taskKey] isEqual:task])) {
-                [Cache setObject:task forKey:taskKey];
-                
-                if ([task.delegate respondsToSelector:@selector(handleRecord:)]) {
-                    [task.delegate handleRecord:task];
-                }
-                
-                record = YES;
-                
-                task.state = RCTaskStateRecored;
-            } );
+    BOOL record = NO;
+    NSString *taskKey = task.key;
+    
+    if (taskKey && !([_tasks objectForKey:taskKey] && [[_tasks objectForKey:taskKey] isEqual:task])) {
+        [_tasks setObject:task forKey:taskKey];
+        
+        if ([task.delegate respondsToSelector:@selector(handleRecord:)]) {
+            [task.delegate handleRecord:task];
+        }
+        
+        record = YES;
+        
+        task.state = RCTaskStateRecored;
+    }
+    
+    return record;
 }
 
-- (void)remove:(NSString *)key {
-    NSString *taskKey = [RCBot taskCacheKeyWithTaskKey:key];
-
-    RCTask *task = [Cache objectForKey:taskKey];
+- (void)remove:(NSString *)taskKey {
+    RCTask *task = [_tasks objectForKey:taskKey];
     
     if ([task.delegate respondsToSelector:@selector(handleRemove:)]) {
         [task.delegate handleRemove:taskKey];
@@ -108,13 +120,11 @@ static dispatch_once_t onceToken;
     task.delegate = nil;
     task = nil;
     
-    [Cache removeObjectForKey:taskKey];
+    [_tasks removeObjectForKey:taskKey];
 }
 
-- (id <RCTaskHandleDelegate>)taskForKey:(NSString *)key {
-    NSString *taskKey = [RCBot taskCacheKeyWithTaskKey:key];
-
-    returnc([Cache objectForKey:taskKey]);
+- (id <RCTaskHandleDelegate>)taskForKey:(NSString *)taskKey {
+    return [_tasks objectForKey:taskKey];
 }
 
 @end

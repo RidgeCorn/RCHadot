@@ -82,4 +82,12 @@
     });
 }
 
+- (NSString *)addKeyPrefixForClass:(Class)cls {
+    return [[NSString stringWithFormat:@"__%@_(managedByRCHadot)_", NSStringFromClass(cls)] stringByAppendingString:self];
+}
+
+- (NSString *)addKeyPrefixForString:(NSString *)string {
+    return [[NSString stringWithFormat:@"__%@_(managedByRCHadot)_", string] stringByAppendingString:self];
+}
+
 @end

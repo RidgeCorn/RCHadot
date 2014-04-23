@@ -72,6 +72,10 @@
 		6E5FCE6818FE32020076D5C5 /* NSDictionary+RCDictionarySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5FCE6718FE32020076D5C5 /* NSDictionary+RCDictionarySpec.m */; };
 		6E5FCE6A18FE353A0076D5C5 /* RCDisplaySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5FCE6918FE353A0076D5C5 /* RCDisplaySpec.m */; };
 		6E610F6618FBFC1A00247441 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E610F6518FBFC1A00247441 /* CoreData.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		6E806AE8190791DA005ED594 /* RCLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E806AE7190791DA005ED594 /* RCLogger.m */; };
+		6E806AEB19079E68005ED594 /* RCLoggerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E806AEA19079E68005ED594 /* RCLoggerSpec.m */; };
+		6E806AEC19079E71005ED594 /* RCLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E806AE7190791DA005ED594 /* RCLogger.m */; };
+		6E806AEE19079FBA005ED594 /* RCTaskTestHelperSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E806AED19079FBA005ED594 /* RCTaskTestHelperSpec.m */; };
 		6E9BF6A71905041900DED4E2 /* RCModelHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BF6A61905041900DED4E2 /* RCModelHelper.m */; };
 		6E9BF6A81905041900DED4E2 /* RCModelHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BF6A61905041900DED4E2 /* RCModelHelper.m */; };
 		6E9BF6AA1905071400DED4E2 /* RCModelHelperSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BF6A91905071400DED4E2 /* RCModelHelperSpec.m */; };
@@ -122,6 +126,15 @@
 		6EAB91F718FFCDA60087C20E /* RCStyleSheetsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAB91F618FFCDA60087C20E /* RCStyleSheetsHelper.m */; };
 		6EAB91FB18FFD6D50087C20E /* StyleSheetsHelperSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAB91FA18FFD6D50087C20E /* StyleSheetsHelperSpec.m */; };
 		6EAB91FC18FFD7D30087C20E /* RCStyleSheetsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAB91F618FFCDA60087C20E /* RCStyleSheetsHelper.m */; };
+		6EDBAE01190744110053BD8A /* RCTaskTestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDBAE00190744110053BD8A /* RCTaskTestHelper.m */; };
+		6EDBAE0519074B520053BD8A /* RCLevelDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDBAE0419074B520053BD8A /* RCLevelDBHelper.m */; };
+		6EDBAE0919074B850053BD8A /* RCLevelDBHelperSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDBAE0819074B850053BD8A /* RCLevelDBHelperSpec.m */; };
+		6EDBAE0A19074D200053BD8A /* RCLevelDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDBAE0419074B520053BD8A /* RCLevelDBHelper.m */; };
+		6EDBAE0B19074D230053BD8A /* RCTaskTestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDBAE00190744110053BD8A /* RCTaskTestHelper.m */; };
+		6EDBAE0E19074F140053BD8A /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDBAE0C19074EE80053BD8A /* libc++.dylib */; };
+		6EDBAE131907584E0053BD8A /* RCLevelDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDBAE121907584E0053BD8A /* RCLevelDB.m */; };
+		6EDBAE14190758500053BD8A /* RCLevelDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDBAE121907584E0053BD8A /* RCLevelDB.m */; };
+		6EDBAE1619075C0B0053BD8A /* RCLevelDBSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDBAE1519075C0B0053BD8A /* RCLevelDBSpec.m */; };
 		6EDEB44318EA499300923C26 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDEB44218EA499300923C26 /* Foundation.framework */; };
 		6EDEB44518EA499300923C26 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDEB44418EA499300923C26 /* CoreGraphics.framework */; };
 		6EDEB44718EA499300923C26 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDEB44618EA499300923C26 /* UIKit.framework */; };
@@ -233,6 +246,10 @@
 		6E610F7D18FC142900247441 /* RCNetWorkHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCNetWorkHelper.m; sourceTree = "<group>"; };
 		6E610F8018FC145500247441 /* RCVerifyHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCVerifyHelper.h; sourceTree = "<group>"; };
 		6E610F8118FC145500247441 /* RCVerifyHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCVerifyHelper.m; sourceTree = "<group>"; };
+		6E806AE6190791DA005ED594 /* RCLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCLogger.h; path = Logger/RCLogger.h; sourceTree = "<group>"; };
+		6E806AE7190791DA005ED594 /* RCLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCLogger.m; path = Logger/RCLogger.m; sourceTree = "<group>"; };
+		6E806AEA19079E68005ED594 /* RCLoggerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCLoggerSpec.m; sourceTree = "<group>"; };
+		6E806AED19079FBA005ED594 /* RCTaskTestHelperSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTaskTestHelperSpec.m; sourceTree = "<group>"; };
 		6E9BF6A51905041900DED4E2 /* RCModelHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCModelHelper.h; sourceTree = "<group>"; };
 		6E9BF6A61905041900DED4E2 /* RCModelHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCModelHelper.m; sourceTree = "<group>"; };
 		6E9BF6A91905071400DED4E2 /* RCModelHelperSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCModelHelperSpec.m; sourceTree = "<group>"; };
@@ -266,6 +283,15 @@
 		6EAB91F518FFCDA60087C20E /* RCStyleSheetsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCStyleSheetsHelper.h; sourceTree = "<group>"; };
 		6EAB91F618FFCDA60087C20E /* RCStyleSheetsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCStyleSheetsHelper.m; sourceTree = "<group>"; };
 		6EAB91FA18FFD6D50087C20E /* StyleSheetsHelperSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StyleSheetsHelperSpec.m; sourceTree = "<group>"; };
+		6EDBADFF190744110053BD8A /* RCTaskTestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTaskTestHelper.h; sourceTree = "<group>"; };
+		6EDBAE00190744110053BD8A /* RCTaskTestHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTaskTestHelper.m; sourceTree = "<group>"; };
+		6EDBAE0319074B520053BD8A /* RCLevelDBHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCLevelDBHelper.h; path = LevelDBHelper/RCLevelDBHelper.h; sourceTree = "<group>"; };
+		6EDBAE0419074B520053BD8A /* RCLevelDBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCLevelDBHelper.m; path = LevelDBHelper/RCLevelDBHelper.m; sourceTree = "<group>"; };
+		6EDBAE0819074B850053BD8A /* RCLevelDBHelperSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCLevelDBHelperSpec.m; sourceTree = "<group>"; };
+		6EDBAE0C19074EE80053BD8A /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		6EDBAE111907584E0053BD8A /* RCLevelDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCLevelDB.h; sourceTree = "<group>"; };
+		6EDBAE121907584E0053BD8A /* RCLevelDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCLevelDB.m; sourceTree = "<group>"; };
+		6EDBAE1519075C0B0053BD8A /* RCLevelDBSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCLevelDBSpec.m; sourceTree = "<group>"; };
 		6EDEB43F18EA499300923C26 /* RCHadotExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RCHadotExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EDEB44218EA499300923C26 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6EDEB44418EA499300923C26 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -327,6 +353,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EDBAE0E19074F140053BD8A /* libc++.dylib in Frameworks */,
 				6E4B53FB18FCCA1100DA270A /* XCTest.framework in Frameworks */,
 				6E5FCD7018FCCCB80076D5C5 /* CoreData.framework in Frameworks */,
 				6E4B53FD18FCCA1100DA270A /* UIKit.framework in Frameworks */,
@@ -358,7 +385,8 @@
 			isa = PBXGroup;
 			children = (
 				6E5FCD9C18FCDD920076D5C5 /* Object */,
-				6E3B698619053BA5002ABF12 /* Cache */,
+				6E806AE919079E47005ED594 /* Logger */,
+				6E3B698619053BA5002ABF12 /* Storage */,
 				6E5FCD9018FCDCCE0076D5C5 /* Bot */,
 				6E3B698B1905408B002ABF12 /* Options */,
 				6E3B698919053F78002ABF12 /* Task */,
@@ -367,12 +395,13 @@
 			name = Core;
 			sourceTree = "<group>";
 		};
-		6E3B698619053BA5002ABF12 /* Cache */ = {
+		6E3B698619053BA5002ABF12 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
 				6E3B698D190540EC002ABF12 /* RCCacheSpec.m */,
+				6EDBAE1519075C0B0053BD8A /* RCLevelDBSpec.m */,
 			);
-			name = Cache;
+			name = Storage;
 			sourceTree = "<group>";
 		};
 		6E3B698719053BDE002ABF12 /* Additions */ = {
@@ -389,6 +418,8 @@
 		6E3B698819053C07002ABF12 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				6EDBAE0619074B6A0053BD8A /* TaskTestHelper */,
+				6EDBAE0719074B710053BD8A /* LevelDBHelper */,
 				6E5FCE5618FE21450076D5C5 /* MappingHelper */,
 				6E5FCD8618FCD4B30076D5C5 /* PListHelper */,
 				6E3B698A19053FB0002ABF12 /* CacheHelper */,
@@ -729,6 +760,23 @@
 			path = VerifyHelper;
 			sourceTree = "<group>";
 		};
+		6E806AE5190791A5005ED594 /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				6E806AE6190791DA005ED594 /* RCLogger.h */,
+				6E806AE7190791DA005ED594 /* RCLogger.m */,
+			);
+			name = Logger;
+			sourceTree = "<group>";
+		};
+		6E806AE919079E47005ED594 /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				6E806AEA19079E68005ED594 /* RCLoggerSpec.m */,
+			);
+			name = Logger;
+			sourceTree = "<group>";
+		};
 		6E9BF6A41905023000DED4E2 /* ModelHelper */ = {
 			isa = PBXGroup;
 			children = (
@@ -741,6 +789,8 @@
 		6E9BF6AB190512BF00DED4E2 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				6EDBADFE190743C50053BD8A /* TaskTestHelper */,
+				6EDBAE0219074B210053BD8A /* LevelDBHelper */,
 				6EED807C1906422500AF3DF0 /* MappingHelper */,
 				6E9BF6A41905023000DED4E2 /* ModelHelper */,
 				6EAB91F418FFCD050087C20E /* StyleSheetsHelper */,
@@ -762,7 +812,8 @@
 			isa = PBXGroup;
 			children = (
 				6EDEB49118EA4AC100923C26 /* Object */,
-				6E9BF6B019051CC200DED4E2 /* Cache */,
+				6E806AE5190791A5005ED594 /* Logger */,
+				6E9BF6B019051CC200DED4E2 /* Storage */,
 				6EDEB48B18EA4A4500923C26 /* Bot */,
 				6EAB91D218FFA3830087C20E /* Options */,
 				6EDEB48C18EA4A5200923C26 /* Task */,
@@ -785,13 +836,13 @@
 			path = Categories;
 			sourceTree = "<group>";
 		};
-		6E9BF6B019051CC200DED4E2 /* Cache */ = {
+		6E9BF6B019051CC200DED4E2 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
-				6E9BF6B419051FB300DED4E2 /* RCCache.h */,
-				6E9BF6B519051FB300DED4E2 /* RCCache.m */,
+				6EDBAE10190757C90053BD8A /* LevelDB */,
+				6EDBAE0F190757BE0053BD8A /* Cache */,
 			);
-			path = Cache;
+			path = Storage;
 			sourceTree = "<group>";
 		};
 		6E9BF6B219051F4600DED4E2 /* TaskOptions */ = {
@@ -936,6 +987,58 @@
 			name = StyleSheetsHelper;
 			sourceTree = "<group>";
 		};
+		6EDBADFE190743C50053BD8A /* TaskTestHelper */ = {
+			isa = PBXGroup;
+			children = (
+				6EDBADFF190744110053BD8A /* RCTaskTestHelper.h */,
+				6EDBAE00190744110053BD8A /* RCTaskTestHelper.m */,
+			);
+			path = TaskTestHelper;
+			sourceTree = "<group>";
+		};
+		6EDBAE0219074B210053BD8A /* LevelDBHelper */ = {
+			isa = PBXGroup;
+			children = (
+				6EDBAE0319074B520053BD8A /* RCLevelDBHelper.h */,
+				6EDBAE0419074B520053BD8A /* RCLevelDBHelper.m */,
+			);
+			name = LevelDBHelper;
+			sourceTree = "<group>";
+		};
+		6EDBAE0619074B6A0053BD8A /* TaskTestHelper */ = {
+			isa = PBXGroup;
+			children = (
+				6E806AED19079FBA005ED594 /* RCTaskTestHelperSpec.m */,
+			);
+			name = TaskTestHelper;
+			sourceTree = "<group>";
+		};
+		6EDBAE0719074B710053BD8A /* LevelDBHelper */ = {
+			isa = PBXGroup;
+			children = (
+				6EDBAE0819074B850053BD8A /* RCLevelDBHelperSpec.m */,
+			);
+			name = LevelDBHelper;
+			sourceTree = "<group>";
+		};
+		6EDBAE0F190757BE0053BD8A /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				6E9BF6B419051FB300DED4E2 /* RCCache.h */,
+				6E9BF6B519051FB300DED4E2 /* RCCache.m */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		6EDBAE10190757C90053BD8A /* LevelDB */ = {
+			isa = PBXGroup;
+			children = (
+				6EDBAE111907584E0053BD8A /* RCLevelDB.h */,
+				6EDBAE121907584E0053BD8A /* RCLevelDB.m */,
+			);
+			path = LevelDB;
+			sourceTree = "<group>";
+		};
 		6EDEB43618EA499200923C26 = {
 			isa = PBXGroup;
 			children = (
@@ -962,6 +1065,7 @@
 		6EDEB44118EA499300923C26 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6EDBAE0C19074EE80053BD8A /* libc++.dylib */,
 				6E5FCDBC18FCDFA50076D5C5 /* CoreLocation.framework */,
 				6E610F6518FBFC1A00247441 /* CoreData.framework */,
 				6EDEB44218EA499300923C26 /* Foundation.framework */,
@@ -1309,16 +1413,19 @@
 				6E5FCD7F18FCD4300076D5C5 /* RCHTTPClient.m in Sources */,
 				6E9BF6B619051FB300DED4E2 /* RCCache.m in Sources */,
 				6E5FCD7C18FCD4210076D5C5 /* NSString+RCString.m in Sources */,
+				6EDBAE131907584E0053BD8A /* RCLevelDB.m in Sources */,
 				6EAB917A18FE6C8B0087C20E /* RCRecord.m in Sources */,
 				6E5FCE5518FE182E0076D5C5 /* RCMappingHelper.m in Sources */,
 				6EAB91D518FFA3B80087C20E /* RCOptions.m in Sources */,
 				6E5FCD7718FCD40A0076D5C5 /* RCCryptoHelper.m in Sources */,
+				6E806AE8190791DA005ED594 /* RCLogger.m in Sources */,
 				6E5FCD8418FCD4460076D5C5 /* RCTask.m in Sources */,
 				6EAB91F718FFCDA60087C20E /* RCStyleSheetsHelper.m in Sources */,
 				6E5FCD7518FCD4020076D5C5 /* RCNetWorkHelper.m in Sources */,
 				6E5FCD8218FCD43E0076D5C5 /* RCViewTask.m in Sources */,
 				6E5FCD7118FCCCE30076D5C5 /* RCVerifyHelper.m in Sources */,
 				6EAB91DA18FFA5060087C20E /* RCViewTaskOptions.m in Sources */,
+				6EDBAE01190744110053BD8A /* RCTaskTestHelper.m in Sources */,
 				6E5FCE5D18FE27DA0076D5C5 /* RCDisplayHelper.m in Sources */,
 				6E5FCD7E18FCD42B0076D5C5 /* RCAppConfigHelper.m in Sources */,
 				6E5FCD7618FCD4060076D5C5 /* RCMapLocationHelper.m in Sources */,
@@ -1326,6 +1433,7 @@
 				6E5FCD8018FCD4330076D5C5 /* RCCacheHelper.m in Sources */,
 				6E5FCD8318FCD4420076D5C5 /* RCControllerTask.m in Sources */,
 				6EAB91E218FFA7170087C20E /* RCControllerTaskOptions.m in Sources */,
+				6EDBAE0519074B520053BD8A /* RCLevelDBHelper.m in Sources */,
 				6E5FCD7D18FCD4260076D5C5 /* RCDeviceHelper.m in Sources */,
 				6E5FCE6518FE31C00076D5C5 /* NSDictionary+RCDictionary.m in Sources */,
 				6E5FCD7318FCD3540076D5C5 /* RCObject.m in Sources */,
@@ -1340,6 +1448,7 @@
 				6E5FCDBB18FCDF4A0076D5C5 /* RCMapLocationHelperSpec.m in Sources */,
 				6E5FCD9B18FCDD7C0076D5C5 /* RCControllerTaskSpec.m in Sources */,
 				6E5FCDA418FCDDF80076D5C5 /* RCHTTPClientSpec.m in Sources */,
+				6EDBAE1619075C0B0053BD8A /* RCLevelDBSpec.m in Sources */,
 				6E5FCDA718FCDE2B0076D5C5 /* RCAppConfigSpec.m in Sources */,
 				6E5FCDB818FCDF1B0076D5C5 /* RCCryptoHelperSpec.m in Sources */,
 				6E5FCD9918FCDD570076D5C5 /* RCViewTaskSpec.m in Sources */,
@@ -1358,8 +1467,11 @@
 				6E5FCDAA18FCDE550076D5C5 /* RCDeviceHelperSpec.m in Sources */,
 				6EAB91EF18FFCA360087C20E /* RCModelOptionsSpec.m in Sources */,
 				6E5FCDB318FCDEDF0076D5C5 /* NSString+RCStorageSpec.m in Sources */,
+				6E806AEE19079FBA005ED594 /* RCTaskTestHelperSpec.m in Sources */,
 				6E5FCE6A18FE353A0076D5C5 /* RCDisplaySpec.m in Sources */,
 				6E5FCDAD18FCDE800076D5C5 /* UIImage+RCImageSpec.m in Sources */,
+				6EDBAE0919074B850053BD8A /* RCLevelDBHelperSpec.m in Sources */,
+				6E806AEB19079E68005ED594 /* RCLoggerSpec.m in Sources */,
 				6EAB91ED18FFCA240087C20E /* RCOptionsSpec.m in Sources */,
 				6E5FCD9E18FCDDA60076D5C5 /* RCObjectSpec.m in Sources */,
 				6E9BF6AA1905071400DED4E2 /* RCModelHelperSpec.m in Sources */,
@@ -1379,11 +1491,13 @@
 			files = (
 				6E3B698F19054954002ABF12 /* RCCache.m in Sources */,
 				6EAB918E18FED6400087C20E /* RCRecord.m in Sources */,
+				6EDBAE14190758500053BD8A /* RCLevelDB.m in Sources */,
 				6EAB919018FED6400087C20E /* RCDisplayHelper.m in Sources */,
 				6EED80801906497000AF3DF0 /* RCWeather.m in Sources */,
 				6EAB91E518FFAA8C0087C20E /* RCViewTaskOptions.m in Sources */,
 				6EAB919218FED6400087C20E /* RCMappingHelper.m in Sources */,
 				6EAB919418FED6400087C20E /* RCVerifyHelper.m in Sources */,
+				6EDBAE0B19074D230053BD8A /* RCTaskTestHelper.m in Sources */,
 				6EAB91E418FFAA880087C20E /* RCControllerTaskOptions.m in Sources */,
 				6EAB919618FED6400087C20E /* RCNetWorkHelper.m in Sources */,
 				6EAB919818FED6400087C20E /* RCMapLocationHelper.m in Sources */,
@@ -1400,6 +1514,7 @@
 				6EAB91AD18FED6400087C20E /* RCPListHelper.m in Sources */,
 				6EAB91AF18FED6400087C20E /* RCHTTPClient.m in Sources */,
 				6EAB91E618FFAA8F0087C20E /* RCOptions.m in Sources */,
+				6EDBAE0A19074D200053BD8A /* RCLevelDBHelper.m in Sources */,
 				6EAB91B118FED6400087C20E /* RCCacheHelper.m in Sources */,
 				6EAB91D118FF860C0087C20E /* RCWeatherView.m in Sources */,
 				6E9BF6A71905041900DED4E2 /* RCModelHelper.m in Sources */,
@@ -1408,6 +1523,7 @@
 				6EAB91B518FED6400087C20E /* RCModelTask.m in Sources */,
 				6EAB91B718FED6400087C20E /* RCViewTask.m in Sources */,
 				6EAB91B918FED6400087C20E /* RCControllerTask.m in Sources */,
+				6E806AEC19079E71005ED594 /* RCLogger.m in Sources */,
 				6EAB91BB18FED6400087C20E /* RCTask.m in Sources */,
 				6EAB91BD18FED6400087C20E /* RCBot.m in Sources */,
 				6EAB918018FE6D5C0087C20E /* RCViewRecord.m in Sources */,
@@ -1463,6 +1579,7 @@
 			baseConfigurationReference = 79EC0D202DD24712B890A49A /* Pods.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/RCHadot.dst;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RCHadot/RCHadot-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1480,6 +1597,7 @@
 			baseConfigurationReference = 79EC0D202DD24712B890A49A /* Pods.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/RCHadot.dst;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RCHadot/RCHadot-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
@@ -1497,6 +1615,7 @@
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RCHadotTests/RCHadotTests-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1518,6 +1637,7 @@
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RCHadotTests/RCHadotTests-Prefix.pch";
 				INFOPLIST_FILE = "RCHadotTests/RCHadotTests-Info.plist";
@@ -1602,6 +1722,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RCHadotExample/RCHadotExample-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/RCHadotExample/RCHadot-Info.plist";
@@ -1616,6 +1737,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RCHadotExample/RCHadotExample-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/RCHadotExample/RCHadot-Info.plist";
