@@ -39,13 +39,13 @@
     
     [RCViewRecord loadRecordByObject:self.view];
     
-    [Bot start:kRCModelLoadWeather];
+    [Bot startTaskWithKey:kRCModelLoadWeather];
     
     RCModelTask *task = (RCModelTask *)[Bot taskForKey:kRCModelLoadWeather];
 
     [RACObserve(task, state) subscribeNext:^(NSNumber *state) {
         if ([state isEqualToNumber: @(RCTaskStateCompletedWithSucceeded)]) {
-            [Bot start:kRCWeatherView removeAfterDone:YES];
+            [Bot startTaskWithKey:kRCWeatherView removeAfterDone:YES];
         }
     }];
 }

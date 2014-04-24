@@ -20,17 +20,14 @@ typedef NS_ENUM(NSUInteger, RCTaskState) {
 typedef void (^RCTaskBlock)(RCTask *task);
 
 @protocol RCTaskHandleDelegate <NSObject>
-
+// Return NO if the task can't be processed, or with error.
 @required
-
-- (void)handleStart:(NSString *)taskKey;
+- (BOOL)handleStart:(RCTask <RCTaskHandleDelegate> *)task;
 
 @optional
+- (BOOL)handleRecord:(RCTask <RCTaskHandleDelegate> *)task;
 
-- (void)handleRecord:(id)task;
-
-- (void)handleRemove:(NSString *)taskKey;
-
+- (void)handleRemove:(RCTask <RCTaskHandleDelegate> *)task;
 - (void)handleError:(NSError *)error;
 
 @end

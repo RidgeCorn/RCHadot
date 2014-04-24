@@ -30,7 +30,7 @@
                                  button.tag = 1001;
                                  )];
     ((UIButton *)[self.view viewWithTag:1001]).rac_command = [[RACCommand alloc] initWithSignalBlock:^(id _) {
-        [Bot start:kRCNewViewController];
+        [Bot startTaskWithKey:kRCNewViewController];
         return [RACSignal empty];
     }];
 }

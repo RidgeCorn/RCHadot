@@ -45,7 +45,7 @@ describe(@"RCBot", ^{
         it(@"should be done", ^{
             NSString *taskKey = @"taskKey";
             
-            [[@([Bot start:taskKey]) should] equal:@(YES)];
+            [[@([Bot startTaskWithKey:taskKey]) should] equal:@(YES)];
             
             [[(RCBotTaskTest *)[Bot taskForKey:taskKey] shouldNot] beNil];
         });
@@ -84,9 +84,18 @@ describe(@"RCBot", ^{
             
             [[(RCBotTaskTest *)[Bot taskForKey:taskKey] should] equal:testTask];
             
-            [[@([Bot start:taskKey removeAfterDone:YES]) should] equal:@(YES)];
+            [[@([Bot startTaskWithKey:taskKey removeAfterDone:YES]) should] equal:@(YES)];
 
             [[(RCBotTaskTest *)[Bot taskForKey:taskKey] shouldEventually] beNil];
+        });
+    });
+    
+    context(@"when start RCBotTaskTest", ^{
+        it(@"should be gone", ^{
+            NSString *taskKey = @"taskKey";
+            RCBotTaskTest *testTask = [[RCBotTaskTest alloc] initWithKey:taskKey];
+            
+            [[@([Bot startTask:testTask]) should] equal:@(YES)];
         });
     });
 });

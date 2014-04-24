@@ -18,8 +18,9 @@
     return self;
 }
 
-- (void)handleStart:(NSString *)taskKey {
-    
+- (BOOL)handleStart:(NSString *)taskKey {
+
+    return YES;
 }
 
 @end

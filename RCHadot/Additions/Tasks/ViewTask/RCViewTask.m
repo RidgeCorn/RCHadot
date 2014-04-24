@@ -45,9 +45,7 @@
     return self;
 }
 
-- (void)handleStart:(NSString *)taskKey {
-    RCViewTask *task = (RCViewTask *)[Bot taskForKey:taskKey];
-    
+- (BOOL)handleStart:(RCViewTask *)task {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
     switch (task.type) {
@@ -112,6 +110,7 @@
     }
 #pragma clang diagnostic pop
 
+    return YES;
 }
 
 @end

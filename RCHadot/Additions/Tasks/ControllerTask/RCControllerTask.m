@@ -47,7 +47,7 @@
     return self;
 }
 
-- (void)handleRecord:(RCControllerTask *)task {
+- (BOOL)handleRecord:(RCControllerTask *)task {
     if (task.runBlock) {
         [[Routable sharedRouter] map:task.key toCallback:^(NSDictionary *params) {
             task.runBlock(self);
@@ -63,18 +63,18 @@
             [[Routable sharedRouter] map:task.key toController:task.controllerClass];
         }
     }
+    
+    return YES;
 }
 
-- (void)handleStart:(NSString *)taskKey {
+- (BOOL)handleStart:(RCControllerTask *)task {
     if (self.type == RCControllerTaskTypeOpen) {
-        [[Routable sharedRouter] open:taskKey animated:_options.animatedWhenStart];
+        [[Routable sharedRouter] open:task.key animated:_options.animatedWhenStart];
     } else {
         [[Routable sharedRouter] pop:_options.animatedWhenStart];
     }
-}
-
-- (void)handleRemove:(NSString *)taskKey {
-    // NOT Support! It's unnecessary.
+    
+    return YES;
 }
 
 @end

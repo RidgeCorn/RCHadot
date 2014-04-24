@@ -74,9 +74,7 @@
     return params;
 }
 
-- (void)handleStart:(NSString *)taskKey {
-    RCModelTask *task = (RCModelTask *)[Bot taskForKey:taskKey];
-    
+- (BOOL)handleStart:(RCModelTask *)task {    
     switch (task.type) {
         case RCModelTaskTypeLoadFromServerWithGet: {
             [HTTPClient getPath:_requestPath parameters:[self genParameters] success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -144,6 +142,8 @@
         default:
             break;
     }
+    
+    return YES;
 }
 
 - (void)handleRequestOperation:(AFHTTPRequestOperation *)operation withResponse:(id)responseObject error:(NSError**)err {
@@ -169,4 +169,5 @@
         self.state = RCTaskStateCompletedWithSucceeded;
     }
 }
+
 @end

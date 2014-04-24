@@ -19,7 +19,7 @@
     if ([tasks count]) {
         for (RCTask *task in tasks) {
             if ([cls isSubclassOfClass:[RCTask class]] && [task isKindOfClass:cls]) {
-                BOOL srun = [Bot start:task.key];
+                BOOL srun = [Bot startTaskWithKey:task.key];
                 
                 if ( !srun) {
                     RCLog(@"\nTask run failed: \n%@\n", task);
@@ -42,7 +42,7 @@
     NSArray *tasks = [Bot allTasks];
     
     for (RCTask *task in tasks) {
-            BOOL srun = [Bot start:task.key];
+            BOOL srun = [Bot startTaskWithKey:task.key];
             
             if ( !srun) {
                 RCLog(@"\nTask run failed: \n%@\n", task);

@@ -57,41 +57,48 @@
 }
 
 #pragma mark - Start Task
-- (BOOL)start:(NSString *)taskKey removeAfterDone:(BOOL)removeAfterDone {
+- (BOOL)startTask:(RCTask<RCTaskHandleDelegate> *)task {
     BOOL called = NO;
-    RCTask *task = nil;
+    
+    task.state = RCTaskStateStart;
+    
+    if ([task.delegate respondsToSelector:@selector(handleStart:)]) {
+        called = [task.delegate handleStart:task];
+    } else {
+        if (task.delegate) {
+            @throw [NSException exceptionWithName:@"Required Method NOT implemented" reason:@"Required Method 'handleStart:' in protocol not implemented." userInfo:nil];
+        } else {
+            @throw [NSException exceptionWithName:@"Delegate NOT setted" reason:@"RCTask's delegate <RCTaskHandleDelegate> has not be setted." userInfo:nil];
+        }
+    }
+    
+    return called;
+}
+
+- (BOOL)startTaskWithKey:(NSString *)taskKey removeAfterDone:(BOOL)removeAfterDone {
+    BOOL called = NO;
+    RCTask <RCTaskHandleDelegate> *task = nil;
     
     if (taskKey) {
         task = [_tasks objectForKey:taskKey];
     }
     
     if (task) {
-        task.state = RCTaskStateStart;
+        called = [self startTask:task];
         
-        if ([task.delegate respondsToSelector:@selector(handleStart:)]) {
-            [task.delegate handleStart:taskKey];
-        } else {
-            if (task.delegate) {
-                @throw [NSException exceptionWithName:@"Required Method NOT implemented" reason:@"Required Method 'handleStart:' in protocol not implemented." userInfo:nil];
-            } else {
-                @throw [NSException exceptionWithName:@"Delegate NOT setted" reason:@"RCTask's delegate <RCTaskHandleDelegate> has not be setted." userInfo:nil];
-            }
+        if(called && removeAfterDone) {
+            [self remove:task.key];
         }
-        
-        called = YES;
     }
     
-    if(called && removeAfterDone) {
-        [self remove:taskKey];
-    }
     return called;
 }
 
-- (BOOL)start:(NSString *)taskKey {
-    return [self start:taskKey removeAfterDone:NO];
+- (BOOL)startTaskWithKey:(NSString *)taskKey {
+    return [self startTaskWithKey:taskKey removeAfterDone:NO];
 }
 
-- (BOOL)record:(RCTask *)task {
+- (BOOL)record:(RCTask <RCTaskHandleDelegate> *)task {
     BOOL record = NO;
     NSString *taskKey = task.key;
     
@@ -99,10 +106,8 @@
         [_tasks setObject:task forKey:taskKey];
         
         if ([task.delegate respondsToSelector:@selector(handleRecord:)]) {
-            [task.delegate handleRecord:task];
+            record = [task.delegate handleRecord:task];
         }
-        
-        record = YES;
         
         task.state = RCTaskStateRecored;
     }
@@ -111,10 +116,10 @@
 }
 
 - (void)remove:(NSString *)taskKey {
-    RCTask *task = [_tasks objectForKey:taskKey];
+    RCTask <RCTaskHandleDelegate> *task = [_tasks objectForKey:taskKey];
     
     if ([task.delegate respondsToSelector:@selector(handleRemove:)]) {
-        [task.delegate handleRemove:taskKey];
+        [task.delegate handleRemove:task];
     }
     
     task.delegate = nil;

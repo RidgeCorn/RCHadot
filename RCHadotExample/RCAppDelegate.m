@@ -27,7 +27,7 @@
     [self.window setRootViewController:task.navigationController];
     [self.window makeKeyAndVisible];
     
-    [Bot start:kRCViewController];
+    [Bot startTaskWithKey:kRCViewController];
     
     return YES;
 }
