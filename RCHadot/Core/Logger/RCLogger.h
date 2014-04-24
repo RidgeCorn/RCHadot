@@ -26,7 +26,7 @@
         #define RCLog(...)  DDLogVerbose(__VA_ARGS__)
 
     #else
-        #define RCLog(...) NSLog(@"\n\n==========\tRCLog Begin\t==========\n\nFile:\t\t%s\nMethod:\t%s\nLine:\t\t%d\nMem:\t\t%p\n\nInfo:\n----------\tInfo Begin\t----------\n\n%@----------\tInfo End\t----------\n\n==========\tRCLog End\t==========\n\n", __FILE__, __PRETTY_FUNCTION__, __LINE__, self, [NSString stringWithFormat:__VA_ARGS__])
+        #define RCLog(...) NSLog(@"\n\n==========\tRCLog Begin\t==========\n\nFile:\t\t%s\nMethod:\t%s\nLine:\t\t%d\nMem:\t\t%p\n\nInfo:\n----------\tInfo Begin\t----------\n%@\n----------\tInfo End\t----------\n\n==========\tRCLog End\t==========\n\n", __FILE__, __PRETTY_FUNCTION__, __LINE__, self, [NSString stringWithFormat:__VA_ARGS__])
 
     #endif
 #else
