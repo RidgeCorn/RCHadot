@@ -16,6 +16,7 @@
 + (id)modelForCacheKey:(NSString *)key;
 
 + (id)modelClass:(Class)cls initWithDictionary:(NSDictionary *)dict error:(NSError**)err;
++ (NSArray *)modelsByClass:(Class)cls initWithArray:(NSArray *)arr error:(NSError**)err;
 
 + (NSDictionary *)parseData:(id)responseObject withKey:(NSString *)key error:(NSError **)err;
 

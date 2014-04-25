@@ -82,6 +82,39 @@ describe(@"RCModelHelper", ^{
             [[err should] beNil];
         });
     });
+    
+    context(@"when test modelsByClass 'RCJSONModelTest' initWithData '@[@{@'name': @'looping'}, ...]' err", ^{
+        it(@"should be done", ^{
+            NSString *username = @"looping";
+            NSArray *arr = @[@{@"username": username}, @{@"username": username}, @{@"username": username}];
+            NSError *err = nil;
+            
+            NSArray *models = [RCModelHelper modelsByClass:[RCJSONModelTest class] initWithArray:arr error:&err];
+            
+            [[err should] beNil];
+
+            for (RCJSONModelTest *model in models) {
+                [[model.name should] equal:username];
+            }
+            
+        });
+    });
+    
+    context(@"when test modelsByClass 'RCMTLModelTest' initWithData '@[@{@'name': @'looping'}, ...]' err", ^{
+        it(@"should be done", ^{
+            NSString *username = @"looping";
+            NSArray *arr = @[@{@"username": username}, @{@"username": username}, @{@"username": username}];
+            NSError *err = nil;
+            
+            NSArray *models = [RCModelHelper modelsByClass:[RCMTLModelTest class] initWithArray:arr error:&err];
+            
+            [[err should] beNil];
+            
+            for (RCMTLModelTest *model in models) {
+                [[model.name should] equal:username];
+            }
+        });
+    });
 });
 
 SPEC_END

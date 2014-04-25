@@ -24,6 +24,7 @@ typedef NS_ENUM(NSUInteger, RCModelOptionsStorageType) {
 @property (nonatomic) NSString *toCacheKey;
 
 @property (nonatomic) Class toModelClass;
+@property (nonatomic) Class toModelsClass;
 
 @property (nonatomic) RCModelOptionsStorageType storageType;
 

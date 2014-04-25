@@ -10,6 +10,8 @@
 #import "RCCacheHelper.h"
 #import <JSONModel.h>
 #import <Mantle.h>
+#import "RCLogger.h"
+#import "RCVerifyHelper.h"
 
 @interface RCModelHelper ()
 
@@ -41,6 +43,27 @@
     }
 
     return model;
+}
+
++ (NSArray *)modelsByClass:(Class)cls initWithArray:(NSArray *)arr error:(NSError **)err {
+    NSMutableArray *models = [@[] mutableCopy];
+    
+    if ( ![RCVerifyHelper isDataNil:arr] && [arr isKindOfClass:[NSArray class]]) {
+        for (NSDictionary *modelDict in arr) {
+            NSError *error = nil;
+            id model = [RCModelHelper modelClass:cls initWithDictionary:modelDict error:&error];
+            
+            if (model) {
+                [models addObject:model];
+                RCLog(@"Succeed! \nAdd %@ dict: %@\nmodel:%@", NSStringFromClass(cls), modelDict, model);
+            } else {
+                RCLog(@"Failed! \nAdd %@ dict: %@\nmodel:%@\nerror: %@", NSStringFromClass(cls), modelDict, model, error);
+            }
+        }
+    }
+    RCLog(@"models: \n%@", models);
+
+    return models;
 }
 
 + (NSDictionary *)parseData:(id)responseObject withKey:(NSString *)key error:(NSError **)err {
