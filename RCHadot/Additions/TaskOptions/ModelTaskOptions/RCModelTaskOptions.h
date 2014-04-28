@@ -17,14 +17,9 @@ typedef NS_ENUM(NSUInteger, RCModelOptionsStorageType) {
 @interface RCModelTaskOptions : RCOptions
 
 @property (nonatomic) NSMutableDictionary *requestParams;
-@property (nonatomic) NSArray *cacheValuePaths;
+@property (nonatomic) NSMutableDictionary *modelsMapping;
 
-@property (nonatomic) NSDictionary *requestKeyMapping;
-@property (nonatomic) NSString *responseDataKeyPath;
 @property (nonatomic) NSString *toCacheKey;
-
-@property (nonatomic) Class toModelClass;
-@property (nonatomic) Class toModelsClass;
 
 @property (nonatomic) RCModelOptionsStorageType storageType;
 

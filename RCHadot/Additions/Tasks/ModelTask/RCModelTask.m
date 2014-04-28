@@ -12,6 +12,8 @@
 #import "RCModelHelper.h"
 #import "RCBot.h"
 #import "RCLogger.h"
+#import "RCClassHelper.h"
+#import "NSString+RCStorage.h"
 
 @implementation RCModelTask
 
@@ -42,42 +44,19 @@
         _type = type;
         _requestPath = requestPath;
         _options = options;
+        
+        if ( !_options) {
+            _options = [RCModelTaskOptions new];
+        }
     }
     
     return self;
 }
 
-- (NSDictionary *)filterParamsFromDictionary:(NSDictionary *)allParams {
-    NSMutableDictionary *params = [@{} mutableCopy];
-    NSArray *allFilterKeys = [_options.requestKeyMapping allKeys];
-    for (NSString *filterKey in allFilterKeys) {
-        if ( ![allParams valueForKey:filterKey]) {
-            RCLog(@"NO Request Key Found (%@)", filterKey);
-        } else {
-            [params setValue:[allParams valueForKey:filterKey] forKey:[_options.requestKeyMapping valueForKey:filterKey]];
-        }
-    }
-    
-    return params;
-}
-
-- (NSDictionary *)genParameters {
-    NSMutableDictionary *params = [@{} mutableCopy];
-    if (_options.requestParams) {
-        [params addEntriesFromDictionary:_options.requestParams];
-    } else {
-        [params addEntriesFromDictionary:[RCCacheHelper dictInCacheWithCachePaths:_options.cacheValuePaths]];
-        
-        params = [[self filterParamsFromDictionary:params] mutableCopy];
-    }
-    
-    return params;
-}
-
 - (BOOL)handleStart:(RCModelTask *)task {    
     switch (task.type) {
         case RCModelTaskTypeLoadFromServerWithGet: {
-            [HTTPClient getPath:_requestPath parameters:[self genParameters] success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            [HTTPClient getPath:_requestPath parameters:_options.requestParams success:^(AFHTTPRequestOperation *operation, id responseObject) {
                 NSError *err = nil;
 
                 [self handleRequestOperation:operation withResponse:responseObject error:&err];
@@ -90,7 +69,7 @@
             break;
             
         case RCModelTaskTypeLoadFromServerWithPost: {
-            [HTTPClient postPath:_requestPath parameters:[self genParameters] success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            [HTTPClient postPath:_requestPath parameters:_options.requestParams success:^(AFHTTPRequestOperation *operation, id responseObject) {
                 NSError *err = nil;
 
                 [self handleRequestOperation:operation withResponse:responseObject error:&err];
@@ -103,7 +82,7 @@
             break;
             
         case RCModelTaskTypeLoadFromServerWithPut: {
-            [HTTPClient putPath:_requestPath parameters:[self genParameters] success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            [HTTPClient putPath:_requestPath parameters:_options.requestParams success:^(AFHTTPRequestOperation *operation, id responseObject) {
                 NSError *err = nil;
 
                 [self handleRequestOperation:operation withResponse:responseObject error:&err];
@@ -116,7 +95,7 @@
             break;
             
         case RCModelTaskTypeLoadFromServerWithDelete: {
-            [HTTPClient deletePath:_requestPath parameters:[self genParameters] success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            [HTTPClient deletePath:_requestPath parameters:_options.requestParams success:^(AFHTTPRequestOperation *operation, id responseObject) {
                 NSError *err = nil;
 
                 [self handleRequestOperation:operation withResponse:responseObject error:&err];
@@ -129,13 +108,7 @@
             break;
             
         case RCModelTaskTypeLoadFromCache: {
-            if (_options.cacheValuePaths) {
-                NSError *err = nil;
-                
-                [self handleRequestOperation:nil withResponse:[RCCacheHelper dictInCacheWithCachePaths:_options.cacheValuePaths] error:&err];
-                
-                [self handleError:err];
-            }
+
         }
             break;
             
@@ -149,11 +122,24 @@
 - (void)handleRequestOperation:(AFHTTPRequestOperation *)operation withResponse:(id)responseObject error:(NSError**)err {
     if (responseObject) {
         if (_options.toCacheKey) {
-            NSDictionary *dict = [RCModelHelper parseData:responseObject withKey:_options.responseDataKeyPath error:err];
+            NSDictionary *dict = [RCModelHelper parseData:responseObject error:err];
             [RCCacheHelper setObject:dict forKey:_options.toCacheKey withType:_options.storageType];
             
-            if (_options.toModelClass && !*err) {
-                [RCCacheHelper setObject:[RCModelHelper modelClass:_options.toModelClass initWithDictionary:dict error:err] forKey:[RCModelHelper modelCacheKeyWithDataCacheKey: _options.toCacheKey] withType:_options.storageType];
+            if (_options.modelsMapping && !*err) {
+                NSArray *allModelKeys = [_options.modelsMapping allKeys];
+                for (NSString *modelKey in allModelKeys) {
+                    id jsonValue = [dict objectForKey:modelKey];
+                    if (jsonValue) {
+                        Class modelClass = ((RCClassHelper *)[_options.modelsMapping objectForKey:modelKey]).cls;
+                        NSString *key = [modelKey addKeyPrefixForClass:self.class];
+                        
+                        if ([jsonValue isKindOfClass:[NSDictionary class]]) {
+                            [RCCacheHelper setObject:[RCModelHelper modelByClass:modelClass initWithDictionary:jsonValue error:err] forKey:key withType:_options.storageType];
+                        } else if ([jsonValue isKindOfClass:[NSArray class]]) {
+                            [RCCacheHelper setObject:[RCModelHelper modelsByClass:modelClass initWithArray:jsonValue error:err] forKey:key withType:_options.storageType];
+                        }
+                    }
+                }
             }
         }
     } else {
@@ -170,14 +156,10 @@
     }
 }
 
-- (void)setParamValue:(id)value withKey:(NSString *)key {
-    if ( !_options) {
-        _options = [RCModelTaskOptions new];
-    }
-    
-    if ( !_options.requestParams) {
-        _options.requestParams = [@{} mutableCopy];
-    }
+#pragma mark - Params
+
+- (void)setParam:(id)value withKey:(NSString *)key {
+    [self checkOptions];
     
     [_options.requestParams setObject:value forKey:key];
 }
@@ -186,8 +168,55 @@
     return [_options.requestParams objectForKey:key];
 }
 
+- (void)removeParamWithKey:(NSString *)key {
+    [_options.requestParams removeObjectForKey:key];
+}
+
 - (void)resetParams {
     [_options.requestParams removeAllObjects];
+}
+
+#pragma mark - Model Class
+- (void)setModelClass:(Class)cls withResponsKey:(NSString *)key {
+    [self checkOptions];
+    
+    [_options.modelsMapping setObject:[RCClassHelper objectFromClass:cls] forKey:key];
+}
+
+- (Class)modelClassWithKey:(NSString *)key {
+    RCClassHelper *helperClass = [_options.modelsMapping objectForKey:key];
+    
+    return helperClass.cls;
+}
+
+- (id)modelWithKey:(NSString *)key {
+    key = [key addKeyPrefixForClass:self.class];
+    
+    return [RCCacheHelper objectForKey:key];
+}
+
+- (void)removeModelClassWithKey:(NSString *)key {
+    [_options.modelsMapping removeObjectForKey:key];
+}
+
+- (void)resetModels {
+    [_options.modelsMapping removeAllObjects];
+}
+
+#pragma mark - Checking
+
+- (void)checkOptions {
+    if ( !_options) {
+        _options = [RCModelTaskOptions new];
+    }
+    
+    if ( !_options.requestParams) {
+        _options.requestParams = [@{} mutableCopy];
+    }
+    
+    if ( !_options.modelsMapping) {
+        _options.modelsMapping = [@{} mutableCopy];
+    }
 }
 
 @end

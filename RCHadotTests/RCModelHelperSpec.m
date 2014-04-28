@@ -65,7 +65,7 @@ describe(@"RCModelHelper", ^{
             NSDictionary *dict = @{@"username": username};
             NSError *err = nil;
             
-            [[((RCJSONModelTest *)[RCModelHelper modelClass:[RCJSONModelTest class] initWithDictionary:dict error:&err]).name should] equal:username];
+            [[((RCJSONModelTest *)[RCModelHelper modelByClass:[RCJSONModelTest class] initWithDictionary:dict error:&err]).name should] equal:username];
             
             [[err should] beNil];
         });
@@ -77,7 +77,7 @@ describe(@"RCModelHelper", ^{
             NSDictionary *dict = @{@"username": username};
             NSError *err = nil;
             
-            [[((RCMTLModelTest *)[RCModelHelper modelClass:[RCMTLModelTest class] initWithDictionary:dict error:&err]).name should] equal:username];
+            [[((RCMTLModelTest *)[RCModelHelper modelByClass:[RCMTLModelTest class] initWithDictionary:dict error:&err]).name should] equal:username];
             
             [[err should] beNil];
         });

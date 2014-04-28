@@ -21,13 +21,12 @@
             
             if (dotLocation == NSNotFound) {
                 if (key) {
-                    [dict setValue:[Cache objectForKey:[key addKeyPrefixForString:key]] forKey:key];
+                    [dict setValue:[Cache objectForKey:key] forKey:key];
                 }
             } else {
                 valuePathKey = [key substringToIndex:dotLocation];
-                NSString *cacheKey = [valuePathKey addKeyPrefixForString:valuePathKey];
                 
-                id value = [Cache objectForKey:cacheKey];
+                id value = [Cache objectForKey:valuePathKey];
                 
                 if ([value isKindOfClass:[NSDictionary class]]) {
                     valuePathKey = [key substringFromIndex:dotLocation + 2];
@@ -45,9 +44,7 @@
     return dict;
 }
 
-+ (void)setObject:(id<NSCoding>)object forKey:(NSString *)key withType:(RCModelOptionsStorageType)type {
-    NSString *cacheKey = [key addKeyPrefixForString:key];
-
++ (void)setObject:(id<NSCoding>)object forKey:(NSString *)cacheKey withType:(RCModelOptionsStorageType)type {
     switch (type) {
         case RCModelOptionsStorageTypeWrite: {
             [Cache setObject:object forKey:cacheKey];
@@ -74,7 +71,7 @@
 }
 
 + (id)objectForKey:(NSString *)key {
-    return [Cache objectForKey:[key addKeyPrefixForString:key]];
+    return [Cache objectForKey:key];
 }
 
 + (id)appendData:(id)object to:(id)value {

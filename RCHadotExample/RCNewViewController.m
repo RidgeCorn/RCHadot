@@ -39,7 +39,6 @@
     
     [RCViewRecord loadRecordByObject:self.view];
     
-    [Bot startTaskWithKey:kRCModelLoadWeather];
     
     RCModelTask *task = (RCModelTask *)[Bot taskForKey:kRCModelLoadWeather];
 
@@ -48,6 +47,9 @@
             [Bot startTaskWithKey:kRCWeatherView removeAfterDone:YES];
         }
     }];
+    
+    [Bot startTask:task];
+
 }
 
 - (void)didReceiveMemoryWarning

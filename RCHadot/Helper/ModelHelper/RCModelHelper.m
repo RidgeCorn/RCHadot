@@ -12,6 +12,7 @@
 #import <Mantle.h>
 #import "RCLogger.h"
 #import "RCVerifyHelper.h"
+#import "NSString+RCStorage.h"
 
 @interface RCModelHelper ()
 
@@ -19,19 +20,15 @@
 
 @implementation RCModelHelper
 
-+ (NSString *)modelCacheKeyWithDataCacheKey:(NSString *)key {
-    return [NSStringFromClass(self.class) stringByAppendingFormat:@"_%@", key ?: @""];
-}
-
 + (void)cacheModel:(id)model forKey:(NSString *)key {
-    [RCCacheHelper setObject:model forKey:[self modelCacheKeyWithDataCacheKey:key]];
+    [RCCacheHelper setObject:model forKey:key];
 }
 
 + (id)modelForCacheKey:(NSString *)key {
-    return [RCCacheHelper objectForKey:[self modelCacheKeyWithDataCacheKey:key]];
+    return [RCCacheHelper objectForKey:key];
 }
 
-+ (id)modelClass:(Class)cls initWithDictionary:(NSDictionary *)dict error:(NSError**)err {
++ (id)modelByClass:(Class)cls initWithDictionary:(NSDictionary *)dict error:(NSError**)err {
     id model;
     
     if ([cls isSubclassOfClass:[JSONModel class]]) {
@@ -51,7 +48,7 @@
     if ( ![RCVerifyHelper isDataNil:arr] && [arr isKindOfClass:[NSArray class]]) {
         for (NSDictionary *modelDict in arr) {
             NSError *error = nil;
-            id model = [RCModelHelper modelClass:cls initWithDictionary:modelDict error:&error];
+            id model = [RCModelHelper modelByClass:cls initWithDictionary:modelDict error:&error];
             
             if (model) {
                 [models addObject:model];
@@ -77,6 +74,10 @@
     [resData addEntriesFromDictionary:(key && [key length]) ? [tmpDict valueForKeyPath:key] : tmpDict];
     
     return resData;
+}
+
++ (NSDictionary *)parseData:(id)responseObject error:(NSError **)err {
+    return [self parseData:responseObject withKey:nil error:err];
 }
 
 @end

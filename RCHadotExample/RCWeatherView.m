@@ -19,7 +19,7 @@
 
 - (id)initWithOptions:(RCViewTaskOptions *)options {
     if (self = [self initWithFrame:options.frame]) {
-        _weather = options.model;
+        _weather = options.models[@"weatherinfo"];
         
         [self configSubviews];
     }

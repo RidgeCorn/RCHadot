@@ -17,8 +17,7 @@
 @property (nonatomic) NSString *viewInitMethod;
 @property (nonatomic) NSArray *viewTags;
 @property (nonatomic) NSString *styleSheetsKey;
-@property (nonatomic) NSString *fromCacheKey;
-@property (nonatomic) BOOL fromCacheModel;
-@property (nonatomic) id model;
+@property (nonatomic) NSString *bindModelTaskKey;
+@property (nonatomic) id models;
 
 @end

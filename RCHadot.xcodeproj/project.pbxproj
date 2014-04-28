@@ -79,6 +79,8 @@
 		6E806AEE19079FBA005ED594 /* RCTaskTestHelperSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E806AED19079FBA005ED594 /* RCTaskTestHelperSpec.m */; };
 		6E9AC767190E40AF007E7C9C /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDBAE0C19074EE80053BD8A /* libc++.dylib */; };
 		6E9AC768190E46A9007E7C9C /* RCHadotTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6EDEB46918EA499300923C26 /* RCHadotTests-Info.plist */; };
+		6E9AC76C190E4E19007E7C9C /* RCClassHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9AC76B190E4E19007E7C9C /* RCClassHelper.m */; };
+		6E9AC76D190E5719007E7C9C /* RCClassHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9AC76B190E4E19007E7C9C /* RCClassHelper.m */; };
 		6E9BF6A71905041900DED4E2 /* RCModelHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BF6A61905041900DED4E2 /* RCModelHelper.m */; };
 		6E9BF6A81905041900DED4E2 /* RCModelHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BF6A61905041900DED4E2 /* RCModelHelper.m */; };
 		6E9BF6AA1905071400DED4E2 /* RCModelHelperSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BF6A91905071400DED4E2 /* RCModelHelperSpec.m */; };
@@ -254,6 +256,8 @@
 		6E806AE7190791DA005ED594 /* RCLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCLogger.m; path = Logger/RCLogger.m; sourceTree = "<group>"; };
 		6E806AEA19079E68005ED594 /* RCLoggerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCLoggerSpec.m; sourceTree = "<group>"; };
 		6E806AED19079FBA005ED594 /* RCTaskTestHelperSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTaskTestHelperSpec.m; sourceTree = "<group>"; };
+		6E9AC76A190E4E19007E7C9C /* RCClassHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCClassHelper.h; sourceTree = "<group>"; };
+		6E9AC76B190E4E19007E7C9C /* RCClassHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCClassHelper.m; sourceTree = "<group>"; };
 		6E9BF6A51905041900DED4E2 /* RCModelHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCModelHelper.h; sourceTree = "<group>"; };
 		6E9BF6A61905041900DED4E2 /* RCModelHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCModelHelper.m; sourceTree = "<group>"; };
 		6E9BF6A91905071400DED4E2 /* RCModelHelperSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCModelHelperSpec.m; sourceTree = "<group>"; };
@@ -784,6 +788,15 @@
 			name = Logger;
 			sourceTree = "<group>";
 		};
+		6E9AC769190E4DD7007E7C9C /* ClassHelper */ = {
+			isa = PBXGroup;
+			children = (
+				6E9AC76A190E4E19007E7C9C /* RCClassHelper.h */,
+				6E9AC76B190E4E19007E7C9C /* RCClassHelper.m */,
+			);
+			path = ClassHelper;
+			sourceTree = "<group>";
+		};
 		6E9BF6A41905023000DED4E2 /* ModelHelper */ = {
 			isa = PBXGroup;
 			children = (
@@ -796,6 +809,7 @@
 		6E9BF6AB190512BF00DED4E2 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				6E9AC769190E4DD7007E7C9C /* ClassHelper */,
 				6EDBADFE190743C50053BD8A /* TaskTestHelper */,
 				6EDBAE0219074B210053BD8A /* LevelDBHelper */,
 				6EED807C1906422500AF3DF0 /* MappingHelper */,
@@ -1437,6 +1451,7 @@
 				6EAB91DA18FFA5060087C20E /* RCViewTaskOptions.m in Sources */,
 				6EDBAE01190744110053BD8A /* RCTaskTestHelper.m in Sources */,
 				6E5FCE5D18FE27DA0076D5C5 /* RCDisplayHelper.m in Sources */,
+				6E9AC76C190E4E19007E7C9C /* RCClassHelper.m in Sources */,
 				6E5FCD7E18FCD42B0076D5C5 /* RCAppConfigHelper.m in Sources */,
 				6E5FCD7618FCD4060076D5C5 /* RCMapLocationHelper.m in Sources */,
 				6EAB91DF18FFA6EB0087C20E /* RCModelTaskOptions.m in Sources */,
@@ -1515,6 +1530,7 @@
 				6EAB91E318FFAA840087C20E /* RCModelTaskOptions.m in Sources */,
 				6EAB919D18FED6400087C20E /* NSDictionary+RCDictionary.m in Sources */,
 				6EAB919F18FED6400087C20E /* UIImage+RCImage.m in Sources */,
+				6E9AC76D190E5719007E7C9C /* RCClassHelper.m in Sources */,
 				6EAB91A118FED6400087C20E /* UIColor+RCColor.m in Sources */,
 				6EAB91A318FED6400087C20E /* NSManagedObject+RCStorage.m in Sources */,
 				6EAB91A518FED6400087C20E /* NSString+RCStorage.m in Sources */,

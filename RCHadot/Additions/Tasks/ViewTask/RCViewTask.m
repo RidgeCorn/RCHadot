@@ -12,6 +12,7 @@
 #import "RCDisplayHelper.h"
 #import "RCStyleSheetsHelper.h"
 #import "RCModelHelper.h"
+#import "RCModelTask.h"
 
 @implementation RCViewTask
 
@@ -70,9 +71,16 @@
                     [tmpView removeFromSuperview];
                 }
                 
-                if (_options.fromCacheModel)  {
-                    _options.model = [RCModelHelper modelForCacheKey:_options.fromCacheKey];
+                RCModelTask *modelTask = (RCModelTask *)[Bot taskForKey:_options.bindModelTaskKey];
+                
+                NSArray *allModelKeys = [modelTask.options.modelsMapping allKeys];
+                NSMutableDictionary *modelsDict = [@{} mutableCopy];
+                
+                for (NSString *modelKey in allModelKeys) {
+                    [modelsDict setObject:[modelTask modelWithKey:modelKey] forKey:modelKey];
                 }
+                
+                _options.models = modelsDict;
                 
                 [_refsView addSubview: [view performSelector:VIEW_INIT_SELECTOR withObject: _options]];
 
