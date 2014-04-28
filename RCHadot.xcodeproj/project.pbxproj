@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		26B00369A02F45AE8ED0F098 /* libPods-RCHadotTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 218952343D664F4D844C8275 /* libPods-RCHadotTests.a */; };
+		3310F28B1F5A4BBFB7D396C0 /* libPods-RCHadotExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4D567C2E844AFC8089319D /* libPods-RCHadotExample.a */; };
 		6E3B698E190540EC002ABF12 /* RCCacheSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3B698D190540EC002ABF12 /* RCCacheSpec.m */; };
 		6E3B698F19054954002ABF12 /* RCCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BF6B519051FB300DED4E2 /* RCCache.m */; };
 		6E4B53EE18FCCA1100DA270A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDEB44218EA499300923C26 /* Foundation.framework */; };
@@ -76,6 +77,8 @@
 		6E806AEB19079E68005ED594 /* RCLoggerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E806AEA19079E68005ED594 /* RCLoggerSpec.m */; };
 		6E806AEC19079E71005ED594 /* RCLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E806AE7190791DA005ED594 /* RCLogger.m */; };
 		6E806AEE19079FBA005ED594 /* RCTaskTestHelperSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E806AED19079FBA005ED594 /* RCTaskTestHelperSpec.m */; };
+		6E9AC767190E40AF007E7C9C /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDBAE0C19074EE80053BD8A /* libc++.dylib */; };
+		6E9AC768190E46A9007E7C9C /* RCHadotTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6EDEB46918EA499300923C26 /* RCHadotTests-Info.plist */; };
 		6E9BF6A71905041900DED4E2 /* RCModelHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BF6A61905041900DED4E2 /* RCModelHelper.m */; };
 		6E9BF6A81905041900DED4E2 /* RCModelHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BF6A61905041900DED4E2 /* RCModelHelper.m */; };
 		6E9BF6AA1905071400DED4E2 /* RCModelHelperSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BF6A91905071400DED4E2 /* RCModelHelperSpec.m */; };
@@ -176,6 +179,7 @@
 /* Begin PBXFileReference section */
 		14AFAA95EBAF435999806950 /* Pods-RCHadotTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCHadotTests.xcconfig"; path = "Pods/Pods-RCHadotTests.xcconfig"; sourceTree = "<group>"; };
 		218952343D664F4D844C8275 /* libPods-RCHadotTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RCHadotTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B4D567C2E844AFC8089319D /* libPods-RCHadotExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RCHadotExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5581E9F0DD0A4528BCC62068 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E3B69821905309E002ABF12 /* RCCategories.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCCategories.h; sourceTree = "<group>"; };
 		6E3B698319053114002ABF12 /* RCDefaultTasks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCDefaultTasks.h; sourceTree = "<group>"; };
@@ -333,6 +337,7 @@
 		6EED8081190683A000AF3DF0 /* RCBotTaskTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCBotTaskTest.h; sourceTree = "<group>"; };
 		6EED8082190683A000AF3DF0 /* RCBotTaskTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCBotTaskTest.m; sourceTree = "<group>"; };
 		79EC0D202DD24712B890A49A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		FF7E78CFCBFC4427A6F327A3 /* Pods-RCHadotExample.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCHadotExample.xcconfig"; path = "Pods/Pods-RCHadotExample.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -369,12 +374,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E9AC767190E40AF007E7C9C /* libc++.dylib in Frameworks */,
 				6E5FCDBE18FCDFD20076D5C5 /* CoreLocation.framework in Frameworks */,
 				6E610F6618FBFC1A00247441 /* CoreData.framework in Frameworks */,
 				6EDEB44518EA499300923C26 /* CoreGraphics.framework in Frameworks */,
 				6EDEB44718EA499300923C26 /* UIKit.framework in Frameworks */,
 				6EDEB44318EA499300923C26 /* Foundation.framework in Frameworks */,
 				96EB4D4D509A4B24BE5F588E /* libPods.a in Frameworks */,
+				3310F28B1F5A4BBFB7D396C0 /* libPods-RCHadotExample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1049,6 +1056,7 @@
 				6EDEB44018EA499300923C26 /* Products */,
 				79EC0D202DD24712B890A49A /* Pods.xcconfig */,
 				14AFAA95EBAF435999806950 /* Pods-RCHadotTests.xcconfig */,
+				FF7E78CFCBFC4427A6F327A3 /* Pods-RCHadotExample.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1074,6 +1082,7 @@
 				6EDEB46118EA499300923C26 /* XCTest.framework */,
 				5581E9F0DD0A4528BCC62068 /* libPods.a */,
 				218952343D664F4D844C8275 /* libPods-RCHadotTests.a */,
+				3B4D567C2E844AFC8089319D /* libPods-RCHadotExample.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1318,6 +1327,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E9AC768190E46A9007E7C9C /* RCHadotTests-Info.plist in Resources */,
 				6E5FCD8A18FCD88F0076D5C5 /* RCPListHelperTests.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1362,7 +1372,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Pods-RCHadotExample-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C4B11F17572442B686F15F7B /* Check Pods Manifest.lock */ = {
@@ -1718,7 +1728,7 @@
 		};
 		6EDEB47218EA499300923C26 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 79EC0D202DD24712B890A49A /* Pods.xcconfig */;
+			baseConfigurationReference = FF7E78CFCBFC4427A6F327A3 /* Pods-RCHadotExample.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1733,7 +1743,7 @@
 		};
 		6EDEB47318EA499300923C26 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 79EC0D202DD24712B890A49A /* Pods.xcconfig */;
+			baseConfigurationReference = FF7E78CFCBFC4427A6F327A3 /* Pods-RCHadotExample.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
