@@ -170,4 +170,24 @@
     }
 }
 
+- (void)setParamValue:(id)value withKey:(NSString *)key {
+    if ( !_options) {
+        _options = [RCModelTaskOptions new];
+    }
+    
+    if ( !_options.requestParams) {
+        _options.requestParams = [@{} mutableCopy];
+    }
+    
+    [_options.requestParams setObject:value forKey:key];
+}
+
+- (id)paramWithKey:(NSString *)key {
+    return [_options.requestParams objectForKey:key];
+}
+
+- (void)resetParams {
+    [_options.requestParams removeAllObjects];
+}
+
 @end
