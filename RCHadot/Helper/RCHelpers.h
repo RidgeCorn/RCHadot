@@ -20,3 +20,4 @@
 #import "RCMappingHelper.h"
 #import "RCLevelDBHelper.h"
 #import "RCTaskTestHelper.h"
+#import "RCClassHelper.h"
