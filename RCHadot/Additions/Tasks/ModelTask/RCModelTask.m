@@ -128,7 +128,7 @@
             if (_options.modelsMapping && !*err) {
                 NSArray *allModelKeys = [_options.modelsMapping allKeys];
                 for (NSString *modelKey in allModelKeys) {
-                    id jsonValue = [dict objectForKey:modelKey];
+                    id jsonValue = [dict valueForKeyPath:modelKey];
                     if (jsonValue) {
                         Class modelClass = ((RCClassHelper *)[_options.modelsMapping objectForKey:modelKey]).cls;
                         NSString *key = [modelKey addKeyPrefixForClass:self.class];
