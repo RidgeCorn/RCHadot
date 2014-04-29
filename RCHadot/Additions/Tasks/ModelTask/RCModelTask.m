@@ -128,7 +128,7 @@
             if (_options.modelsMapping && !*err) {
                 NSArray *allModelKeys = [_options.modelsMapping allKeys];
                 for (NSString *modelKey in allModelKeys) {
-                    id jsonValue = [dict valueForKeyPath:modelKey];
+                    id jsonValue = [modelKey hasPrefix:@"__"] ? dict : [dict valueForKeyPath:modelKey];
                     if (jsonValue) {
                         Class modelClass = ((RCClassHelper *)[_options.modelsMapping objectForKey:modelKey]).cls;
                         NSString *key = [modelKey addKeyPrefixForClass:self.class];
@@ -189,7 +189,7 @@
     return helperClass.cls;
 }
 
-- (id)modelWithKey:(NSString *)key {
+- (id)modelWithKey:(id)key {
     key = [key addKeyPrefixForClass:self.class];
     
     return [RCCacheHelper objectForKey:key];

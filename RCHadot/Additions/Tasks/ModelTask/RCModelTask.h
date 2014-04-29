@@ -23,17 +23,17 @@ typedef NS_ENUM(NSUInteger, RCModelTaskType) {
 @property (nonatomic) NSString *requestPath;
 @property (nonatomic) RCModelTaskOptions *options;
 
-- (id)initWithKey:(NSString *)key type:(RCModelTaskType)type requestPath:(NSString *)requestPath options:(RCModelTaskOptions *)options;
+- (id)initWithKey:(id)key type:(RCModelTaskType)type requestPath:(NSString *)requestPath options:(RCModelTaskOptions *)options;
 
-- (void)setParam:(id)value withKey:(NSString *)key;
-- (id)paramWithKey:(NSString *)key;
-- (void)removeParamWithKey:(NSString *)key;
+- (void)setParam:(id)value withKey:(id)key;
+- (id)paramWithKey:(id)key;
+- (void)removeParamWithKey:(id)key;
 - (void)resetParams;
 
-- (void)setModelClass:(Class)cls withResponsKey:(NSString *)key;// key means keyPath
-- (id)modelWithKey:(NSString *)key;
-- (Class)modelClassWithKey:(NSString *)key;
-- (void)removeModelClassWithKey:(NSString *)key;
+- (void)setModelClass:(Class)cls withResponsKey:(id)key;// key means keyPath
+- (id)modelWithKey:(id)key;
+- (Class)modelClassWithKey:(id)key;
+- (void)removeModelClassWithKey:(id)key;
 - (void)resetModels;
 
 @end
