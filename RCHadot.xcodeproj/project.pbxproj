@@ -77,7 +77,6 @@
 		6E806AEC19079E71005ED594 /* RCLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E806AE7190791DA005ED594 /* RCLogger.m */; };
 		6E806AEE19079FBA005ED594 /* RCTaskTestHelperSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E806AED19079FBA005ED594 /* RCTaskTestHelperSpec.m */; };
 		6E9AC767190E40AF007E7C9C /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDBAE0C19074EE80053BD8A /* libc++.dylib */; };
-		6E9AC768190E46A9007E7C9C /* RCHadotTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6EDEB46918EA499300923C26 /* RCHadotTests-Info.plist */; };
 		6E9AC76C190E4E19007E7C9C /* RCClassHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9AC76B190E4E19007E7C9C /* RCClassHelper.m */; };
 		6E9AC76D190E5719007E7C9C /* RCClassHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9AC76B190E4E19007E7C9C /* RCClassHelper.m */; };
 		6E9BF6A71905041900DED4E2 /* RCModelHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BF6A61905041900DED4E2 /* RCModelHelper.m */; };
@@ -1339,7 +1338,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E9AC768190E46A9007E7C9C /* RCHadotTests-Info.plist in Resources */,
 				6E5FCD8A18FCD88F0076D5C5 /* RCPListHelperTests.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
