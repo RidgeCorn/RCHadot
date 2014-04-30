@@ -19,7 +19,6 @@ typedef NS_ENUM(NSUInteger, RCControllerTaskType) {
 @property (nonatomic) RCControllerTaskOptions *options;
 @property (nonatomic) Class controllerClass;
 @property (nonatomic) RCControllerTaskType type;
-@property (nonatomic) UINavigationController *navigationController;
 
 - (id)initWithKey:(NSString *)key Type:(RCControllerTaskType)type navigationController:(UINavigationController *)navigationController controllerClass:(Class)controllerClass options:(RCControllerTaskOptions *)options;
 

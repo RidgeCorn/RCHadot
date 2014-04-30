@@ -7,6 +7,7 @@
 //
 
 #import "RCObject.h"
+#import <ReactiveCocoa.h>
 
 typedef NS_ENUM(NSUInteger, RCTaskState) {
     RCTaskStateRecored,
@@ -17,8 +18,6 @@ typedef NS_ENUM(NSUInteger, RCTaskState) {
 
 @class RCTask;
 
-typedef void (^RCTaskBlock)(RCTask *task);
-
 @protocol RCTaskHandleDelegate <NSObject>
 // Return NO if the task can't be processed, or with error.
 @required
@@ -26,20 +25,26 @@ typedef void (^RCTaskBlock)(RCTask *task);
 
 @optional
 - (BOOL)handleRecord:(RCTask <RCTaskHandleDelegate> *)task;
-
 - (void)handleRemove:(RCTask <RCTaskHandleDelegate> *)task;
-- (void)handleError:(NSError *)error;
 
 @end
 
-@interface RCTask : RCObject <NSCopying, NSCoding>
+typedef void (^RCTaskBlock)(id <RCTaskHandleDelegate> task_b);
+
+@interface RCTask : RCObject <NSCopying, NSCoding> {
+    RCTaskBlock _stateBlock;
+    RCTaskBlock _runBlock;
+}
 
 @property (nonatomic) NSString *key;
-@property (nonatomic, copy) RCTaskBlock runBlock;
 @property (nonatomic, weak) id <RCTaskHandleDelegate> delegate;
 @property (nonatomic) RCTaskState state;
 @property (nonatomic) NSError *error;
+@property (nonatomic) id refsObj;
 
 - (id)initWithKey:(NSString *)key;
+- (id)initWithKey:(NSString *)key refsByObject:(id)object;
+- (void)handleStateBlock:(RCTaskBlock)stateBlock;
+- (void)startRunBlock:(RCTaskBlock)runBlock;
 
 @end

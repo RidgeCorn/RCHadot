@@ -24,7 +24,7 @@
 
     RCControllerTask *task = (RCControllerTask *)[Bot taskForKey:kRCViewController];
     
-    [self.window setRootViewController:task.navigationController];
+    [self.window setRootViewController:task.refsObj];
     [self.window makeKeyAndVisible];
     
     [Bot startTaskWithKey:kRCViewController];

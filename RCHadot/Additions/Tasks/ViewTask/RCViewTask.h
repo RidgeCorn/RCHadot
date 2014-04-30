@@ -20,9 +20,8 @@ typedef NS_ENUM(NSUInteger, RCViewTaskType) {
 
 @property (nonatomic) Class viewClass;
 @property (nonatomic) RCViewTaskType type;
-@property (nonatomic) id refsView;
 @property (nonatomic) RCViewTaskOptions *options;
 
-- (id)initWithKey:(NSString *)key Type:(RCViewTaskType)type refsView:(id)refsView viewClass:(Class)viewClass options:(RCViewTaskOptions *)options;
+- (id)initWithKey:(NSString *)key Type:(RCViewTaskType)type refsView:(id)view viewClass:(Class)viewClass options:(RCViewTaskOptions *)options;
 
 @end

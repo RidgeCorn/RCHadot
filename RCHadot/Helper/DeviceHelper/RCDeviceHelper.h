@@ -23,4 +23,7 @@
 
 + (BOOL)callNumber:(NSString *)phoneNumber;
 
++ (void)beginNetworkTask;
++ (void)endNetworkTask;
+
 @end

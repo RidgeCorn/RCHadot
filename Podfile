@@ -1,5 +1,6 @@
 platform :ios,'5.1.1'
 
+pod 'ReactiveCocoa'
 pod 'Routable'
 pod 'AFNetworking', '~> 1.0'
 pod 'CocoaLumberjack'
@@ -31,10 +32,6 @@ pod 'Lockbox'
 # pod 'NJKWebViewProgress'
 # pod 'PSTCollectionView'
 # pod 'ZXingObjC'
-
-target :RCHadotExample, :exclusive => true do
-    pod 'ReactiveCocoa'
-end
     
 target :RCHadotTests, :exclusive => true do
     pod 'Kiwi/XCTest'

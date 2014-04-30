@@ -14,6 +14,7 @@
 #import "RCLogger.h"
 #import "RCClassHelper.h"
 #import "NSString+RCStorage.h"
+#import "RCDeviceHelper.h"
 
 @implementation RCModelTask
 
@@ -31,9 +32,29 @@
     [aCoder encodeObject:self.key forKey:@"key"];
 }
 
+- (id)initWithKey:(NSString *)key refsByObject:(id)object {
+    if(self = [super initWithKey:key refsByObject:object]) {
+        self.delegate = self;
+        
+        [RACObserve(self, state) subscribeNext:^(NSNumber *state) {
+            if (_stateBlock) {
+                _stateBlock(self);
+            }
+        }];
+    }
+    
+    return self;
+}
+
 - (id)initWithKey:(NSString *)key {
     if(self = [super initWithKey:key]) {
         self.delegate = self;
+        
+        [RACObserve(self, state) subscribeNext:^(NSNumber *state) {
+            if (_stateBlock) {
+                _stateBlock(self);
+            }
+        }];
     }
     
     return self;
@@ -49,73 +70,79 @@
             _options = [RCModelTaskOptions new];
         }
     }
-    
+
     return self;
 }
 
-- (BOOL)handleStart:(RCModelTask *)task {    
-    switch (task.type) {
-        case RCModelTaskTypeLoadFromServerWithGet: {
-            [HTTPClient getPath:_requestPath parameters:_options.requestParams success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                NSError *err = nil;
+- (BOOL)handleStart:(RCModelTask *)task {
+    if (_runBlock) {
+        _runBlock(self);
+    } else {
+        [RCDeviceHelper beginNetworkTask];
 
-                [self handleRequestOperation:operation withResponse:responseObject error:&err];
+        switch (task.type) {
+            case RCModelTaskTypeLoadFromServerWithGet: {
+                [HTTPClient getPath:_requestPath parameters:_options.requestParams success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                    NSError *err = nil;
+                    
+                    [self handleRequestOperation:operation withResponse:responseObject error:&err];
+                    
+                    [self handleError:err];
+                } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                    [self handleError:error];
+                }];
+            }
+                break;
                 
-                [self handleError:err];
-            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                [self handleError:error];
-            }];
-        }
-            break;
-            
-        case RCModelTaskTypeLoadFromServerWithPost: {
-            [HTTPClient postPath:_requestPath parameters:_options.requestParams success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                NSError *err = nil;
-
-                [self handleRequestOperation:operation withResponse:responseObject error:&err];
+            case RCModelTaskTypeLoadFromServerWithPost: {
+                [HTTPClient postPath:_requestPath parameters:_options.requestParams success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                    NSError *err = nil;
+                    
+                    [self handleRequestOperation:operation withResponse:responseObject error:&err];
+                    
+                    [self handleError:err];
+                } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                    [self handleError:error];
+                }];
+            }
+                break;
                 
-                [self handleError:err];
-            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                [self handleError:error];
-            }];
-        }
-            break;
-            
-        case RCModelTaskTypeLoadFromServerWithPut: {
-            [HTTPClient putPath:_requestPath parameters:_options.requestParams success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                NSError *err = nil;
-
-                [self handleRequestOperation:operation withResponse:responseObject error:&err];
+            case RCModelTaskTypeLoadFromServerWithPut: {
+                [HTTPClient putPath:_requestPath parameters:_options.requestParams success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                    NSError *err = nil;
+                    
+                    [self handleRequestOperation:operation withResponse:responseObject error:&err];
+                    
+                    [self handleError:err];
+                } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                    [self handleError:error];
+                }];
+            }
+                break;
                 
-                [self handleError:err];
-            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                [self handleError:error];
-            }];
-        }
-            break;
-            
-        case RCModelTaskTypeLoadFromServerWithDelete: {
-            [HTTPClient deletePath:_requestPath parameters:_options.requestParams success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                NSError *err = nil;
-
-                [self handleRequestOperation:operation withResponse:responseObject error:&err];
+            case RCModelTaskTypeLoadFromServerWithDelete: {
+                [HTTPClient deletePath:_requestPath parameters:_options.requestParams success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                    NSError *err = nil;
+                    
+                    [self handleRequestOperation:operation withResponse:responseObject error:&err];
+                    
+                    [self handleError:err];
+                } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                    [self handleError:error];
+                }];
+            }
+                break;
                 
-                [self handleError:err];
-            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                [self handleError:error];
-            }];
-        }
-            break;
-            
-        case RCModelTaskTypeLoadFromCache: {
+            case RCModelTaskTypeLoadFromCache: {
+                [RCDeviceHelper endNetworkTask];
 
+            }
+                break;
+                
+            default:
+                break;
         }
-            break;
-            
-        default:
-            break;
     }
-    
     return YES;
 }
 
@@ -131,7 +158,7 @@
                     id jsonValue = [modelKey hasPrefix:@"__"] ? dict : [dict valueForKeyPath:modelKey];
                     if (jsonValue) {
                         Class modelClass = ((RCClassHelper *)[_options.modelsMapping objectForKey:modelKey]).cls;
-                        NSString *key = [modelKey addKeyPrefixForClass:self.class];
+                        NSString *key = [modelKey addKeyPrefixForClass:self.refsObj ? [self.refsObj class] : modelClass];
                         
                         if ([jsonValue isKindOfClass:[NSDictionary class]]) {
                             [RCCacheHelper setObject:[RCModelHelper modelByClass:modelClass initWithDictionary:jsonValue error:err] forKey:key withType:_options.storageType];
@@ -154,6 +181,8 @@
     } else {
         self.state = RCTaskStateCompletedWithSucceeded;
     }
+    
+    [RCDeviceHelper endNetworkTask];
 }
 
 #pragma mark - Params
@@ -190,7 +219,7 @@
 }
 
 - (id)modelWithKey:(id)key {
-    key = [key addKeyPrefixForClass:self.class];
+    key = [key addKeyPrefixForClass:self.refsObj ? [self.refsObj class] : ((RCClassHelper *)[_options.modelsMapping objectForKey:key]).cls];
     
     return [RCCacheHelper objectForKey:key];
 }

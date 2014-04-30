@@ -68,4 +68,13 @@
     
     return called;
 }
+
++ (void)beginNetworkTask {
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+}
+
++ (void)endNetworkTask {
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+}
+
 @end

@@ -28,18 +28,37 @@
     [aCoder encodeObject:self.key forKey:@"key"];
 }
 
+- (id)initWithKey:(NSString *)key refsByObject:(id)object {
+    if(self = [super initWithKey:key refsByObject:object]) {
+        self.delegate = self;
+        
+        [RACObserve(self, state) subscribeNext:^(NSNumber *state) {
+            if (_stateBlock) {
+                _stateBlock(self);
+            }
+        }];
+    }
+    
+    return self;
+}
+
 - (id)initWithKey:(NSString *)key {
     if(self = [super initWithKey:key]) {
         self.delegate = self;
+        
+        [RACObserve(self, state) subscribeNext:^(NSNumber *state) {
+            if (_stateBlock) {
+                _stateBlock(self);
+            }
+        }];
     }
     
     return self;
 }
 
 - (id)initWithKey:(NSString *)key Type:(RCControllerTaskType)type navigationController:(UINavigationController *)navigationController controllerClass:(__unsafe_unretained Class)controllerClass options:(RCControllerTaskOptions *)options {
-    if ([self initWithKey:key]) {
+    if ([self initWithKey:key refsByObject:navigationController]) {
         _type = type;
-        _navigationController = navigationController;
         _controllerClass = controllerClass;
         _options = options;
     }
@@ -48,16 +67,16 @@
 }
 
 - (BOOL)handleRecord:(RCControllerTask *)task {
-    if (task.runBlock) {
+    if (_runBlock) {
         [[Routable sharedRouter] map:task.key toCallback:^(NSDictionary *params) {
-            task.runBlock(self);
+            _runBlock(self);
         } withOptions:_options];
     } else {
         if (_options) {
             [[Routable sharedRouter] map:task.key toController:task.controllerClass withOptions:_options];
             
-            if (_options.shouldOpenAsRootViewController && task.navigationController) {
-                [[Routable sharedRouter] setNavigationController:task.navigationController];
+            if (_options.shouldOpenAsRootViewController && self.refsObj) {
+                [[Routable sharedRouter] setNavigationController:self.refsObj];
             }
         } else {
             [[Routable sharedRouter] map:task.key toController:task.controllerClass];

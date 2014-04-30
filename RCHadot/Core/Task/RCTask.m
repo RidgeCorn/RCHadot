@@ -9,6 +9,14 @@
 #import "RCTask.h"
 
 @implementation RCTask
+- (id)initWithKey:(NSString *)key refsByObject:(id)object {
+    if (self = [super init]) {
+        _key = key;
+        _refsObj = object;
+    }
+    
+    return self;
+}
 
 - (id)initWithKey:(NSString *)key {
     if (self = [super init]) {
@@ -34,5 +42,13 @@
 
 - (void)encodeWithCoder:(NSCoder *)encoder {
     [encoder encodeObject:self.key forKey:@"taskKey"];
+}
+
+- (void)handleStateBlock:(RCTaskBlock)stateBlock {
+    _stateBlock = stateBlock;
+}
+
+- (void)startRunBlock:(RCTaskBlock)runBlock {
+    _runBlock = runBlock;
 }
 @end

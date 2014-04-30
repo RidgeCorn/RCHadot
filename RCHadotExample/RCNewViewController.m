@@ -39,17 +39,38 @@
     
     [RCViewRecord loadRecordByObject:self.view];
     
-    
     RCModelTask *task = (RCModelTask *)[Bot taskForKey:kRCModelLoadWeather];
-
-    [RACObserve(task, state) subscribeNext:^(NSNumber *state) {
-        if ([state isEqualToNumber: @(RCTaskStateCompletedWithSucceeded)]) {
-            [Bot startTaskWithKey:kRCWeatherView removeAfterDone:YES];
+    task.refsObj = self;
+    
+    [task handleStateBlock:^(RCModelTask <RCTaskHandleDelegate> *task_b) {
+        switch (task_b.state) {
+            case RCTaskStateRecored: {
+                RCLog(@"RCTaskStateRecored");
+            }
+                break;
+            case RCTaskStateStart: {
+                RCLog(@"RCTaskStateStart");
+            }
+                break;
+            case RCTaskStateCompletedWithSucceeded: {
+                RCLog(@"RCTaskStateCompletedWithSucceeded");
+                
+                [Bot startTaskWithKey:kRCWeatherView removeAfterDone:YES];
+            }
+                break;
+            case RCTaskStateCompletedWithError: {
+                RCLog(@"RCTaskStateCompletedWithError");
+            }
+                break;
+                
+            default: {
+                RCLog(@"Unkown state!!!");
+            }
+                break;
         }
     }];
     
     [Bot startTask:task];
-
 }
 
 - (void)didReceiveMemoryWarning

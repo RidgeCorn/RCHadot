@@ -47,14 +47,13 @@
     
     if ( ![RCVerifyHelper isDataNil:arr] && [arr isKindOfClass:[NSArray class]]) {
         for (NSDictionary *modelDict in arr) {
-            NSError *error = nil;
-            id model = [RCModelHelper modelByClass:cls initWithDictionary:modelDict error:&error];
+            id model = [RCModelHelper modelByClass:cls initWithDictionary:modelDict error:err];
             
             if (model) {
                 [models addObject:model];
                 RCLog(@"Succeed! \nAdd %@ dict: %@\nmodel:%@", NSStringFromClass(cls), modelDict, model);
             } else {
-                RCLog(@"Failed! \nAdd %@ dict: %@\nmodel:%@\nerror: %@", NSStringFromClass(cls), modelDict, model, error);
+                RCLog(@"Failed! \nAdd %@ dict: %@\nmodel:%@\nerror: %@", NSStringFromClass(cls), modelDict, model, *err);
             }
         }
     }
