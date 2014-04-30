@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		26B00369A02F45AE8ED0F098 /* libPods-RCHadotTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 218952343D664F4D844C8275 /* libPods-RCHadotTests.a */; };
-		3310F28B1F5A4BBFB7D396C0 /* libPods-RCHadotExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4D567C2E844AFC8089319D /* libPods-RCHadotExample.a */; };
 		6E3B698E190540EC002ABF12 /* RCCacheSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3B698D190540EC002ABF12 /* RCCacheSpec.m */; };
 		6E3B698F19054954002ABF12 /* RCCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BF6B519051FB300DED4E2 /* RCCache.m */; };
 		6E4B53EE18FCCA1100DA270A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDEB44218EA499300923C26 /* Foundation.framework */; };
@@ -385,7 +384,6 @@
 				6EDEB44718EA499300923C26 /* UIKit.framework in Frameworks */,
 				6EDEB44318EA499300923C26 /* Foundation.framework in Frameworks */,
 				96EB4D4D509A4B24BE5F588E /* libPods.a in Frameworks */,
-				3310F28B1F5A4BBFB7D396C0 /* libPods-RCHadotExample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

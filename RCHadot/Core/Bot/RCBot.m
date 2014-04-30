@@ -86,7 +86,7 @@
     if (task) {
         called = [self startTask:task];
         
-        if(called && removeAfterDone) {
+        if (called && removeAfterDone) {
             [self remove:task.key];
         }
     }
