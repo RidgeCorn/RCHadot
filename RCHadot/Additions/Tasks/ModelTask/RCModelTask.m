@@ -15,6 +15,7 @@
 #import "RCClassHelper.h"
 #import "NSString+RCStorage.h"
 #import "RCDeviceHelper.h"
+#import "RCVerifyHelper.h"
 
 @implementation RCModelTask
 
@@ -156,7 +157,7 @@
                 NSArray *allModelKeys = [_options.modelsMapping allKeys];
                 for (NSString *modelKey in allModelKeys) {
                     id jsonValue = [modelKey hasPrefix:@"__"] ? dict : [dict valueForKeyPath:modelKey];
-                    if (jsonValue) {
+                    if ( ![RCVerifyHelper isDataNil:jsonValue]) {
                         Class modelClass = ((RCClassHelper *)[_options.modelsMapping objectForKey:modelKey]).cls;
                         NSString *key = [modelKey addKeyPrefixForClass:self.refsObj ? [self.refsObj class] : modelClass];
                         
