@@ -157,15 +157,15 @@
                 NSArray *allModelKeys = [_options.modelsMapping allKeys];
                 for (NSString *modelKey in allModelKeys) {
                     id jsonValue = [modelKey hasPrefix:@"__"] ? dict : [dict valueForKeyPath:modelKey];
-                    if ( ![RCVerifyHelper isDataNil:jsonValue]) {
                         Class modelClass = ((RCClassHelper *)[_options.modelsMapping objectForKey:modelKey]).cls;
                         NSString *key = [modelKey addKeyPrefixForClass:self.refsObj ? [self.refsObj class] : modelClass];
                         
-                        if ([jsonValue isKindOfClass:[NSDictionary class]]) {
-                            [RCCacheHelper setObject:[RCModelHelper modelByClass:modelClass initWithDictionary:jsonValue error:err] forKey:key withType:_options.storageType];
-                        } else if ([jsonValue isKindOfClass:[NSArray class]]) {
-                            [RCCacheHelper setObject:[RCModelHelper modelsByClass:modelClass initWithArray:jsonValue error:err] forKey:key withType:_options.storageType];
-                        }
+                    if ([jsonValue isKindOfClass:[NSDictionary class]]) {
+                        [RCCacheHelper setObject:[RCModelHelper modelByClass:modelClass initWithDictionary:jsonValue error:err] forKey:key withType:_options.storageType];
+                    } else if ([jsonValue isKindOfClass:[NSArray class]]) {
+                        [RCCacheHelper setObject:[RCModelHelper modelsByClass:modelClass initWithArray:jsonValue error:err] forKey:key withType:_options.storageType];
+                    } else { // unsupported object
+                        [RCCacheHelper setObject:nil forKey:key];//so, remove invaild data from cache
                     }
                 }
             }
