@@ -24,4 +24,6 @@
 
 + (id)objectForKey:(NSString *)key;
 
++ (id)objectForDisposableKey:(NSString *)key; //Using this to get object for key type of RCModelOptionsStorageTypeDisposable
+
 @end

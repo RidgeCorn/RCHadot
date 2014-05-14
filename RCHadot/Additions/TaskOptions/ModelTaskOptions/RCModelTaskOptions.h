@@ -8,9 +8,12 @@
 
 #import "RCOptions.h"
 
+static NSString *const kRCModelOptionsStorageTypeDisposable = @"__kRCModelOptionsStorageTypeDisposable__";
+
 typedef NS_ENUM(NSUInteger, RCModelOptionsStorageType) {
     RCModelOptionsStorageTypeWrite,
     RCModelOptionsStorageTypeAppend,
+    RCModelOptionsStorageTypeDisposable,
 //    RCModelOptionsStorageTypeUpdate
 };
 

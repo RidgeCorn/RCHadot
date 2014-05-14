@@ -151,6 +151,20 @@ describe(@"RCCacheHelper", ^{
             [[[RCCacheHelper objectForKey:key] should] equal:theNewDict];
         });
     });
+    
+    context(@"when testing setObject '@{@'newKey':@'newValue'}' forKey 'key' withType 'RCModelOptionsStorageTypeOnce'", ^{
+        it(@"should be done", ^{
+            NSDictionary *dict = @{@"newKey":@"newValue"};
+            NSString *key = @"key";
+            RCModelOptionsStorageType type = RCModelOptionsStorageTypeDisposable;
+            
+            [RCCacheHelper setObject:dict forKey:key withType:type];
+            
+            [[[RCCacheHelper objectForDisposableKey:key] should] equal:dict];
+            
+            [[[RCCacheHelper objectForDisposableKey:key] should] beNil];
+        });
+    });
 });
 
 SPEC_END

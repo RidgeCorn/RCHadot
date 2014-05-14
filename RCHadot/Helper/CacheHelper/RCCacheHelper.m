@@ -50,6 +50,7 @@
             [Cache setObject:object forKey:cacheKey];
         }
             break;
+            
         case RCModelOptionsStorageTypeAppend: {
             id value = [Cache objectForKey:cacheKey];
             
@@ -61,6 +62,12 @@
             }
         }
             break;
+            
+        case RCModelOptionsStorageTypeDisposable: {
+            [Cache setObject:object forKey:[kRCModelOptionsStorageTypeDisposable stringByAppendingString:cacheKey]];
+        }
+            break;
+            
         default:
             break;
     }
@@ -72,6 +79,16 @@
 
 + (id)objectForKey:(NSString *)key {
     return [Cache objectForKey:key];
+}
+
++ (id)objectForDisposableKey:(NSString *)key {
+    id value = [self objectForKey:[kRCModelOptionsStorageTypeDisposable stringByAppendingString:key]];
+    
+    if (value) {
+        [Cache removeObjectForKey:[kRCModelOptionsStorageTypeDisposable stringByAppendingString:key]];
+    }
+    
+    return value;
 }
 
 + (id)appendData:(id)object to:(id)value {
