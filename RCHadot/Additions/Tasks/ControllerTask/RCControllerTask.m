@@ -66,6 +66,14 @@
     return self;
 }
 
+- (id)initWithKey:(NSString *)key runBlock:(RCTaskBlock)runBlock {
+    if (self = [super initWithKey:key runBlock:runBlock]) {
+        self.delegate = self;
+    }
+    
+    return self;
+}
+
 - (BOOL)handleRecord:(RCControllerTask *)task {
     if (_runBlock) {
         [[Routable sharedRouter] map:task.key toCallback:^(NSDictionary *params) {
@@ -94,6 +102,14 @@
     }
     
     return YES;
+}
+
+- (void)resetRefsObj:(UINavigationController *)controller {
+    if (controller) {
+        self.refsObj = controller;
+    }
+    
+    [[Routable sharedRouter] setNavigationController:self.refsObj];
 }
 
 @end

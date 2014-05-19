@@ -65,6 +65,14 @@
     return self;
 }
 
+- (id)initWithKey:(NSString *)key runBlock:(RCTaskBlock)runBlock {
+    if (self = [super initWithKey:key runBlock:runBlock]) {
+        self.delegate = self;
+    }
+    
+    return self;
+}
+
 - (BOOL)handleStart:(RCViewTask *)task {
     if (_runBlock) {
         _runBlock(self);

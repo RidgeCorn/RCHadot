@@ -27,6 +27,27 @@ describe(@"RCControllerTask", ^{
             [[task.key should] equal:key];
         });
     });
+    
+    context(@"when test - (id)initWithKey:(NSString *)key runBlock:(RCTaskBlock)runBlock;", ^{
+        it(@"should be done", ^{
+            NSString *key = @"key";
+            
+            __block NSString *value = @"";
+            NSString *theValue = @"value";
+            
+            RCControllerTask *task = [[RCControllerTask alloc] initWithKey:key runBlock:^(id<RCTaskHandleDelegate> task_b) {
+                value = @"value";
+            }];
+            
+            [[value should] equal:@""];
+            
+            [Bot record:task];
+            
+            [Bot startTask:task];
+            
+            [[value should] equal:theValue];
+        });
+    });
 });
 
 SPEC_END

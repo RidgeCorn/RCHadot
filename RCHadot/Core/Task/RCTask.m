@@ -26,6 +26,15 @@
     return self;
 }
 
+- (id)initWithKey:(NSString *)key runBlock:(RCTaskBlock)runBlock {
+    if (self = [super init]) {
+        _key = key;
+        _runBlock = runBlock;
+    }
+    
+    return self;
+}
+
 #pragma mark - NSCopying, NSCoding
 - (instancetype)copyWithZone:(NSZone *)zone {
     return [NSKeyedUnarchiver unarchiveObjectWithData:
@@ -48,7 +57,7 @@
     _stateBlock = stateBlock;
 }
 
-- (void)startRunBlock:(RCTaskBlock)runBlock {
+- (void)resetRunBlock:(RCTaskBlock)runBlock {
     _runBlock = runBlock;
 }
 @end

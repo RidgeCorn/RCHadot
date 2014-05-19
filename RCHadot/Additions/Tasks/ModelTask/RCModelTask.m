@@ -61,6 +61,14 @@
     return self;
 }
 
+- (id)initWithKey:(NSString *)key runBlock:(RCTaskBlock)runBlock {
+    if (self = [super initWithKey:key runBlock:runBlock]) {
+        self.delegate = self;
+    }
+    
+    return self;
+}
+
 - (id)initWithKey:(NSString *)key type:(RCModelTaskType)type requestPath:(NSString *)requestPath options:(RCModelTaskOptions *)options {
     if (self = [self initWithKey:key]) {
         _type = type;

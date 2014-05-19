@@ -22,4 +22,6 @@ typedef NS_ENUM(NSUInteger, RCControllerTaskType) {
 
 - (id)initWithKey:(NSString *)key Type:(RCControllerTaskType)type navigationController:(UINavigationController *)navigationController controllerClass:(Class)controllerClass options:(RCControllerTaskOptions *)options;
 
+- (void)resetRefsObj:(UINavigationController *)controller;
+
 @end

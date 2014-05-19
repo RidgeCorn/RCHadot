@@ -43,8 +43,9 @@ typedef void (^RCTaskBlock)(id <RCTaskHandleDelegate> task_b);
 @property (nonatomic) id refsObj;
 
 - (id)initWithKey:(NSString *)key;
+- (id)initWithKey:(NSString *)key runBlock:(RCTaskBlock)runBlock;
 - (id)initWithKey:(NSString *)key refsByObject:(id)object;
 - (void)handleStateBlock:(RCTaskBlock)stateBlock;
-- (void)startRunBlock:(RCTaskBlock)runBlock;
+- (void)resetRunBlock:(RCTaskBlock)runBlock;
 
 @end
