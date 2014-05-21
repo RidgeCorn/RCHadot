@@ -15,7 +15,7 @@
 }
 
 + (BOOL)isFloatZero:(CGFloat)floatValue {
-    return (floatValue < 0.000001 && floatValue > -0.000001);
+    return (fabs(floatValue) < FLT_EPSILON);
 }
 
 + (BOOL)isDataZero:(id)data {
