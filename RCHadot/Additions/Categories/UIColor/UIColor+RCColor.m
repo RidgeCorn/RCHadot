@@ -7,6 +7,7 @@
 //
 
 #import "UIColor+RCColor.h"
+#import "RCAppConfigHelper.h"
 
 @implementation UIColor (RCColor)
 
@@ -64,4 +65,7 @@
     return [UIColor colorWithRed:239 / 255.0 green:239 / 255.0 blue:244 / 255.0 alpha:1];
 }
 
++ (UIColor *)applicationTintColor {
+    return [UIColor colorWithHexString:[RCAppConfigHelper applicationTintColorString]];
+}
 @end
