@@ -28,6 +28,7 @@ static NSString *const kRCDefaultAPIBaseURL = @"RCDefaultAPIBaseURL";
 static NSString *const kRCDefaultCookieBaseURL = @"RCDefaultCookieBaseURL";
 static NSString *const kRCApplicationTintColor = @"RCApplicationTintColor";
 static NSString *const kRCApplicationThemeKey = @"RCApplicationThemeKey";
+static NSString *const kRCApplicationBackgrandColor = @"RCApplicationBackgrandColor";
 
 @interface RCAppConfigHelper : NSObject
 
@@ -54,6 +55,7 @@ static NSString *const kRCApplicationThemeKey = @"RCApplicationThemeKey";
 + (NSString *)userAgent;
 
 + (NSString *)applicationTintColorString;
++ (NSString *)applicationBackgrandColorString;
 + (NSString *)applicationThemeKey;
 
 @end
