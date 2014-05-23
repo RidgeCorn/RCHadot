@@ -108,6 +108,10 @@
     return [RCPListHelper objectInMainBundlePListWithKey:kRCApplicationTintColor];
 }
 
++ (NSString *)applicationBackgrandColorString {
+    return [RCPListHelper objectInMainBundlePListWithKey:kRCApplicationBackgrandColor];
+}
+
 + (NSString *)applicationThemeKey {
     return [RCPListHelper objectInMainBundlePListWithKey:kRCApplicationThemeKey];
 }
