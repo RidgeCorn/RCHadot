@@ -69,8 +69,8 @@
     return [UIColor colorWithHexString:[RCAppConfigHelper applicationTintColorString]];
 }
 
-+ (UIColor *)applicationBackgrandColor {
-    return [UIColor colorWithHexString:[RCAppConfigHelper applicationBackgrandColorString]];
++ (UIColor *)applicationBackgroundColor {
+    return [UIColor colorWithHexString:[RCAppConfigHelper applicationBackgroundColorString]];
 }
 
 @end

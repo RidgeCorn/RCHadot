@@ -14,6 +14,6 @@
 + (UIColor *)colorWithHexString:(NSString *)colorString alpha:(CGFloat)alpha;
 + (UIColor *)tableViewBackgroundColorOfiOS7;
 + (UIColor *)applicationTintColor;
-+ (UIColor *)applicationBackgrandColor;
++ (UIColor *)applicationBackgroundColor;
 
 @end
