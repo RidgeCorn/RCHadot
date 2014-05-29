@@ -164,10 +164,15 @@
             if (_options.modelsMapping && !*err) {
                 NSArray *allModelKeys = [_options.modelsMapping allKeys];
                 for (NSString *modelKey in allModelKeys) {
-                    id jsonValue = [modelKey hasPrefix:@"__"] ? dict : [dict objectForKey:modelKey];
-                        Class modelClass = ((RCClassHelper *)[_options.modelsMapping objectForKey:modelKey]).cls;
-                        NSString *key = [modelKey addKeyPrefixForClass:self.refsObj ? [self.refsObj class] : modelClass];
-                        
+                    id jsonValue = nil;
+                    @try { //handle null data
+                        jsonValue = [modelKey hasPrefix:@"__"] ? dict : [dict valueForKeyPath:modelKey];
+                    } @catch (NSException *exception) {
+                        RCLog(@"Exception: %@", exception);
+                    }
+                    Class modelClass = ((RCClassHelper *)[_options.modelsMapping objectForKey:modelKey]).cls;
+                    NSString *key = [modelKey addKeyPrefixForClass:self.refsObj ? [self.refsObj class] : modelClass];
+                    
                     if ([jsonValue isKindOfClass:[NSDictionary class]]) {
                         [RCCacheHelper setObject:[RCModelHelper modelByClass:modelClass initWithDictionary:jsonValue error:err] forKey:key withType:_options.storageType];
                     } else if ([jsonValue isKindOfClass:[NSArray class]]) {
