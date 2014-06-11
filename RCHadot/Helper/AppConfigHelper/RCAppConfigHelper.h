@@ -32,6 +32,7 @@ static NSString *const kRCApplicationBackgroundColor = @"RCApplicationBackground
 
 @interface RCAppConfigHelper : NSObject
 
++ (NSString *)productDisplayName;
 + (NSString *)bundleIdentifier;
 + (NSString *)bundleVersion;
 + (NSString *)bundleName;
