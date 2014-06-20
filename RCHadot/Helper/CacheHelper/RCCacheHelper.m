@@ -81,6 +81,10 @@
     return [Cache objectForKey:key];
 }
 
++ (void)removeObjectForKey:(NSString *)key {
+    [Cache removeObjectForKey:key];
+}
+
 + (id)objectForDisposableKey:(NSString *)key {
     id value = [self objectForKey:[kRCModelOptionsStorageTypeDisposable stringByAppendingString:key]];
     

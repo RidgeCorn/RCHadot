@@ -156,7 +156,7 @@
 }
 
 - (void)handleRequestOperation:(AFHTTPRequestOperation *)operation withResponse:(id)responseObject error:(NSError**)err {
-    if (responseObject) {
+    if (responseObject && !*err) {
         if (_options.toCacheKey) {
             NSDictionary *dict = [RCModelHelper parseData:responseObject error:err];
             [RCCacheHelper setObject:dict forKey:_options.toCacheKey withType:_options.storageType];
@@ -172,7 +172,7 @@
                         jsonValue = [modelKey hasPrefix:@"__"] ? dict : [dict valueForKeyPath:modelKey];
                     } @catch (NSException *exception) {
                         RCLog(@"Exception: %@", exception);
-                        [RCCacheHelper setObject:nil forKey:key];// Clean cache data!
+                        [RCCacheHelper removeObjectForKey:key];// Clean cache data!
                     }
                     
                     if ([jsonValue isKindOfClass:[NSDictionary class]]) {
@@ -180,18 +180,23 @@
                     } else if ([jsonValue isKindOfClass:[NSArray class]]) {
                         [RCCacheHelper setObject:[RCModelHelper modelsByClass:modelClass initWithArray:jsonValue error:err] forKey:key withType:_options.storageType];
                     } else { // unsupported object
-                        [RCCacheHelper setObject:nil forKey:key];//so, remove invaild data from cache
+                        [RCCacheHelper removeObjectForKey:key];//so, remove invaild data from cache
                     }
                 }
             }
         }
     } else {
+        if (responseObject) {
+            RCLog(@"HTTP Request Error!!!\nOperation: %@", operation.responseString);
+        } else {
             RCLog(@"NO Response Data!");
+        }
     }
 }
 
 - (void)handleError:(NSError *)error {
     if (error) {
+        RCLog(@"Error: %@", error);
         self.error = error;
         self.state = RCTaskStateCompletedWithError;
     } else {

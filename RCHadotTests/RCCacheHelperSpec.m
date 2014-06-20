@@ -165,6 +165,21 @@ describe(@"RCCacheHelper", ^{
             [[[RCCacheHelper objectForDisposableKey:key] should] beNil];
         });
     });
+    
+    context(@"when testing removeObject('@{@'newKey':@'newValue'}')ForKey 'key'", ^{
+        it(@"should be done", ^{
+            NSDictionary *dict = @{@"newKey":@"newValue"};
+            NSString *key = @"key";
+            
+            [RCCacheHelper setObject:dict forKey:key];
+            
+            [[[RCCacheHelper objectForKey:key] should] equal:dict];
+            
+            [RCCacheHelper removeObjectForKey:key];
+
+            [[[RCCacheHelper objectForDisposableKey:key] should] beNil];
+        });
+    });
 });
 
 SPEC_END
