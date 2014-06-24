@@ -17,7 +17,7 @@
     const char *original_str = [self UTF8String];
     unsigned char result[CC_MD5_DIGEST_LENGTH];
     
-    CC_MD5(original_str, strlen(original_str), result);
+    CC_MD5(original_str, (unsigned int)strlen(original_str), result);
     NSMutableString *md5String = [NSMutableString string];
     
     for (int i = 0; i < CC_MD5_DIGEST_LENGTH; i++) {
