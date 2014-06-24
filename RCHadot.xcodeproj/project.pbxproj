@@ -72,6 +72,8 @@
 		6E5FCE6818FE32020076D5C5 /* NSDictionary+RCDictionarySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5FCE6718FE32020076D5C5 /* NSDictionary+RCDictionarySpec.m */; };
 		6E5FCE6A18FE353A0076D5C5 /* RCDisplaySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5FCE6918FE353A0076D5C5 /* RCDisplaySpec.m */; };
 		6E610F6618FBFC1A00247441 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E610F6518FBFC1A00247441 /* CoreData.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		6E6155F319591F3800EC7915 /* UIView+RCView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6155F219591F3800EC7915 /* UIView+RCView.m */; };
+		6E6155F419591F3800EC7915 /* UIView+RCView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6155F219591F3800EC7915 /* UIView+RCView.m */; };
 		6E806AE8190791DA005ED594 /* RCLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E806AE7190791DA005ED594 /* RCLogger.m */; };
 		6E806AEB19079E68005ED594 /* RCLoggerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E806AEA19079E68005ED594 /* RCLoggerSpec.m */; };
 		6E806AEC19079E71005ED594 /* RCLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E806AE7190791DA005ED594 /* RCLogger.m */; };
@@ -250,6 +252,8 @@
 		6E610F7D18FC142900247441 /* RCNetWorkHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCNetWorkHelper.m; sourceTree = "<group>"; };
 		6E610F8018FC145500247441 /* RCVerifyHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCVerifyHelper.h; sourceTree = "<group>"; };
 		6E610F8118FC145500247441 /* RCVerifyHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCVerifyHelper.m; sourceTree = "<group>"; };
+		6E6155F119591F3800EC7915 /* UIView+RCView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+RCView.h"; sourceTree = "<group>"; };
+		6E6155F219591F3800EC7915 /* UIView+RCView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+RCView.m"; sourceTree = "<group>"; };
 		6E806AE6190791DA005ED594 /* RCLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCLogger.h; path = Logger/RCLogger.h; sourceTree = "<group>"; };
 		6E806AE7190791DA005ED594 /* RCLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCLogger.m; path = Logger/RCLogger.m; sourceTree = "<group>"; };
 		6E806AEA19079E68005ED594 /* RCLoggerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCLoggerSpec.m; sourceTree = "<group>"; };
@@ -768,6 +772,15 @@
 			path = VerifyHelper;
 			sourceTree = "<group>";
 		};
+		6E6155F019591EAE00EC7915 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				6E6155F119591F3800EC7915 /* UIView+RCView.h */,
+				6E6155F219591F3800EC7915 /* UIView+RCView.m */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
 		6E806AE5190791A5005ED594 /* Logger */ = {
 			isa = PBXGroup;
 			children = (
@@ -844,6 +857,7 @@
 		6E9BF6AF19051C7800DED4E2 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				6E6155F019591EAE00EC7915 /* UIView */,
 				6E5FCE6218FE315D0076D5C5 /* NSDictionary */,
 				6E610F6F18FC132400247441 /* UIImage */,
 				6E610F6B18FC130000247441 /* UIColor */,
@@ -1448,6 +1462,7 @@
 				6EDBAE01190744110053BD8A /* RCTaskTestHelper.m in Sources */,
 				6E5FCE5D18FE27DA0076D5C5 /* RCDisplayHelper.m in Sources */,
 				6E9AC76C190E4E19007E7C9C /* RCClassHelper.m in Sources */,
+				6E6155F419591F3800EC7915 /* UIView+RCView.m in Sources */,
 				6E5FCD7E18FCD42B0076D5C5 /* RCAppConfigHelper.m in Sources */,
 				6E5FCD7618FCD4060076D5C5 /* RCMapLocationHelper.m in Sources */,
 				6EAB91DF18FFA6EB0087C20E /* RCModelTaskOptions.m in Sources */,
@@ -1538,6 +1553,7 @@
 				6EAB91E618FFAA8F0087C20E /* RCOptions.m in Sources */,
 				6EDBAE0A19074D200053BD8A /* RCLevelDBHelper.m in Sources */,
 				6EAB91B118FED6400087C20E /* RCCacheHelper.m in Sources */,
+				6E6155F319591F3800EC7915 /* UIView+RCView.m in Sources */,
 				6EAB91D118FF860C0087C20E /* RCWeatherView.m in Sources */,
 				6E9BF6A71905041900DED4E2 /* RCModelHelper.m in Sources */,
 				6EAB91FC18FFD7D30087C20E /* RCStyleSheetsHelper.m in Sources */,

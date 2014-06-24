@@ -12,3 +12,4 @@
 #import "NSDictionary+RCDictionary.h"
 #import "NSManagedObject+RCStorage.h"
 #import "NSString+RCStorage.h"
+#import "UIView+RCView.h"
