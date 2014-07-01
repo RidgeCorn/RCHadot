@@ -77,4 +77,26 @@
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 }
 
++ (UIViewController *)topViewController {
+    return [RCDeviceHelper topViewController:[UIApplication sharedApplication].keyWindow.rootViewController];
+}
+
++ (UIViewController *)topViewController:(UIViewController *)rootViewController {
+    if (rootViewController.presentedViewController == nil) {
+        if ([rootViewController isKindOfClass:[UINavigationController class]]) {
+            rootViewController = ((UINavigationController *)rootViewController).topViewController;
+        }
+        return rootViewController;
+    }
+    
+    if ([rootViewController.presentedViewController isMemberOfClass:[UINavigationController class]]) {
+        UINavigationController *navigationController = (UINavigationController *)rootViewController.presentedViewController;
+        UIViewController *lastViewController = [[navigationController viewControllers] lastObject];
+        return [RCDeviceHelper topViewController:lastViewController];
+    }
+    
+    UIViewController *presentedViewController = (UIViewController *)rootViewController.presentedViewController;
+    return [RCDeviceHelper topViewController:presentedViewController];
+}
+
 @end

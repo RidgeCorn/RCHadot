@@ -26,4 +26,8 @@
 + (void)beginNetworkTask;
 + (void)endNetworkTask;
 
++ (UIViewController *)topViewController;
+
++ (UIViewController *)topViewController:(UIViewController *)rootViewController;
+
 @end
