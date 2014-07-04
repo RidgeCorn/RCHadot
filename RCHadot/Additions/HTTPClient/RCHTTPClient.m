@@ -24,24 +24,32 @@
     return _sharedClient;
 }
 
-- (void)setUserAgent:(NSString *)userAgent {
-    [self setDefaultHeader:@"User-Agent" value:userAgent];
-}
-
 - (id)initWithBaseURL:(NSURL *)url {
-    
-    self = [super initWithBaseURL:url];
-    
-    if (! self) {
-        return nil;
+    if (self = [super initWithBaseURL:url]) {
+
     }
     
-    [self registerHTTPOperationClass:[AFJSONRequestOperation class]];
-    
-    // Accept HTTP Header; see http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.1
-//	[self setDefaultHeader:@"Accept" value:@"application/json"];
-    
     return self;
+}
+
+- (void)setUserAgent:(NSString *)userAgent {
+    [self.requestSerializer setValue:userAgent forHTTPHeaderField:@"User-Agent"];
+}
+
+- (id)getPath:(NSString *)URLString parameters:(NSDictionary *)parameters success:(void (^)(id, id))success failure:(void (^)(id, NSError *))failure {
+    return [self GET:URLString parameters:parameters success:success failure:failure];
+}
+
+- (id)postPath:(NSString *)URLString parameters:(NSDictionary *)parameters success:(void (^)(id, id))success failure:(void (^)(id, NSError *))failure {
+    return [self POST:URLString parameters:parameters success:success failure:failure];
+}
+
+- (id)putPath:(NSString *)URLString parameters:(NSDictionary *)parameters success:(void (^)(id, id))success failure:(void (^)(id, NSError *))failure {
+    return [self PUT:URLString parameters:parameters success:success failure:failure];
+}
+
+- (id)deletePath:(NSString *)URLString parameters:(NSDictionary *)parameters success:(void (^)(id, id))success failure:(void (^)(id, NSError *))failure {
+    return [self DELETE:URLString parameters:parameters success:success failure:failure];
 }
 
 @end

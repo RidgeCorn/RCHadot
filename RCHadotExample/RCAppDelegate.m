@@ -17,6 +17,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [RCHTTPClient sharedClient].responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    
     [RCStyleSheetsHelper initWithThemeKey:[RCAppConfigHelper applicationThemeKey]];
 
     [RCModelRecord loadRecordByObject:nil];

@@ -24,15 +24,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     [self.view addSubview:blockc(button,
                                  UIButton *button = [[UIButton alloc] initWithFrame:self.view.frame];
                                  [button setBackgroundColor:[UIColor greenColor]];
                                  button.tag = 1001;
-                                 )];
-    ((UIButton *)[self.view viewWithTag:1001]).rac_command = [[RACCommand alloc] initWithSignalBlock:^(id _) {
+                                 [button setTitle:@"Here !!!" forState:UIControlStateNormal];
+                                 button.rac_command = [[RACCommand alloc] initWithSignalBlock:^(id _) {
         [Bot startTaskWithKey:kRCNewViewController];
         return [RACSignal empty];
     }];
+                                 )];
 }
 
 - (void)didReceiveMemoryWarning

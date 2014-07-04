@@ -149,6 +149,7 @@
 		6EDEB45918EA499300923C26 /* RCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDEB45818EA499300923C26 /* RCViewController.m */; };
 		6EDEB45B18EA499300923C26 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EDEB45A18EA499300923C26 /* Images.xcassets */; };
 		6EDEB4A618EA5D9700923C26 /* RCNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDEB4A518EA5D9700923C26 /* RCNewViewController.m */; };
+		6EE4BF6119668CDE00D9C734 /* SkyBlue.NUI.nss in Resources */ = {isa = PBXBuildFile; fileRef = 6EE4BF6019668CDE00D9C734 /* SkyBlue.NUI.nss */; };
 		6EED807819061CD000AF3DF0 /* RCJSONModelTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EED807719061CD000AF3DF0 /* RCJSONModelTest.m */; };
 		6EED807B19061CEA00AF3DF0 /* RCMTLModelTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EED807A19061CEA00AF3DF0 /* RCMTLModelTest.m */; };
 		6EED80801906497000AF3DF0 /* RCWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EED807F1906497000AF3DF0 /* RCWeather.m */; };
@@ -160,6 +161,13 @@
 
 /* Begin PBXContainerItemProxy section */
 		6E4B53FE18FCCA1100DA270A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6EDEB43718EA499200923C26 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6E4B53EC18FCCA1100DA270A;
+			remoteInfo = RCHadot;
+		};
+		6E8996AD1966984500A83B92 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6EDEB43718EA499200923C26 /* Project object */;
 			proxyType = 1;
@@ -336,6 +344,7 @@
 		6EDEB48418EA4A2500923C26 /* RCViewTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCViewTask.m; sourceTree = "<group>"; };
 		6EDEB4A418EA5D9700923C26 /* RCNewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCNewViewController.h; sourceTree = "<group>"; };
 		6EDEB4A518EA5D9700923C26 /* RCNewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCNewViewController.m; sourceTree = "<group>"; };
+		6EE4BF6019668CDE00D9C734 /* SkyBlue.NUI.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SkyBlue.NUI.nss; sourceTree = "<group>"; };
 		6EED807619061CD000AF3DF0 /* RCJSONModelTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCJSONModelTest.h; sourceTree = "<group>"; };
 		6EED807719061CD000AF3DF0 /* RCJSONModelTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCJSONModelTest.m; sourceTree = "<group>"; };
 		6EED807919061CEA00AF3DF0 /* RCMTLModelTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCMTLModelTest.h; sourceTree = "<group>"; };
@@ -938,6 +947,7 @@
 		6EAB918818FED5100087C20E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6EE4BF6019668CDE00D9C734 /* SkyBlue.NUI.nss */,
 				6EDEB45418EA499300923C26 /* Main.storyboard */,
 				6EDEB45A18EA499300923C26 /* Images.xcassets */,
 			);
@@ -1301,6 +1311,7 @@
 			);
 			dependencies = (
 				6E4B53FF18FCCA1100DA270A /* PBXTargetDependency */,
+				6E8996AE1966984500A83B92 /* PBXTargetDependency */,
 			);
 			name = RCHadotTests;
 			productName = RCHadotTests;
@@ -1376,6 +1387,7 @@
 			files = (
 				6EDEB45B18EA499300923C26 /* Images.xcassets in Resources */,
 				6EDEB44D18EA499300923C26 /* InfoPlist.strings in Resources */,
+				6EE4BF6119668CDE00D9C734 /* SkyBlue.NUI.nss in Resources */,
 				6EAB918918FED5460087C20E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1597,6 +1609,11 @@
 			isa = PBXTargetDependency;
 			target = 6E4B53EC18FCCA1100DA270A /* RCHadot */;
 			targetProxy = 6E4B53FE18FCCA1100DA270A /* PBXContainerItemProxy */;
+		};
+		6E8996AE1966984500A83B92 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6E4B53EC18FCCA1100DA270A /* RCHadot */;
+			targetProxy = 6E8996AD1966984500A83B92 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
