@@ -21,3 +21,4 @@
 #import "RCLevelDBHelper.h"
 #import "RCTaskTestHelper.h"
 #import "RCClassHelper.h"
+#import "RCPlayerHelper.h"
