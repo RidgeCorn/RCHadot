@@ -24,11 +24,13 @@
 
 - (BOOL)startTaskWithKey:(NSString *)taskKey removeAfterDone:(BOOL)removeAfterDone;
 - (BOOL)startTaskWithKey:(NSString *)taskKey;
-
 - (BOOL)startTask:(RCTask <RCTaskHandleDelegate> *)task;
+
+- (BOOL)cancelTaskWithKey:(NSString *)taskKey;
+- (BOOL)cancelTask:(RCTask <RCTaskHandleDelegate> *)task;
 
 - (BOOL)record:(RCTask <RCTaskHandleDelegate> *)task;
 
-- (id <RCTaskHandleDelegate>)taskForKey:(NSString *)taskKey;
+- (id)taskForKey:(NSString *)taskKey;
 
 @end

@@ -149,11 +149,11 @@
 		6EDEB45918EA499300923C26 /* RCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDEB45818EA499300923C26 /* RCViewController.m */; };
 		6EDEB45B18EA499300923C26 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EDEB45A18EA499300923C26 /* Images.xcassets */; };
 		6EDEB4A618EA5D9700923C26 /* RCNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDEB4A518EA5D9700923C26 /* RCNewViewController.m */; };
+		6EE42A021984E98D005013B8 /* RCBotTaskTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE42A011984E98D005013B8 /* RCBotTaskTest.m */; };
 		6EE4BF6119668CDE00D9C734 /* SkyBlue.NUI.nss in Resources */ = {isa = PBXBuildFile; fileRef = 6EE4BF6019668CDE00D9C734 /* SkyBlue.NUI.nss */; };
 		6EED807819061CD000AF3DF0 /* RCJSONModelTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EED807719061CD000AF3DF0 /* RCJSONModelTest.m */; };
 		6EED807B19061CEA00AF3DF0 /* RCMTLModelTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EED807A19061CEA00AF3DF0 /* RCMTLModelTest.m */; };
 		6EED80801906497000AF3DF0 /* RCWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EED807F1906497000AF3DF0 /* RCWeather.m */; };
-		6EED8083190683A000AF3DF0 /* RCBotTaskTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EED8082190683A000AF3DF0 /* RCBotTaskTest.m */; };
 		6EFDD93E196401EA00D3756B /* RCPlayerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EFDD93D196401EA00D3756B /* RCPlayerHelper.m */; };
 		6EFDD93F196401EA00D3756B /* RCPlayerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EFDD93D196401EA00D3756B /* RCPlayerHelper.m */; };
 		96EB4D4D509A4B24BE5F588E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5581E9F0DD0A4528BCC62068 /* libPods.a */; };
@@ -344,6 +344,8 @@
 		6EDEB48418EA4A2500923C26 /* RCViewTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCViewTask.m; sourceTree = "<group>"; };
 		6EDEB4A418EA5D9700923C26 /* RCNewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCNewViewController.h; sourceTree = "<group>"; };
 		6EDEB4A518EA5D9700923C26 /* RCNewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCNewViewController.m; sourceTree = "<group>"; };
+		6EE42A001984E98D005013B8 /* RCBotTaskTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCBotTaskTest.h; sourceTree = "<group>"; };
+		6EE42A011984E98D005013B8 /* RCBotTaskTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCBotTaskTest.m; sourceTree = "<group>"; };
 		6EE4BF6019668CDE00D9C734 /* SkyBlue.NUI.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SkyBlue.NUI.nss; sourceTree = "<group>"; };
 		6EED807619061CD000AF3DF0 /* RCJSONModelTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCJSONModelTest.h; sourceTree = "<group>"; };
 		6EED807719061CD000AF3DF0 /* RCJSONModelTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCJSONModelTest.m; sourceTree = "<group>"; };
@@ -351,8 +353,6 @@
 		6EED807A19061CEA00AF3DF0 /* RCMTLModelTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCMTLModelTest.m; sourceTree = "<group>"; };
 		6EED807E1906497000AF3DF0 /* RCWeather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCWeather.h; sourceTree = "<group>"; };
 		6EED807F1906497000AF3DF0 /* RCWeather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCWeather.m; sourceTree = "<group>"; };
-		6EED8081190683A000AF3DF0 /* RCBotTaskTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCBotTaskTest.h; sourceTree = "<group>"; };
-		6EED8082190683A000AF3DF0 /* RCBotTaskTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCBotTaskTest.m; sourceTree = "<group>"; };
 		6EFDD93C196401EA00D3756B /* RCPlayerHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCPlayerHelper.h; sourceTree = "<group>"; };
 		6EFDD93D196401EA00D3756B /* RCPlayerHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCPlayerHelper.m; sourceTree = "<group>"; };
 		79EC0D202DD24712B890A49A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
@@ -529,8 +529,8 @@
 		6E5FCD9018FCDCCE0076D5C5 /* Bot */ = {
 			isa = PBXGroup;
 			children = (
-				6EED8081190683A000AF3DF0 /* RCBotTaskTest.h */,
-				6EED8082190683A000AF3DF0 /* RCBotTaskTest.m */,
+				6EE42A001984E98D005013B8 /* RCBotTaskTest.h */,
+				6EE42A011984E98D005013B8 /* RCBotTaskTest.m */,
 				6E5FCD9118FCDCEE0076D5C5 /* RCBotSpec.m */,
 			);
 			name = Bot;
@@ -1516,6 +1516,7 @@
 				6E5FCDB818FCDF1B0076D5C5 /* RCCryptoHelperSpec.m in Sources */,
 				6E5FCD9918FCDD570076D5C5 /* RCViewTaskSpec.m in Sources */,
 				6E3B698E190540EC002ABF12 /* RCCacheSpec.m in Sources */,
+				6EE42A021984E98D005013B8 /* RCBotTaskTest.m in Sources */,
 				6E5FCE5818FE21690076D5C5 /* MappingHelperSpec.m in Sources */,
 				6EAB91EB18FFCA020087C20E /* RCRecordSpec.m in Sources */,
 				6E5FCD9718FCDD490076D5C5 /* RCModelTaskSpec.m in Sources */,
@@ -1542,7 +1543,6 @@
 				6EAB91F118FFCA500087C20E /* RCViewOptionsSpec.m in Sources */,
 				6E4B541218FCCB0200DA270A /* RCVerifyHelperSpec.m in Sources */,
 				6E5FCD9218FCDCEE0076D5C5 /* RCBotSpec.m in Sources */,
-				6EED8083190683A000AF3DF0 /* RCBotTaskTest.m in Sources */,
 				6E5FCDB118FCDEC70076D5C5 /* NSManagedObject+RCStorageSpec.m in Sources */,
 				6EED807B19061CEA00AF3DF0 /* RCMTLModelTest.m in Sources */,
 			);

@@ -18,7 +18,7 @@
     return self;
 }
 
-- (BOOL)handleStart:(NSString *)taskKey {
+- (BOOL)start {
 
     return YES;
 }

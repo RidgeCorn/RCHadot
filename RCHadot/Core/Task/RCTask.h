@@ -13,7 +13,8 @@ typedef NS_ENUM(NSUInteger, RCTaskState) {
     RCTaskStateRecored,
     RCTaskStateStart,
     RCTaskStateCompletedWithSucceeded,
-    RCTaskStateCompletedWithError
+    RCTaskStateCompletedWithError,
+    RCTaskStateCanceled
 };
 
 @class RCTask;
@@ -21,11 +22,12 @@ typedef NS_ENUM(NSUInteger, RCTaskState) {
 @protocol RCTaskHandleDelegate <NSObject>
 // Return NO if the task can't be processed, or with error.
 @required
-- (BOOL)handleStart:(RCTask <RCTaskHandleDelegate> *)task;
+- (BOOL)start;
 
 @optional
-- (BOOL)handleRecord:(RCTask <RCTaskHandleDelegate> *)task;
-- (void)handleRemove:(RCTask <RCTaskHandleDelegate> *)task;
+- (BOOL)record;
+- (void)remove;
+- (BOOL)cancel;
 
 @end
 

@@ -17,6 +17,12 @@
 #import "RCDeviceHelper.h"
 #import "RCVerifyHelper.h"
 
+@interface RCModelTask ()
+
+@property (nonatomic) AFHTTPRequestOperation *currentHTTPRequestOperation;
+
+@end
+
 @implementation RCModelTask
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
@@ -83,15 +89,15 @@
     return self;
 }
 
-- (BOOL)handleStart:(RCModelTask *)task {
+- (BOOL)start {
     if (_runBlock) {
         _runBlock(self);
     } else {
         [RCDeviceHelper beginNetworkTask];
 
-        switch (task.type) {
+        switch (self.type) {
             case RCModelTaskTypeLoadFromServerWithGet: {
-                [HTTPClient getPath:_requestPath parameters:_options.requestParams success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                _currentHTTPRequestOperation = [HTTPClient getPath:_requestPath parameters:_options.requestParams success:^(AFHTTPRequestOperation *operation, id responseObject) {
                     NSError *err = nil;
                     
                     [self handleRequestOperation:operation withResponse:responseObject error:&err];
@@ -104,7 +110,7 @@
                 break;
                 
             case RCModelTaskTypeLoadFromServerWithPost: {
-                [HTTPClient postPath:_requestPath parameters:_options.requestParams success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                _currentHTTPRequestOperation = [HTTPClient postPath:_requestPath parameters:_options.requestParams success:^(AFHTTPRequestOperation *operation, id responseObject) {
                     NSError *err = nil;
                     
                     [self handleRequestOperation:operation withResponse:responseObject error:&err];
@@ -117,7 +123,7 @@
                 break;
                 
             case RCModelTaskTypeLoadFromServerWithPut: {
-                [HTTPClient putPath:_requestPath parameters:_options.requestParams success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                _currentHTTPRequestOperation = [HTTPClient putPath:_requestPath parameters:_options.requestParams success:^(AFHTTPRequestOperation *operation, id responseObject) {
                     NSError *err = nil;
                     
                     [self handleRequestOperation:operation withResponse:responseObject error:&err];
@@ -130,7 +136,7 @@
                 break;
                 
             case RCModelTaskTypeLoadFromServerWithDelete: {
-                [HTTPClient deletePath:_requestPath parameters:_options.requestParams success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                _currentHTTPRequestOperation = [HTTPClient deletePath:_requestPath parameters:_options.requestParams success:^(AFHTTPRequestOperation *operation, id responseObject) {
                     NSError *err = nil;
                     
                     [self handleRequestOperation:operation withResponse:responseObject error:&err];
@@ -152,6 +158,16 @@
                 break;
         }
     }
+    return YES;
+}
+
+- (BOOL)cancel {
+    [_currentHTTPRequestOperation cancel];
+
+    RCLog(@"Canceled current HTTP request operation:%@\n", _currentHTTPRequestOperation);
+    
+    [RCDeviceHelper endNetworkTask];
+
     return YES;
 }
 

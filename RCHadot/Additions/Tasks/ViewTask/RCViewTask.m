@@ -73,19 +73,19 @@
     return self;
 }
 
-- (BOOL)handleStart:(RCViewTask *)task {
+- (BOOL)start {
     if (_runBlock) {
         _runBlock(self);
     } else {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-        switch (task.type) {
+        switch (self.type) {
             case RCViewTaskTypeAddToView: {
                 SEL VIEW_INIT_SELECTOR = sel_registerName(_options.viewInitMethod ? [_options.viewInitMethod UTF8String ]: "initWithOptions:");
                 id view = nil;
                 
-                if (task.viewClass) {
-                    view = [(task.viewClass) alloc];
+                if (self.viewClass) {
+                    view = [(self.viewClass) alloc];
                 }
                 
                 if (self.refsObj && [view respondsToSelector:VIEW_INIT_SELECTOR]) {

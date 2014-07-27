@@ -26,12 +26,7 @@ PODS:
   - CocoaLumberjack/Extensions (1.9.1):
     - CocoaLumberjack/Core
   - JSONModel (0.13.0)
-  - Kiwi/ARC (2.2.4)
-  - Kiwi/NonARC (2.2.4)
-  - Kiwi/XCTest (2.2.4):
-    - Kiwi/ARC
-    - Kiwi/NonARC
-  - leveldb (1.17)
+  - Kiwi (2.3.0)
   - Lockbox (1.4.9)
   - Mantle (1.5):
     - Mantle/extobjc
@@ -39,8 +34,11 @@ PODS:
   - NUI (0.5.4):
     - NUIParse
   - NUIParse (1.2.1)
-  - Objective-LevelDB (3):
-    - leveldb
+  - Objective-LevelDB (2.1.0):
+    - Objective-LevelDB/leveldb
+    - Objective-LevelDB/leveldb
+  - Objective-LevelDB/leveldb (2.1.0):
+    - Objective-LevelDB/leveldb
   - Reachability (3.1.1)
   - ReactiveCocoa (2.3.1):
     - ReactiveCocoa/UI
@@ -56,31 +54,26 @@ DEPENDENCIES:
   - AFNetworking
   - CocoaLumberjack
   - JSONModel
-  - Kiwi/XCTest
+  - Kiwi
   - Lockbox
   - Mantle
   - NUI
-  - Objective-LevelDB (from `https://github.com/looping/Objective-LevelDB`)
+  - Objective-LevelDB
   - Reachability
   - ReactiveCocoa
   - Routable
   - TMCache
 
-EXTERNAL SOURCES:
-  Objective-LevelDB:
-    :git: https://github.com/looping/Objective-LevelDB
-
 SPEC CHECKSUMS:
   AFNetworking: 6d7b76aa5d04c8c37daad3eef4b7e3f2a7620da3
   CocoaLumberjack: 94accd5749f5c5d15134c8d50f34a973aed8ef69
   JSONModel: 62ea96b49ea18a8b91ef89c249dba291d8601d82
-  Kiwi: c73667f2b84cbf36f1a3830267c5a4ae8dcbd8ba
-  leveldb: 68d03d5801238009c9ff4bbb3a0cb164e91e6188
+  Kiwi: 54bece5b35564d9b8e03c608d926f1a22fcfc589
   Lockbox: cfe87dbbce6b5c6d7cfeefc3fe6594ef55919b11
   Mantle: c67a7e45e14196ed42b2a7cbb98ff6a9920e6b92
   NUI: ce8570dc3bb7983ffa8ae58ab0fc852d378b00cb
   NUIParse: f29eb240cfc9848b216c827884f37ae64abd19e4
-  Objective-LevelDB: adb4c20679f27c57a23cb5fb8d9281fa43da3e7e
+  Objective-LevelDB: 19fc204589601881402fd0f985f45e20ca92e60b
   Reachability: 8e9635e3cb4f98e7f825e51147f677ecc694d0e7
   ReactiveCocoa: dca75777b9d18990c8714a3a6f2149f29b4d1462
   Routable: 73102c8584082a25aeeea3a00bc2885afb9b9188

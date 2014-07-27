@@ -74,29 +74,29 @@
     return self;
 }
 
-- (BOOL)handleRecord:(RCControllerTask *)task {
+- (BOOL)record {
     if (_runBlock) {
-        [[Routable sharedRouter] map:task.key toCallback:^(NSDictionary *params) {
+        [[Routable sharedRouter] map:self.key toCallback:^(NSDictionary *params) {
             _runBlock(self);
         } withOptions:_options];
     } else {
         if (_options) {
-            [[Routable sharedRouter] map:task.key toController:task.controllerClass withOptions:_options];
+            [[Routable sharedRouter] map:self.key toController:self.controllerClass withOptions:_options];
             
             if (_options.shouldOpenAsRootViewController && self.refsObj) {
                 [[Routable sharedRouter] setNavigationController:self.refsObj];
             }
         } else {
-            [[Routable sharedRouter] map:task.key toController:task.controllerClass];
+            [[Routable sharedRouter] map:self.key toController:self.controllerClass];
         }
     }
     
     return YES;
 }
 
-- (BOOL)handleStart:(RCControllerTask *)task {
+- (BOOL)start {
     if (self.type == RCControllerTaskTypeOpen) {
-        [[Routable sharedRouter] open:task.key animated:_options.animatedWhenStart];
+        [[Routable sharedRouter] open:self.key animated:_options.animatedWhenStart];
     } else {
         [[Routable sharedRouter] pop:_options.animatedWhenStart];
     }
