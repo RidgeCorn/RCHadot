@@ -171,7 +171,8 @@
     return YES;
 }
 
-- (void)handleRequestOperation:(AFHTTPRequestOperation *)operation withResponse:(id)responseObject error:(NSError**)err {
+- (BOOL)handleRequestOperation:(AFHTTPRequestOperation *)operation withResponse:(id)responseObject error:(NSError**)err {
+    BOOL completed = YES;
     if (responseObject && !*err) {
         if (_options.toCacheKey) {
             NSDictionary *dict = [RCModelHelper parseData:responseObject error:err];
@@ -202,12 +203,20 @@
             }
         }
     } else {
+        NSString *errorString = @"NO Response Data!";
         if (responseObject) {
-            RCLog(@"HTTP Request Error!!!\nOperation: %@", operation.responseString);
-        } else {
-            RCLog(@"NO Response Data!");
+            errorString = [NSString stringWithFormat:@"HTTP Request Error!!!\nOperation: %@", operation.responseString];
         }
+        RCLog(@"%@", errorString);
+
+        *err = [NSError errorWithDomain:[NSStringFromClass(self.class) stringByAppendingString:@"_RCModelTaskError"] code:404 userInfo:@{NSLocalizedDescriptionKey: errorString}];
     }
+    
+    if (*err) {
+        completed = NO;
+    }
+    
+    return completed;
 }
 
 - (void)handleError:(NSError *)error {

@@ -51,6 +51,9 @@
         CFUUIDRef puuid = CFUUIDCreate( nil );
         CFStringRef uuidString = CFUUIDCreateString( nil, puuid );
         result = CFBridgingRelease(CFStringCreateCopy( NULL, uuidString));
+        
+        CFRelease(puuid);
+        CFRelease(uuidString);
     }
     
     return result;

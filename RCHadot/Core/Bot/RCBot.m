@@ -66,27 +66,28 @@ typedef NS_ENUM(NSUInteger, RCBotRunErrorLevel) {
 - (BOOL)startTask:(RCTask<RCTaskHandleDelegate> *)task {
     BOOL called = NO;
     
-    task.state = RCTaskStateStart;
-    
-    if ([task.delegate respondsToSelector:@selector(start)]) {
-        called = [task.delegate start];
-    } else {
-        [self _logRunErrorWithTask:task whenCallingMethod:@"start" withErrorLevel:RCBotRunErrorLevelThrowException];
+    if (task) {
+        if ( ![Bot taskForKey:task.key]) {
+            [Bot record:task];
+        }
+        
+        task.state = RCTaskStateStart;
+        
+        if ([task.delegate respondsToSelector:@selector(start)]) {
+            called = [task.delegate start];
+        } else {
+            [self _logRunErrorWithTask:task whenCallingMethod:@"start" withErrorLevel:RCBotRunErrorLevelThrowException];
+        }
     }
     
     return called;
 }
 
 - (BOOL)startTaskWithKey:(NSString *)taskKey removeAfterDone:(BOOL)removeAfterDone {
-    BOOL called = NO;
-    RCTask <RCTaskHandleDelegate> *task = [self taskForKey:taskKey];
+    BOOL called = [self startTask:[self taskForKey:taskKey]];
     
-    if (task) {
-        called = [self startTask:task];
-        
-        if (called && removeAfterDone) {
-            [self remove:task.key];
-        }
+    if (called && removeAfterDone) {
+        [self remove:taskKey];
     }
     
     return called;
@@ -99,14 +100,16 @@ typedef NS_ENUM(NSUInteger, RCBotRunErrorLevel) {
 - (BOOL)cancelTask:(RCTask<RCTaskHandleDelegate> *)task {
     BOOL called = NO;
     
-    if ([task.delegate respondsToSelector:@selector(cancel)]) {
-        called = [task.delegate cancel];
-        
-        task.state = RCTaskStateCanceled;
-    } else {
-        [self _logRunErrorWithTask:task whenCallingMethod:@"cancel" withErrorLevel:RCBotRunErrorLevelDebugLog];
+    if (task) {
+        if ([task.delegate respondsToSelector:@selector(cancel)]) {
+            called = [task.delegate cancel];
+            
+            task.state = RCTaskStateCanceled;
+        } else {
+            [self _logRunErrorWithTask:task whenCallingMethod:@"cancel" withErrorLevel:RCBotRunErrorLevelDebugLog];
+        }
     }
-    
+
     return called;
 }
 
@@ -116,18 +119,21 @@ typedef NS_ENUM(NSUInteger, RCBotRunErrorLevel) {
 
 - (BOOL)record:(RCTask <RCTaskHandleDelegate> *)task {
     BOOL record = NO;
-    NSString *taskKey = task.key;
     
-    if (taskKey && !([_tasks objectForKey:taskKey] && [[_tasks objectForKey:taskKey] isEqual:task])) {
-        [_tasks setObject:task forKey:taskKey];
+    if (task) {
+        NSString *taskKey = task.key;
         
-        if ([task.delegate respondsToSelector:@selector(record)]) {
-            record = [task.delegate record];
-        } else {
-            [self _logRunErrorWithTask:task whenCallingMethod:@"record" withErrorLevel:RCBotRunErrorLevelDebugLog];
+        if (taskKey && !([_tasks objectForKey:taskKey] && [[_tasks objectForKey:taskKey] isEqual:task])) {
+            [_tasks setObject:task forKey:taskKey];
+            
+            if ([task.delegate respondsToSelector:@selector(record)]) {
+                record = [task.delegate record];
+            } else {
+                [self _logRunErrorWithTask:task whenCallingMethod:@"record" withErrorLevel:RCBotRunErrorLevelDebugLog];
+            }
+            
+            task.state = RCTaskStateRecored;
         }
-        
-        task.state = RCTaskStateRecored;
     }
     
     return record;

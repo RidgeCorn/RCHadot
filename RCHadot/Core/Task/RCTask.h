@@ -34,6 +34,8 @@ typedef NS_ENUM(NSUInteger, RCTaskState) {
 typedef void (^RCTaskBlock)(id <RCTaskHandleDelegate> task_b);
 
 @interface RCTask : RCObject <NSCopying, NSCoding> {
+    
+@public
     RCTaskBlock _stateBlock;
     RCTaskBlock _runBlock;
 }

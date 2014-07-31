@@ -57,7 +57,7 @@
 }
 
 - (id)initWithKey:(NSString *)key Type:(RCControllerTaskType)type navigationController:(UINavigationController *)navigationController controllerClass:(__unsafe_unretained Class)controllerClass options:(RCControllerTaskOptions *)options {
-    if ([self initWithKey:key refsByObject:navigationController]) {
+    if (self = [self initWithKey:key refsByObject:navigationController]) {
         _type = type;
         _controllerClass = controllerClass;
         _options = options;
