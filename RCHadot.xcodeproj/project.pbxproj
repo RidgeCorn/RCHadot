@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		26B00369A02F45AE8ED0F098 /* libPods-RCHadotTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 218952343D664F4D844C8275 /* libPods-RCHadotTests.a */; };
+		6E157EEF199453B90046A202 /* NSDate+RCDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E157EEE199453B90046A202 /* NSDate+RCDate.m */; };
+		6E157EF0199453B90046A202 /* NSDate+RCDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E157EEE199453B90046A202 /* NSDate+RCDate.m */; };
 		6E3B698E190540EC002ABF12 /* RCCacheSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3B698D190540EC002ABF12 /* RCCacheSpec.m */; };
 		6E3B698F19054954002ABF12 /* RCCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BF6B519051FB300DED4E2 /* RCCache.m */; };
 		6E4B53EE18FCCA1100DA270A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDEB44218EA499300923C26 /* Foundation.framework */; };
@@ -193,6 +195,8 @@
 		218952343D664F4D844C8275 /* libPods-RCHadotTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RCHadotTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4D567C2E844AFC8089319D /* libPods-RCHadotExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RCHadotExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5581E9F0DD0A4528BCC62068 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E157EED199453B90046A202 /* NSDate+RCDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+RCDate.h"; sourceTree = "<group>"; };
+		6E157EEE199453B90046A202 /* NSDate+RCDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+RCDate.m"; sourceTree = "<group>"; };
 		6E3B69821905309E002ABF12 /* RCCategories.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCCategories.h; sourceTree = "<group>"; };
 		6E3B698319053114002ABF12 /* RCDefaultTasks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCDefaultTasks.h; sourceTree = "<group>"; };
 		6E3B69841905315E002ABF12 /* RCDefaultTaskOptions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCDefaultTaskOptions.h; sourceTree = "<group>"; };
@@ -406,6 +410,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6E157EEC199453B90046A202 /* NSDate */ = {
+			isa = PBXGroup;
+			children = (
+				6E157EED199453B90046A202 /* NSDate+RCDate.h */,
+				6E157EEE199453B90046A202 /* NSDate+RCDate.m */,
+			);
+			path = NSDate;
+			sourceTree = "<group>";
+		};
 		6E3B698519053B88002ABF12 /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -871,6 +884,7 @@
 		6E9BF6AF19051C7800DED4E2 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				6E157EEC199453B90046A202 /* NSDate */,
 				6E6155F019591EAE00EC7915 /* UIView */,
 				6E5FCE6218FE315D0076D5C5 /* NSDictionary */,
 				6E610F6F18FC132400247441 /* UIImage */,
@@ -1468,6 +1482,7 @@
 				6E5FCD7918FCD4150076D5C5 /* UIColor+RCColor.m in Sources */,
 				6E5FCD7418FCD3FA0076D5C5 /* RCPListHelper.m in Sources */,
 				6E5FCD8518FCD44C0076D5C5 /* RCBot.m in Sources */,
+				6E157EF0199453B90046A202 /* NSDate+RCDate.m in Sources */,
 				6E5FCD7818FCD40F0076D5C5 /* UIImage+RCImage.m in Sources */,
 				6E5FCD7B18FCD41E0076D5C5 /* NSString+RCStorage.m in Sources */,
 				6E5FCD7F18FCD4300076D5C5 /* RCHTTPClient.m in Sources */,
@@ -1591,6 +1606,7 @@
 				6EAB91B918FED6400087C20E /* RCControllerTask.m in Sources */,
 				6E806AEC19079E71005ED594 /* RCLogger.m in Sources */,
 				6EAB91BB18FED6400087C20E /* RCTask.m in Sources */,
+				6E157EEF199453B90046A202 /* NSDate+RCDate.m in Sources */,
 				6EAB91BD18FED6400087C20E /* RCBot.m in Sources */,
 				6EAB918018FE6D5C0087C20E /* RCViewRecord.m in Sources */,
 				6EAB918318FE6D750087C20E /* RCControllerRecord.m in Sources */,
