@@ -26,4 +26,11 @@
     }
 }
 
+
+#pragma mark - Remove subviews
+- (void)removeAllSubviews {
+    for (id view in self.subviews) {
+        [view removeFromSuperview];
+    }
+}
 @end

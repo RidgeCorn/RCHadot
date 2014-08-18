@@ -11,5 +11,6 @@
 @interface UIView (RCView)
 
 - (UIViewController *) firstAvailableUIViewController;
+- (void)removeAllSubviews;
 
 @end
