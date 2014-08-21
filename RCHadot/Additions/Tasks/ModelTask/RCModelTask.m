@@ -14,8 +14,7 @@
 #import "RCLogger.h"
 #import "RCClassHelper.h"
 #import "NSString+RCStorage.h"
-#import "RCDeviceHelper.h"
-#import "RCVerifyHelper.h"
+#import <UIApplication+RCApplication.h>
 
 @interface RCModelTask ()
 
@@ -93,7 +92,7 @@
     if (_runBlock) {
         _runBlock(self);
     } else {
-        [RCDeviceHelper beginNetworkTask];
+        [UIApplication beginNetworkTask];
 
         switch (self.type) {
             case RCModelTaskTypeLoadFromServerWithGet: {
@@ -149,7 +148,7 @@
                 break;
                 
             case RCModelTaskTypeLoadFromCache: {
-                [RCDeviceHelper endNetworkTask];
+                [UIApplication endNetworkTask];
 
             }
                 break;
@@ -166,7 +165,7 @@
 
     RCLog(@"Canceled current HTTP request operation:%@\n", _currentHTTPRequestOperation);
     
-    [RCDeviceHelper endNetworkTask];
+    [UIApplication endNetworkTask];
 
     return YES;
 }
@@ -228,7 +227,7 @@
         self.state = RCTaskStateCompletedWithSucceeded;
     }
     
-    [RCDeviceHelper endNetworkTask];
+    [UIApplication endNetworkTask];
 }
 
 #pragma mark - Params

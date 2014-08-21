@@ -10,6 +10,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   
+  s.dependency 'RCKit'
   s.dependency 'ReactiveCocoa'
   s.dependency 'Routable'
   s.dependency 'AFNetworking'

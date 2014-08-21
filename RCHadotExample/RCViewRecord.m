@@ -8,6 +8,7 @@
 
 #import "RCViewRecord.h"
 #import "RCWeatherView.h"
+#import <UIScreen+RCScreen.h>
 
 @implementation RCViewRecord
 
@@ -26,7 +27,7 @@
                        task.options.viewTags = @[@101];
                        task.options.styleSheetsKey = @"View";
                        
-                       task.options.frame = CGRectMake(0, 0, [RCDeviceHelper fullScreenWidth], [RCDeviceHelper fullScreenHeight]);
+                       task.options.frame = CGRectMake(0, 0, [UIScreen fullScreenWidth], [UIScreen fullScreenHeight]);
                        task.options.bindModelTaskKey = kRCModelLoadWeather;
                        )];
 }

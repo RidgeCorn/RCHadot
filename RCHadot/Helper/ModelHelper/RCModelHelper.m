@@ -11,8 +11,8 @@
 #import <JSONModel.h>
 #import <Mantle.h>
 #import "RCLogger.h"
-#import "RCVerifyHelper.h"
 #import "NSString+RCStorage.h"
+#import <NSObject+RCVerify.h>
 
 @interface RCModelHelper ()
 
@@ -45,7 +45,7 @@
 + (NSArray *)modelsByClass:(Class)cls initWithArray:(NSArray *)arr error:(NSError **)err {
     NSMutableArray *models = [@[] mutableCopy];
     
-    if ( ![RCVerifyHelper isDataNil:arr] && [arr isKindOfClass:[NSArray class]]) {
+    if ( ![NSObject isDataNil:arr] && [arr isKindOfClass:[NSArray class]]) {
         for (NSDictionary *modelDict in arr) {
             id model = [RCModelHelper modelByClass:cls initWithDictionary:modelDict error:err];
             

@@ -7,7 +7,7 @@
 //
 
 #import "RCMapLocationHelper.h"
-#import "RCVerifyHelper.h"
+#import <NSObject+RCVerify.h>
 
 #define X_PI M_PI * 50 / 3.0f
 
@@ -91,7 +91,7 @@
 
 + (BOOL)isLocationCoordinate:(CLLocationCoordinate2D)coordinate1 sameAs:(CLLocationCoordinate2D)coordinate2 {
     BOOL isSameLocationCoordinate = NO;
-    if ([RCVerifyHelper isFloatZero:(coordinate1.latitude - coordinate2.latitude)] && [RCVerifyHelper isFloatZero:(coordinate1.longitude - coordinate2.longitude)]) {
+    if ([NSObject isFloatZero:(coordinate1.latitude - coordinate2.latitude)] && [NSObject isFloatZero:(coordinate1.longitude - coordinate2.longitude)]) {
         isSameLocationCoordinate = YES;
     }
     return isSameLocationCoordinate;

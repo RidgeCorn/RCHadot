@@ -6,9 +6,9 @@
 //  Copyright (c) 2014    RidgeCorn. All rights reserved.
 //
 
-#import "RCAppConfigHelper.h"
 #import "RCHTTPClient.h"
 #import "RCObject.h"
+#import <NSString+RCAppConfig.h>
 
 @implementation RCHTTPClient
 
@@ -17,8 +17,8 @@
     static dispatch_once_t onceToken;
     
     dispatch_once(&onceToken, ^{
-        _sharedClient = [[RCHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:[RCAppConfigHelper apiBaseHTTPURLString]]];
-        [_sharedClient setUserAgent:[RCAppConfigHelper userAgent]];
+        _sharedClient = [[RCHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:[NSString apiBaseHTTPURLString]]];
+        [_sharedClient setUserAgent:[NSString userAgent]];
     });
     
     return _sharedClient;

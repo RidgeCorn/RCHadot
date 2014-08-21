@@ -9,6 +9,7 @@
 #import "RCNewViewController.h"
 #import "RCViewRecord.h"
 #import "RCStyleSheetsHelper.h"
+#import <RCLogger.h>
 
 @interface RCNewViewController ()
 

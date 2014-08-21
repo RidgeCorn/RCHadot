@@ -1,12 +1,12 @@
 platform :ios,'6.0'
 
+pod 'RCKit'
+
 pod 'ReactiveCocoa'
 pod 'Routable'
 pod 'AFNetworking'
-pod 'CocoaLumberjack'
 pod 'Objective-LevelDB'
 pod 'TMCache'
-pod 'Reachability'
 pod 'NUI'
 pod 'JSONModel'
 pod 'Mantle'

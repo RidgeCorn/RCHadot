@@ -11,13 +11,17 @@
 #endif
 
 #ifdef __OBJC__
+    #define RC_LOGGER_ENABLE 0
+
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import <ReactiveCocoa.h>
     #import "RCHadot.h"
+
     static NSString * const kRCControllerPop = @"kRCControllerPop";
     static NSString * const kRCViewController = @"kRCViewController";
     static NSString * const kRCNewViewController = @"kRCNewViewController";
     static NSString * const kRCModelLoadWeather = @"kRCModelLoadWeather";
     static NSString * const kRCWeatherView = @"kRCWeatherView";
+
 #endif

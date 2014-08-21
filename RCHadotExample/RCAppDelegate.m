@@ -11,7 +11,7 @@
 #import "RCViewRecord.h"
 #import "RCControllerRecord.h"
 #import "RCStyleSheetsHelper.h"
-#import "RCAppConfigHelper.h"
+#import <NSString+RCAppConfig.h>
 
 @implementation RCAppDelegate
 
@@ -19,7 +19,7 @@
 {
     [RCHTTPClient sharedClient].responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     
-    [RCStyleSheetsHelper initWithThemeKey:[RCAppConfigHelper applicationThemeKey]];
+    [RCStyleSheetsHelper initWithThemeKey:[NSString applicationThemeKey]];
 
     [RCModelRecord loadRecordByObject:nil];
     [RCControllerRecord loadRecordByObject:nil];
