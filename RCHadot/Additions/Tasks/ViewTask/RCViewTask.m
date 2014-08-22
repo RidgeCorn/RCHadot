@@ -8,7 +8,6 @@
 
 #import "RCViewTask.h"
 #import "RCBot.h"
-#import "RCMappingHelper.h"
 #import "RCDisplayHelper.h"
 #import "RCStyleSheetsHelper.h"
 #import "RCModelHelper.h"
@@ -103,7 +102,7 @@
                     
                     RCModelTask *modelTask = (RCModelTask *)[Bot taskForKey:_options.bindModelTaskKey];
                     
-                    NSArray *allModelKeys = [modelTask.options.modelsMapping allKeys];
+                    NSArray *allModelKeys = [modelTask.modelsMapping allKeys];
                     NSMutableDictionary *modelsDict = [@{} mutableCopy];
                     
                     for (NSString *modelKey in allModelKeys) {
@@ -121,8 +120,8 @@
                     if (_options.styleSheetsKey) {
                         [view setNuiClass:_options.styleSheetsKey];
                     }
-                    
-                    [RCDisplayHelper displayData:[RCCacheHelper dictInCacheWithCachePaths:_options.cacheValuePaths] inView:view withMapping:[RCMappingHelper collectionForKey:_options.mappingCollectionKey]];
+#warning data
+//                    [RCDisplayHelper displayData:[RCCacheHelper dictInCacheWithCachePaths:_options.cacheValuePaths] inView:view withMapping:[RCMappingHelper collectionForKey:_options.mappingCollectionKey]];
                 }
             }
                 break;

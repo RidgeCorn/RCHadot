@@ -70,7 +70,7 @@ typedef NS_ENUM(NSUInteger, RCBotRunErrorLevel) {
         if ( ![Bot taskForKey:task.key]) {
             [Bot record:task];
         }
-        
+                
         task.state = RCTaskStateStart;
         
         if ([task.delegate respondsToSelector:@selector(start)]) {

@@ -6,6 +6,5 @@
 //  Copyright (c) 2014    RidgeCorn. All rights reserved.
 //
 
-#import "RCModelTaskOptions.h"
 #import "RCViewTaskOptions.h"
 #import "RCControllerTaskOptions.h"

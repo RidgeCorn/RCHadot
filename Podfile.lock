@@ -29,11 +29,6 @@ PODS:
   - NUI (0.5.4):
     - NUIParse
   - NUIParse (1.2.1)
-  - Objective-LevelDB (2.1.0):
-    - Objective-LevelDB/leveldb
-    - Objective-LevelDB/leveldb
-  - Objective-LevelDB/leveldb (2.1.0):
-    - Objective-LevelDB/leveldb
   - RCKit (0.1):
     - Reachability
   - Reachability (3.1.1)
@@ -45,7 +40,6 @@ PODS:
   - ReactiveCocoa/UI (2.3.1):
     - ReactiveCocoa/Core
   - Routable (0.1.1)
-  - TMCache (1.2.1)
 
 DEPENDENCIES:
   - AFNetworking
@@ -54,11 +48,9 @@ DEPENDENCIES:
   - Lockbox
   - Mantle
   - NUI
-  - Objective-LevelDB
   - RCKit
   - ReactiveCocoa
   - Routable
-  - TMCache
 
 SPEC CHECKSUMS:
   AFNetworking: 6d7b76aa5d04c8c37daad3eef4b7e3f2a7620da3
@@ -68,11 +60,9 @@ SPEC CHECKSUMS:
   Mantle: c67a7e45e14196ed42b2a7cbb98ff6a9920e6b92
   NUI: ce8570dc3bb7983ffa8ae58ab0fc852d378b00cb
   NUIParse: f29eb240cfc9848b216c827884f37ae64abd19e4
-  Objective-LevelDB: 19fc204589601881402fd0f985f45e20ca92e60b
   RCKit: cfff885d7e653379aeb0c25aa2c34bacc6a26869
   Reachability: 8e9635e3cb4f98e7f825e51147f677ecc694d0e7
   ReactiveCocoa: dca75777b9d18990c8714a3a6f2149f29b4d1462
   Routable: e87e3b3ce4c71442d12cb6fd5fb60652b1e8b026
-  TMCache: ed936c5b4684e4ea15113d46fba8829ed3baadad
 
 COCOAPODS: 0.33.1

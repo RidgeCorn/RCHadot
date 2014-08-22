@@ -7,7 +7,6 @@
 //
 
 #import "RCTask.h"
-#import "RCModelTaskOptions.h"
 
 typedef NS_ENUM(NSUInteger, RCModelTaskType) {
     RCModelTaskTypeLoadFromServerWithGet,
@@ -21,9 +20,13 @@ typedef NS_ENUM(NSUInteger, RCModelTaskType) {
 
 @property (nonatomic) RCModelTaskType type;
 @property (nonatomic) NSString *requestPath;
-@property (nonatomic) RCModelTaskOptions *options;
+@property (nonatomic) NSMutableDictionary *requestParams;
+@property (nonatomic) NSMutableDictionary *modelsMapping;
+@property (nonatomic) id responseData;
+@property (nonatomic) NSDictionary *responseJSONDict;
+@property (nonatomic) NSMutableDictionary *responseModels;
 
-- (id)initWithKey:(id)key type:(RCModelTaskType)type requestPath:(NSString *)requestPath options:(RCModelTaskOptions *)options;
+- (id)initWithKey:(id)key type:(RCModelTaskType)type requestPath:(NSString *)requestPath;
 
 - (void)setParam:(id)value withKey:(id)key;
 - (id)paramWithKey:(id)key;

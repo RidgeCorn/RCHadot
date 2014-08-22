@@ -5,7 +5,7 @@
 //  Created by Looping on 14-3-30.
 //  Copyright (c) 2014    RidgeCorn. All rights reserved.
 //
-
+#import <RCKit.h>
 #import "RCCore.h"
 #import "RCAdditions.h"
 #import "RCHelpers.h"

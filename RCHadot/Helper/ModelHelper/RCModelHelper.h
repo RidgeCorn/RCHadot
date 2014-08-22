@@ -10,9 +10,6 @@
 
 @interface RCModelHelper : RCObject
 
-+ (void)cacheModel:(id)model forKey:(NSString *)key;
-+ (id)modelForCacheKey:(NSString *)key;
-
 + (id)modelByClass:(Class)cls initWithDictionary:(NSDictionary *)dict error:(NSError**)err;
 + (NSArray *)modelsByClass:(Class)cls initWithArray:(NSArray *)arr error:(NSError**)err;
 

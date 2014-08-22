@@ -7,7 +7,6 @@
 //
 
 #import "RCModelHelper.h"
-#import "RCCacheHelper.h"
 #import <JSONModel.h>
 #import <Mantle.h>
 #import "RCLogger.h"
@@ -19,14 +18,6 @@
 @end
 
 @implementation RCModelHelper
-
-+ (void)cacheModel:(id)model forKey:(NSString *)key {
-    [RCCacheHelper setObject:model forKey:key];
-}
-
-+ (id)modelForCacheKey:(NSString *)key {
-    return [RCCacheHelper objectForKey:key];
-}
 
 + (id)modelByClass:(Class)cls initWithDictionary:(NSDictionary *)dict error:(NSError**)err {
     id model;

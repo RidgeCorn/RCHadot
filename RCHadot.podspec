@@ -14,12 +14,9 @@ Pod::Spec.new do |s|
   s.dependency 'ReactiveCocoa'
   s.dependency 'Routable'
   s.dependency 'AFNetworking'
-  s.dependency 'Reachability'
-  s.dependency 'TMCache'
   s.dependency 'NUI'
   s.dependency 'Mantle'
   s.dependency 'JSONModel'
   s.dependency 'Lockbox'
-  s.dependency 'Objective-LevelDB'
 
 end

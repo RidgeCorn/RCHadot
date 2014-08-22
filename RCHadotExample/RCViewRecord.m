@@ -18,7 +18,8 @@
     [mapping setObject:@"cityLabel.text" forKey:@"city"];
     [mapping setObject:@"tempLabel.text" forKey:@"temp"];
     [mapping setObject:@"timeLabel.text" forKey:@"time"];
-    [RCMappingHelper addCollection:mapping withKey:kRCWeatherView];
+#warning data
+//    [RCMappingHelper addCollection:mapping withKey:kRCWeatherView];
 
     [Bot record:blockc(task,                       
                        RCViewTask *task = [[RCViewTask alloc] initWithKey:kRCWeatherView Type:RCViewTaskTypeAddToView refsView:object viewClass:[RCWeatherView class] options:[RCViewTaskOptions new]];
