@@ -19,7 +19,7 @@
 }
 
 - (BOOL)start {
-
+    self.state = RCTaskStateCompletedWithSucceeded;
     return YES;
 }
 

@@ -43,14 +43,15 @@
 }
 
 - (instancetype)initWithCoder:(NSCoder *)decoder {
-    NSString *key = [decoder decodeObjectForKey:@"taskKey"];
+    self.key = [decoder decodeObjectForKey:@"key"];
+    self.state = [[decoder decodeObjectForKey:@"state"] integerValue];
     
-    self = [self initWithKey:key];
     return self;
 }
 
 - (void)encodeWithCoder:(NSCoder *)encoder {
-    [encoder encodeObject:self.key forKey:@"taskKey"];
+    [encoder encodeObject:_key forKey:@"key"];
+    [encoder encodeObject:@(_state) forKey:@"state"];
 }
 
 - (void)handleStateBlock:(RCTaskBlock)stateBlock {

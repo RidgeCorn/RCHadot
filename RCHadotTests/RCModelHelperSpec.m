@@ -16,49 +16,6 @@
 SPEC_BEGIN(RCModelHelperSpec)
 
 describe(@"RCModelHelper", ^{
-    context(@"when test setModelObject 'NSString' forKey 'modelCache'", ^{
-        it(@"should be done", ^{
-            NSString *model = @"modelCache";
-            
-            [RCModelHelper cacheModel:model forKey:model];
-            
-            [[[RCModelHelper modelForCacheKey:model] should] equal:model];
-        });
-    });
-    
-    context(@"when test setModelObject 'NSArray' forKey 'modelCache'", ^{
-        it(@"should be done", ^{
-            NSArray *model = @[];
-            NSString *key = @"modelCache";
-            
-            [RCModelHelper cacheModel:model forKey:key];
-            
-            [[[RCModelHelper modelForCacheKey:key] should] equal:model];
-        });
-    });
-    
-    context(@"when test setModelObject 'RCJSONModelTest' forKey 'modelCache'", ^{
-        it(@"should be done", ^{
-            RCJSONModelTest *model = [[RCJSONModelTest alloc] init];
-            NSString *key = @"modelCache";
-            
-            [RCModelHelper cacheModel:model forKey:key];
-            
-            [[[RCModelHelper modelForCacheKey:key] should] equal:model];
-        });
-    });
-    
-    context(@"when test setModelObject 'RCMTLModelTest' forKey 'modelCache'", ^{
-        it(@"should be done", ^{
-            RCMTLModelTest *model = [[RCMTLModelTest alloc] init];
-            NSString *key = @"modelCache";
-            
-            [RCModelHelper cacheModel:model forKey:key];
-            
-            [[[RCModelHelper modelForCacheKey:key] should] equal:model];
-        });
-    });
-    
     context(@"when test modelClass 'RCJSONModelTest' initWithDictionary '@{@'name': @'looping'}' err", ^{
         it(@"should be done", ^{
             NSString *username = @"looping";

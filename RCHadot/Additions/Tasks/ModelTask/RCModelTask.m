@@ -11,7 +11,6 @@
 #import "RCModelHelper.h"
 #import "RCBot.h"
 #import "RCLogger.h"
-#import "RCClassHelper.h"
 #import "NSString+RCStorage.h"
 #import <UIApplication+RCApplication.h>
 
@@ -24,17 +23,30 @@
 @implementation RCModelTask
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
-    NSString *key = [aDecoder decodeObjectForKey:@"key"];
-    
-    if(self = [self initWithKey:key]) {
+    if(self = [super initWithCoder:aDecoder]) {
+        _type = [[aDecoder decodeObjectForKey:@"type"] integerValue];
+        _requestPath = [aDecoder decodeObjectForKey:@"requestPath"];
+        _requestParams = [aDecoder decodeObjectForKey:@"requestParams"];
+        _modelsMapping = [aDecoder decodeObjectForKey:@"modelsMapping"];
+        _responseModels = [aDecoder decodeObjectForKey:@"responseData"];
+        _responseJSONDict = [aDecoder decodeObjectForKey:@"responseJSONDict"];
+        _responseModels = [aDecoder decodeObjectForKey:@"responseModels"];
         
+        [self commonConfig];
     }
     
     return self;
 }
 
 - (void)encodeWithCoder:(NSCoder *)aCoder {
-    [aCoder encodeObject:self.key forKey:@"key"];
+    [super encodeWithCoder:aCoder];
+    [aCoder encodeObject:@(_type) forKey:@"type"];
+    [aCoder encodeObject:_requestPath forKey:@"requestPath"];
+    [aCoder encodeObject:_requestParams forKey:@"requestParams"];
+    [aCoder encodeObject:_modelsMapping forKey:@"modelsMapping"];
+    [aCoder encodeObject:_responseData forKey:@"responseData"];
+    [aCoder encodeObject:_responseJSONDict forKey:@"responseJSONDict"];
+    [aCoder encodeObject:_responseModels forKey:@"responseModels"];
 }
 
 - (id)initWithKey:(NSString *)key refsByObject:(id)object {
@@ -162,11 +174,14 @@
 
 - (BOOL)cancel {
 #warning TODO cancel _runBlock
-    [_currentHTTPRequestOperation cancel];
-
-    RCLog(@"Canceled current HTTP request operation:%@\n", _currentHTTPRequestOperation);
     
-    [UIApplication endNetworkTask];
+    if (_currentHTTPRequestOperation.isExecuting) {
+        [_currentHTTPRequestOperation cancel];
+        
+        RCLog(@"Canceled current HTTP request operation:%@\n", _currentHTTPRequestOperation);
+        
+        [UIApplication endNetworkTask];
+    }
 
     return YES;
 }
@@ -180,7 +195,7 @@
         if (_modelsMapping && !*err) {
             NSArray *allModelKeys = [_modelsMapping allKeys];
             for (NSString *modelKey in allModelKeys) {
-                Class modelClass = ((RCClassHelper *)[_modelsMapping objectForKey:modelKey]).cls;
+                Class modelClass = NSClassFromString([_modelsMapping objectForKey:modelKey]);
                 NSString *key = [modelKey addKeyPrefixForClass:self.refsObj ? [self.refsObj class] : modelClass];
                 
                 id jsonValue = nil;
@@ -248,17 +263,15 @@
 
 #pragma mark - Model Class
 - (void)setModelClass:(Class)cls withResponsKey:(NSString *)key {
-    [_modelsMapping setObject:[RCClassHelper objectFromClass:cls] forKey:key];
+    [_modelsMapping setObject:NSStringFromClass(cls) forKey:key];
 }
 
 - (Class)modelClassWithKey:(NSString *)key {
-    RCClassHelper *helperClass = [_modelsMapping objectForKey:key];
-    
-    return helperClass.cls;
+    return NSClassFromString([_modelsMapping objectForKey:key]);
 }
 
 - (id)modelWithKey:(id)key {
-    key = [key addKeyPrefixForClass:self.refsObj ? [self.refsObj class] : ((RCClassHelper *)[_modelsMapping objectForKey:key]).cls];
+    key = [key addKeyPrefixForClass:self.refsObj ? [self.refsObj class] : NSClassFromString([_modelsMapping objectForKey:key])];
     
     return [_responseModels objectForKey:key];
 }

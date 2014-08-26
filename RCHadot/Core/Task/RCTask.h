@@ -10,7 +10,7 @@
 #import <ReactiveCocoa.h>
 
 typedef NS_ENUM(NSUInteger, RCTaskState) {
-    RCTaskStateRecored,
+    RCTaskStateRecored = 0,
     RCTaskStateStart,
     RCTaskStateCompletedWithSucceeded,
     RCTaskStateCompletedWithError,

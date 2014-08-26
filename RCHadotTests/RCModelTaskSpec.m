@@ -19,9 +19,8 @@ describe(@"RCModelTask", ^{
             NSString *key = @"key";
             RCModelTaskType type = RCModelTaskTypeLoadFromServerWithGet;
             NSString *requestPath = @"path";
-            RCModelTaskOptions *options = [[RCModelTaskOptions alloc] init];
             
-            RCModelTask *task = [[RCModelTask alloc] initWithKey:key type:type requestPath:requestPath options:options];
+            RCModelTask *task = [[RCModelTask alloc] initWithKey:key type:type requestPath:requestPath];
 
             [[task should] beNonNil];
             [[task.key should] equal:key];
@@ -33,16 +32,15 @@ describe(@"RCModelTask", ^{
             NSString *key = @"key";
             RCModelTaskType type = RCModelTaskTypeLoadFromServerWithGet;
             NSString *requestPath = @"path";
-            RCModelTaskOptions *options = [[RCModelTaskOptions alloc] init];
             
-            RCModelTask *task = [[RCModelTask alloc] initWithKey:key type:type requestPath:requestPath options:options];
+            RCModelTask *task = [[RCModelTask alloc] initWithKey:key type:type requestPath:requestPath];
 
             NSString *prama = @"prama";
             NSString *pramaKey = @"key";
             [task setParam:prama withKey:pramaKey];
             
             [[[task paramWithKey:pramaKey] should] equal:prama];
-            [[[task.options.requestParams objectForKey:pramaKey] should] equal:prama];
+            [[[task.requestParams objectForKey:pramaKey] should] equal:prama];
         });
     });
     
@@ -51,21 +49,20 @@ describe(@"RCModelTask", ^{
             NSString *key = @"key";
             RCModelTaskType type = RCModelTaskTypeLoadFromServerWithGet;
             NSString *requestPath = @"path";
-            RCModelTaskOptions *options = [[RCModelTaskOptions alloc] init];
             
-            RCModelTask *task = [[RCModelTask alloc] initWithKey:key type:type requestPath:requestPath options:options];
+            RCModelTask *task = [[RCModelTask alloc] initWithKey:key type:type requestPath:requestPath];
             
             NSString *prama = @"prama";
             NSString *pramaKey = @"key";
             [task setParam:prama withKey:pramaKey];
             
             [[[task paramWithKey:pramaKey] should] equal:prama];
-            [[[task.options.requestParams objectForKey:pramaKey] should] equal:prama];
+            [[[task.requestParams objectForKey:pramaKey] should] equal:prama];
             
             [task removeParamWithKey:key];
             
             [[[task paramWithKey:pramaKey] should] beNil];
-            [[[task.options.requestParams objectForKey:pramaKey] should] beNil];
+            [[[task.requestParams objectForKey:pramaKey] should] beNil];
         });
     });
     
@@ -74,23 +71,22 @@ describe(@"RCModelTask", ^{
             NSString *key = @"key";
             RCModelTaskType type = RCModelTaskTypeLoadFromServerWithGet;
             NSString *requestPath = @"path";
-            RCModelTaskOptions *options = [[RCModelTaskOptions alloc] init];
             
-            RCModelTask *task = [[RCModelTask alloc] initWithKey:key type:type requestPath:requestPath options:options];
+            RCModelTask *task = [[RCModelTask alloc] initWithKey:key type:type requestPath:requestPath];
 
             NSString *prama = @"prama";
             NSString *pramaKey = @"key";
             [task setParam:prama withKey:pramaKey];
             
             [[[task paramWithKey:pramaKey] should] beNonNil];
-            [[[task.options.requestParams objectForKey:pramaKey] should] beNonNil];
-            [[@([task.options.requestParams count]) should] equal:@(1)];
+            [[[task.requestParams objectForKey:pramaKey] should] beNonNil];
+            [[@([task.requestParams count]) should] equal:@(1)];
 
             [task resetParams];
             
             [[[task paramWithKey:pramaKey] should] beNil];
-            [[[task.options.requestParams objectForKey:pramaKey] should] beNil];
-            [[@([task.options.requestParams count]) should] equal:@(0)];
+            [[[task.requestParams objectForKey:pramaKey] should] beNil];
+            [[@([task.requestParams count]) should] equal:@(0)];
         });
     });
     
@@ -99,9 +95,8 @@ describe(@"RCModelTask", ^{
             NSString *key = @"key";
             RCModelTaskType type = RCModelTaskTypeLoadFromServerWithGet;
             NSString *requestPath = @"path";
-            RCModelTaskOptions *options = [[RCModelTaskOptions alloc] init];
             
-            RCModelTask *task = [[RCModelTask alloc] initWithKey:key type:type requestPath:requestPath options:options];
+            RCModelTask *task = [[RCModelTask alloc] initWithKey:key type:type requestPath:requestPath];
             
             Class cls = [JSONModel class];
             NSString *modelKey = @"key";
@@ -116,9 +111,8 @@ describe(@"RCModelTask", ^{
             NSString *key = @"key";
             RCModelTaskType type = RCModelTaskTypeLoadFromServerWithGet;
             NSString *requestPath = @"path";
-            RCModelTaskOptions *options = [[RCModelTaskOptions alloc] init];
             
-            RCModelTask *task = [[RCModelTask alloc] initWithKey:key type:type requestPath:requestPath options:options];
+            RCModelTask *task = [[RCModelTask alloc] initWithKey:key type:type requestPath:requestPath];
             
             Class cls = [JSONModel class];
             NSString *modelKey = @"key";
@@ -129,7 +123,7 @@ describe(@"RCModelTask", ^{
             [task removeModelClassWithKey:key];
             
             [[[task modelClassWithKey:modelKey] should] beNil];
-            [[[task.options.modelsMapping objectForKey:modelKey] should] beNil];
+            [[[task.modelsMapping objectForKey:modelKey] should] beNil];
         });
     });
     
@@ -138,22 +132,21 @@ describe(@"RCModelTask", ^{
             NSString *key = @"key";
             RCModelTaskType type = RCModelTaskTypeLoadFromServerWithGet;
             NSString *requestPath = @"path";
-            RCModelTaskOptions *options = [[RCModelTaskOptions alloc] init];
             
-            RCModelTask *task = [[RCModelTask alloc] initWithKey:key type:type requestPath:requestPath options:options];
+            RCModelTask *task = [[RCModelTask alloc] initWithKey:key type:type requestPath:requestPath];
             
             Class cls = [JSONModel class];
             NSString *modelKey = @"key";
             [task setModelClass:cls withResponsKey:modelKey];
             
             [[[task modelClassWithKey:modelKey] should] equal:cls];
-            [[@([task.options.modelsMapping count]) should] equal:@(1)];
+            [[@([task.modelsMapping count]) should] equal:@(1)];
             
             [task resetModels];
             
             [[[task modelClassWithKey:modelKey] should] beNil];
-            [[[task.options.modelsMapping objectForKey:modelKey] should] beNil];
-            [[@([task.options.modelsMapping count]) should] equal:@(0)];
+            [[[task.modelsMapping objectForKey:modelKey] should] beNil];
+            [[@([task.modelsMapping count]) should] equal:@(0)];
         });
     });
     
