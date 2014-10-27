@@ -7,30 +7,11 @@
 //
 
 #import "RCAppDelegate.h"
-#import "RCModelRecord.h"
-#import "RCViewRecord.h"
-#import "RCControllerRecord.h"
-#import "RCStyleSheetsHelper.h"
-#import <NSString+RCAppConfig.h>
 
 @implementation RCAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [RCHTTPClient sharedClient].responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    
-    [RCStyleSheetsHelper initWithThemeKey:[NSString applicationThemeKey]];
-
-    [RCModelRecord loadRecordByObject:nil];
-    [RCControllerRecord loadRecordByObject:nil];
-
-    RCControllerTask *task = (RCControllerTask *)[Bot taskForKey:kRCViewController];
-    
-    [self.window setRootViewController:task.refsObj];
-    [self.window makeKeyAndVisible];
-    
-    [Bot startTaskWithKey:kRCViewController];
-    
     return YES;
 }
 							

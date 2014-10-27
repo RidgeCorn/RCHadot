@@ -23,8 +23,6 @@
 		6E5FCD7618FCD4060076D5C5 /* RCMapLocationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E610F7918FC141E00247441 /* RCMapLocationHelper.m */; };
 		6E5FCD7F18FCD4300076D5C5 /* RCHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E610F4D18FB747100247441 /* RCHTTPClient.m */; };
 		6E5FCD8118FCD43A0076D5C5 /* RCModelTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDEB47E18EA4A2500923C26 /* RCModelTask.m */; };
-		6E5FCD8218FCD43E0076D5C5 /* RCViewTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDEB48418EA4A2500923C26 /* RCViewTask.m */; };
-		6E5FCD8318FCD4420076D5C5 /* RCControllerTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDEB47B18EA4A2500923C26 /* RCControllerTask.m */; };
 		6E5FCD8418FCD4460076D5C5 /* RCTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDEB48218EA4A2500923C26 /* RCTask.m */; };
 		6E5FCD8518FCD44C0076D5C5 /* RCBot.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDEB47918EA4A2500923C26 /* RCBot.m */; };
 		6E5FCD9218FCDCEE0076D5C5 /* RCBotSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5FCD9118FCDCEE0076D5C5 /* RCBotSpec.m */; };
@@ -46,9 +44,6 @@
 		6E9BF6A81905041900DED4E2 /* RCModelHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BF6A61905041900DED4E2 /* RCModelHelper.m */; };
 		6E9BF6AA1905071400DED4E2 /* RCModelHelperSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9BF6A91905071400DED4E2 /* RCModelHelperSpec.m */; };
 		6EAB917A18FE6C8B0087C20E /* RCRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAB917918FE6C8B0087C20E /* RCRecord.m */; };
-		6EAB917D18FE6D430087C20E /* RCModelRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAB917C18FE6D430087C20E /* RCModelRecord.m */; };
-		6EAB918018FE6D5C0087C20E /* RCViewRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAB917F18FE6D5C0087C20E /* RCViewRecord.m */; };
-		6EAB918318FE6D750087C20E /* RCControllerRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAB918218FE6D750087C20E /* RCControllerRecord.m */; };
 		6EAB918918FED5460087C20E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EDEB45418EA499300923C26 /* Main.storyboard */; };
 		6EAB918E18FED6400087C20E /* RCRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAB917918FE6C8B0087C20E /* RCRecord.m */; };
 		6EAB919018FED6400087C20E /* RCDisplayHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5FCE5C18FE27DA0076D5C5 /* RCDisplayHelper.m */; };
@@ -56,24 +51,15 @@
 		6EAB91AF18FED6400087C20E /* RCHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E610F4D18FB747100247441 /* RCHTTPClient.m */; };
 		6EAB91B318FED6400087C20E /* RCObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDEB48018EA4A2500923C26 /* RCObject.m */; };
 		6EAB91B518FED6400087C20E /* RCModelTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDEB47E18EA4A2500923C26 /* RCModelTask.m */; };
-		6EAB91B718FED6400087C20E /* RCViewTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDEB48418EA4A2500923C26 /* RCViewTask.m */; };
-		6EAB91B918FED6400087C20E /* RCControllerTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDEB47B18EA4A2500923C26 /* RCControllerTask.m */; };
 		6EAB91BB18FED6400087C20E /* RCTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDEB48218EA4A2500923C26 /* RCTask.m */; };
 		6EAB91BD18FED6400087C20E /* RCBot.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDEB47918EA4A2500923C26 /* RCBot.m */; };
-		6EAB91D118FF860C0087C20E /* RCWeatherView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAB91D018FF860C0087C20E /* RCWeatherView.m */; };
 		6EAB91D518FFA3B80087C20E /* RCOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAB91D418FFA3B80087C20E /* RCOptions.m */; };
-		6EAB91DA18FFA5060087C20E /* RCViewTaskOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAB91D918FFA5060087C20E /* RCViewTaskOptions.m */; };
-		6EAB91E218FFA7170087C20E /* RCControllerTaskOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAB91E118FFA7170087C20E /* RCControllerTaskOptions.m */; };
-		6EAB91E418FFAA880087C20E /* RCControllerTaskOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAB91E118FFA7170087C20E /* RCControllerTaskOptions.m */; };
-		6EAB91E518FFAA8C0087C20E /* RCViewTaskOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAB91D918FFA5060087C20E /* RCViewTaskOptions.m */; };
 		6EAB91E618FFAA8F0087C20E /* RCOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAB91D418FFA3B80087C20E /* RCOptions.m */; };
 		6EAB91EB18FFCA020087C20E /* RCRecordSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAB91EA18FFCA020087C20E /* RCRecordSpec.m */; };
 		6EAB91ED18FFCA240087C20E /* RCOptionsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAB91EC18FFCA240087C20E /* RCOptionsSpec.m */; };
 		6EAB91F118FFCA500087C20E /* RCViewOptionsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAB91F018FFCA500087C20E /* RCViewOptionsSpec.m */; };
 		6EAB91F318FFCA650087C20E /* RCControllerOptionsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAB91F218FFCA650087C20E /* RCControllerOptionsSpec.m */; };
-		6EAB91F718FFCDA60087C20E /* RCStyleSheetsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAB91F618FFCDA60087C20E /* RCStyleSheetsHelper.m */; };
 		6EAB91FB18FFD6D50087C20E /* StyleSheetsHelperSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAB91FA18FFD6D50087C20E /* StyleSheetsHelperSpec.m */; };
-		6EAB91FC18FFD7D30087C20E /* RCStyleSheetsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAB91F618FFCDA60087C20E /* RCStyleSheetsHelper.m */; };
 		6EDBAE0E19074F140053BD8A /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDBAE0C19074EE80053BD8A /* libc++.dylib */; };
 		6EDEB44318EA499300923C26 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDEB44218EA499300923C26 /* Foundation.framework */; };
 		6EDEB44518EA499300923C26 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDEB44418EA499300923C26 /* CoreGraphics.framework */; };
@@ -83,12 +69,9 @@
 		6EDEB45318EA499300923C26 /* RCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDEB45218EA499300923C26 /* RCAppDelegate.m */; };
 		6EDEB45918EA499300923C26 /* RCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDEB45818EA499300923C26 /* RCViewController.m */; };
 		6EDEB45B18EA499300923C26 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EDEB45A18EA499300923C26 /* Images.xcassets */; };
-		6EDEB4A618EA5D9700923C26 /* RCNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDEB4A518EA5D9700923C26 /* RCNewViewController.m */; };
 		6EE42A021984E98D005013B8 /* RCBotTaskTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE42A011984E98D005013B8 /* RCBotTaskTest.m */; };
-		6EE4BF6119668CDE00D9C734 /* SkyBlue.NUI.nss in Resources */ = {isa = PBXBuildFile; fileRef = 6EE4BF6019668CDE00D9C734 /* SkyBlue.NUI.nss */; };
 		6EED807819061CD000AF3DF0 /* RCJSONModelTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EED807719061CD000AF3DF0 /* RCJSONModelTest.m */; };
 		6EED807B19061CEA00AF3DF0 /* RCMTLModelTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EED807A19061CEA00AF3DF0 /* RCMTLModelTest.m */; };
-		6EED80801906497000AF3DF0 /* RCWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EED807F1906497000AF3DF0 /* RCWeather.m */; };
 		96EB4D4D509A4B24BE5F588E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5581E9F0DD0A4528BCC62068 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -122,12 +105,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		14AFAA95EBAF435999806950 /* Pods-RCHadotTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCHadotTests.xcconfig"; path = "Pods/Pods-RCHadotTests.xcconfig"; sourceTree = "<group>"; };
 		218952343D664F4D844C8275 /* libPods-RCHadotTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RCHadotTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		33447CEB17D58CBF5BD4A832 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		336009F9385E820AB5442DC6 /* Pods-RCHadotTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCHadotTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RCHadotTests/Pods-RCHadotTests.release.xcconfig"; sourceTree = "<group>"; };
 		3B4D567C2E844AFC8089319D /* libPods-RCHadotExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RCHadotExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CEBA4AF0773A1825D69EDD6 /* Pods-RCHadotTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCHadotTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RCHadotTests/Pods-RCHadotTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5581E9F0DD0A4528BCC62068 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E3B698319053114002ABF12 /* RCDefaultTasks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCDefaultTasks.h; sourceTree = "<group>"; };
-		6E3B69841905315E002ABF12 /* RCDefaultTaskOptions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCDefaultTaskOptions.h; sourceTree = "<group>"; };
 		6E3B69901905799B002ABF12 /* RCHadotTests-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RCHadotTests-Prefix.pch"; sourceTree = "<group>"; };
 		6E3B699219057A66002ABF12 /* RCHadot-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RCHadot-Prefix.pch"; sourceTree = "<group>"; };
 		6E4B53ED18FCCA1100DA270A /* libRCHadot.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRCHadot.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,26 +141,12 @@
 		6E9BF6B119051D7B00DED4E2 /* RCCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCCore.h; sourceTree = "<group>"; };
 		6EAB917818FE6C8B0087C20E /* RCRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCRecord.h; sourceTree = "<group>"; };
 		6EAB917918FE6C8B0087C20E /* RCRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRecord.m; sourceTree = "<group>"; };
-		6EAB917B18FE6D430087C20E /* RCModelRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCModelRecord.h; sourceTree = "<group>"; };
-		6EAB917C18FE6D430087C20E /* RCModelRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCModelRecord.m; sourceTree = "<group>"; };
-		6EAB917E18FE6D5C0087C20E /* RCViewRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCViewRecord.h; sourceTree = "<group>"; };
-		6EAB917F18FE6D5C0087C20E /* RCViewRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCViewRecord.m; sourceTree = "<group>"; };
-		6EAB918118FE6D740087C20E /* RCControllerRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCControllerRecord.h; sourceTree = "<group>"; };
-		6EAB918218FE6D750087C20E /* RCControllerRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCControllerRecord.m; sourceTree = "<group>"; };
-		6EAB91CF18FF860C0087C20E /* RCWeatherView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCWeatherView.h; sourceTree = "<group>"; };
-		6EAB91D018FF860C0087C20E /* RCWeatherView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCWeatherView.m; sourceTree = "<group>"; };
 		6EAB91D318FFA3B80087C20E /* RCOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCOptions.h; sourceTree = "<group>"; };
 		6EAB91D418FFA3B80087C20E /* RCOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCOptions.m; sourceTree = "<group>"; };
-		6EAB91D818FFA5060087C20E /* RCViewTaskOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCViewTaskOptions.h; sourceTree = "<group>"; };
-		6EAB91D918FFA5060087C20E /* RCViewTaskOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCViewTaskOptions.m; sourceTree = "<group>"; };
-		6EAB91E018FFA7170087C20E /* RCControllerTaskOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCControllerTaskOptions.h; sourceTree = "<group>"; };
-		6EAB91E118FFA7170087C20E /* RCControllerTaskOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCControllerTaskOptions.m; sourceTree = "<group>"; };
 		6EAB91EA18FFCA020087C20E /* RCRecordSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCRecordSpec.m; sourceTree = "<group>"; };
 		6EAB91EC18FFCA240087C20E /* RCOptionsSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCOptionsSpec.m; sourceTree = "<group>"; };
 		6EAB91F018FFCA500087C20E /* RCViewOptionsSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCViewOptionsSpec.m; sourceTree = "<group>"; };
 		6EAB91F218FFCA650087C20E /* RCControllerOptionsSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCControllerOptionsSpec.m; sourceTree = "<group>"; };
-		6EAB91F518FFCDA60087C20E /* RCStyleSheetsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCStyleSheetsHelper.h; sourceTree = "<group>"; };
-		6EAB91F618FFCDA60087C20E /* RCStyleSheetsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCStyleSheetsHelper.m; sourceTree = "<group>"; };
 		6EAB91FA18FFD6D50087C20E /* StyleSheetsHelperSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StyleSheetsHelperSpec.m; sourceTree = "<group>"; };
 		6EDBAE0C19074EE80053BD8A /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		6EDEB43F18EA499300923C26 /* RCHadotExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RCHadotExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -198,8 +168,6 @@
 		6EDEB46B18EA499300923C26 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6EDEB47818EA4A2500923C26 /* RCBot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCBot.h; sourceTree = "<group>"; };
 		6EDEB47918EA4A2500923C26 /* RCBot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCBot.m; sourceTree = "<group>"; };
-		6EDEB47A18EA4A2500923C26 /* RCControllerTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCControllerTask.h; sourceTree = "<group>"; };
-		6EDEB47B18EA4A2500923C26 /* RCControllerTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCControllerTask.m; sourceTree = "<group>"; };
 		6EDEB47C18EA4A2500923C26 /* RCHadot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCHadot.h; sourceTree = "<group>"; };
 		6EDEB47D18EA4A2500923C26 /* RCModelTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCModelTask.h; sourceTree = "<group>"; };
 		6EDEB47E18EA4A2500923C26 /* RCModelTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCModelTask.m; sourceTree = "<group>"; };
@@ -207,20 +175,13 @@
 		6EDEB48018EA4A2500923C26 /* RCObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCObject.m; sourceTree = "<group>"; };
 		6EDEB48118EA4A2500923C26 /* RCTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTask.h; sourceTree = "<group>"; };
 		6EDEB48218EA4A2500923C26 /* RCTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTask.m; sourceTree = "<group>"; };
-		6EDEB48318EA4A2500923C26 /* RCViewTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCViewTask.h; sourceTree = "<group>"; };
-		6EDEB48418EA4A2500923C26 /* RCViewTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCViewTask.m; sourceTree = "<group>"; };
-		6EDEB4A418EA5D9700923C26 /* RCNewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCNewViewController.h; sourceTree = "<group>"; };
-		6EDEB4A518EA5D9700923C26 /* RCNewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCNewViewController.m; sourceTree = "<group>"; };
 		6EE42A001984E98D005013B8 /* RCBotTaskTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCBotTaskTest.h; sourceTree = "<group>"; };
 		6EE42A011984E98D005013B8 /* RCBotTaskTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCBotTaskTest.m; sourceTree = "<group>"; };
-		6EE4BF6019668CDE00D9C734 /* SkyBlue.NUI.nss */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SkyBlue.NUI.nss; sourceTree = "<group>"; };
 		6EED807619061CD000AF3DF0 /* RCJSONModelTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCJSONModelTest.h; sourceTree = "<group>"; };
 		6EED807719061CD000AF3DF0 /* RCJSONModelTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCJSONModelTest.m; sourceTree = "<group>"; };
 		6EED807919061CEA00AF3DF0 /* RCMTLModelTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCMTLModelTest.h; sourceTree = "<group>"; };
 		6EED807A19061CEA00AF3DF0 /* RCMTLModelTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCMTLModelTest.m; sourceTree = "<group>"; };
-		6EED807E1906497000AF3DF0 /* RCWeather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCWeather.h; sourceTree = "<group>"; };
-		6EED807F1906497000AF3DF0 /* RCWeather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCWeather.m; sourceTree = "<group>"; };
-		79EC0D202DD24712B890A49A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		B3BCC5D3D3DB3EBB95A5392A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -421,7 +382,6 @@
 			isa = PBXGroup;
 			children = (
 				6E9BF6B319051F5300DED4E2 /* Tasks */,
-				6E9BF6B219051F4600DED4E2 /* TaskOptions */,
 				6E610F4B18FB747100247441 /* HTTPClient */,
 				6E610F6A18FC12F800247441 /* RCAdditions.h */,
 			);
@@ -450,7 +410,6 @@
 			isa = PBXGroup;
 			children = (
 				6E9BF6A41905023000DED4E2 /* ModelHelper */,
-				6EAB91F418FFCD050087C20E /* StyleSheetsHelper */,
 				6E610F7718FC141E00247441 /* MapLocationHelper */,
 				6E5FCE5A18FE27950076D5C5 /* DisplayHelper */,
 				6E9BF6AE190518AC00DED4E2 /* RCHelpers.h */,
@@ -471,38 +430,13 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
-		6E9BF6B219051F4600DED4E2 /* TaskOptions */ = {
-			isa = PBXGroup;
-			children = (
-				6EAB91D718FFA4DA0087C20E /* ViewTaskOptions */,
-				6EAB91DB18FFA6A00087C20E /* ControllerTaskOptions */,
-				6E3B69841905315E002ABF12 /* RCDefaultTaskOptions.h */,
-			);
-			path = TaskOptions;
-			sourceTree = "<group>";
-		};
 		6E9BF6B319051F5300DED4E2 /* Tasks */ = {
 			isa = PBXGroup;
 			children = (
 				6EDEB48E18EA4A6700923C26 /* ModelTask */,
-				6EDEB48F18EA4A7900923C26 /* ViewTask */,
-				6EDEB49018EA4A8D00923C26 /* ControllerTask */,
 				6E3B698319053114002ABF12 /* RCDefaultTasks.h */,
 			);
 			path = Tasks;
-			sourceTree = "<group>";
-		};
-		6EAB917618FE6BE70087C20E /* TaskRecord */ = {
-			isa = PBXGroup;
-			children = (
-				6EAB917B18FE6D430087C20E /* RCModelRecord.h */,
-				6EAB917C18FE6D430087C20E /* RCModelRecord.m */,
-				6EAB917E18FE6D5C0087C20E /* RCViewRecord.h */,
-				6EAB917F18FE6D5C0087C20E /* RCViewRecord.m */,
-				6EAB918118FE6D740087C20E /* RCControllerRecord.h */,
-				6EAB918218FE6D750087C20E /* RCControllerRecord.m */,
-			);
-			name = TaskRecord;
 			sourceTree = "<group>";
 		};
 		6EAB917718FE6C650087C20E /* Record */ = {
@@ -526,20 +460,10 @@
 		6EAB918818FED5100087C20E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				6EE4BF6019668CDE00D9C734 /* SkyBlue.NUI.nss */,
 				6EDEB45418EA499300923C26 /* Main.storyboard */,
 				6EDEB45A18EA499300923C26 /* Images.xcassets */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
-		};
-		6EAB91CE18FF85DC0087C20E /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				6EAB91CF18FF860C0087C20E /* RCWeatherView.h */,
-				6EAB91D018FF860C0087C20E /* RCWeatherView.m */,
-			);
-			name = Views;
 			sourceTree = "<group>";
 		};
 		6EAB91D218FFA3830087C20E /* Options */ = {
@@ -549,24 +473,6 @@
 				6EAB91D418FFA3B80087C20E /* RCOptions.m */,
 			);
 			path = Options;
-			sourceTree = "<group>";
-		};
-		6EAB91D718FFA4DA0087C20E /* ViewTaskOptions */ = {
-			isa = PBXGroup;
-			children = (
-				6EAB91D818FFA5060087C20E /* RCViewTaskOptions.h */,
-				6EAB91D918FFA5060087C20E /* RCViewTaskOptions.m */,
-			);
-			path = ViewTaskOptions;
-			sourceTree = "<group>";
-		};
-		6EAB91DB18FFA6A00087C20E /* ControllerTaskOptions */ = {
-			isa = PBXGroup;
-			children = (
-				6EAB91E018FFA7170087C20E /* RCControllerTaskOptions.h */,
-				6EAB91E118FFA7170087C20E /* RCControllerTaskOptions.m */,
-			);
-			path = ControllerTaskOptions;
 			sourceTree = "<group>";
 		};
 		6EAB91E718FFC9900087C20E /* Options */ = {
@@ -586,15 +492,6 @@
 			name = Record;
 			sourceTree = "<group>";
 		};
-		6EAB91F418FFCD050087C20E /* StyleSheetsHelper */ = {
-			isa = PBXGroup;
-			children = (
-				6EAB91F518FFCDA60087C20E /* RCStyleSheetsHelper.h */,
-				6EAB91F618FFCDA60087C20E /* RCStyleSheetsHelper.m */,
-			);
-			path = StyleSheetsHelper;
-			sourceTree = "<group>";
-		};
 		6EAB91F918FFD6AB0087C20E /* StyleSheetsHelper */ = {
 			isa = PBXGroup;
 			children = (
@@ -611,8 +508,7 @@
 				6EDEB44818EA499300923C26 /* RCHadotExample */,
 				6EDEB44118EA499300923C26 /* Frameworks */,
 				6EDEB44018EA499300923C26 /* Products */,
-				79EC0D202DD24712B890A49A /* Pods.xcconfig */,
-				14AFAA95EBAF435999806950 /* Pods-RCHadotTests.xcconfig */,
+				7E923A6124E2CB4751FF8646 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -648,9 +544,6 @@
 			children = (
 				6EAB918818FED5100087C20E /* Resources */,
 				6EAB918418FE6D7E0087C20E /* AppDelegate */,
-				6EAB917618FE6BE70087C20E /* TaskRecord */,
-				6EED807D1906494E00AF3DF0 /* Models */,
-				6EAB91CE18FF85DC0087C20E /* Views */,
 				6EDEB4A718EA5DA500923C26 /* Controllers */,
 				6EDEB44918EA499300923C26 /* Supporting Files */,
 			);
@@ -728,24 +621,6 @@
 			path = ModelTask;
 			sourceTree = "<group>";
 		};
-		6EDEB48F18EA4A7900923C26 /* ViewTask */ = {
-			isa = PBXGroup;
-			children = (
-				6EDEB48318EA4A2500923C26 /* RCViewTask.h */,
-				6EDEB48418EA4A2500923C26 /* RCViewTask.m */,
-			);
-			path = ViewTask;
-			sourceTree = "<group>";
-		};
-		6EDEB49018EA4A8D00923C26 /* ControllerTask */ = {
-			isa = PBXGroup;
-			children = (
-				6EDEB47A18EA4A2500923C26 /* RCControllerTask.h */,
-				6EDEB47B18EA4A2500923C26 /* RCControllerTask.m */,
-			);
-			path = ControllerTask;
-			sourceTree = "<group>";
-		};
 		6EDEB49118EA4AC100923C26 /* Object */ = {
 			isa = PBXGroup;
 			children = (
@@ -760,19 +635,19 @@
 			children = (
 				6EDEB45718EA499300923C26 /* RCViewController.h */,
 				6EDEB45818EA499300923C26 /* RCViewController.m */,
-				6EDEB4A418EA5D9700923C26 /* RCNewViewController.h */,
-				6EDEB4A518EA5D9700923C26 /* RCNewViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
 		};
-		6EED807D1906494E00AF3DF0 /* Models */ = {
+		7E923A6124E2CB4751FF8646 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				6EED807E1906497000AF3DF0 /* RCWeather.h */,
-				6EED807F1906497000AF3DF0 /* RCWeather.m */,
+				33447CEB17D58CBF5BD4A832 /* Pods.debug.xcconfig */,
+				B3BCC5D3D3DB3EBB95A5392A /* Pods.release.xcconfig */,
+				4CEBA4AF0773A1825D69EDD6 /* Pods-RCHadotTests.debug.xcconfig */,
+				336009F9385E820AB5442DC6 /* Pods-RCHadotTests.release.xcconfig */,
 			);
-			name = Models;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -884,7 +759,6 @@
 			files = (
 				6EDEB45B18EA499300923C26 /* Images.xcassets in Resources */,
 				6EDEB44D18EA499300923C26 /* InfoPlist.strings in Resources */,
-				6EE4BF6119668CDE00D9C734 /* SkyBlue.NUI.nss in Resources */,
 				6EAB918918FED5460087C20E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -919,7 +793,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-RCHadotExample-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C4B11F17572442B686F15F7B /* Check Pods Manifest.lock */ = {
@@ -949,7 +823,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-RCHadotTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RCHadotTests/Pods-RCHadotTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -966,13 +840,8 @@
 				6EAB917A18FE6C8B0087C20E /* RCRecord.m in Sources */,
 				6EAB91D518FFA3B80087C20E /* RCOptions.m in Sources */,
 				6E5FCD8418FCD4460076D5C5 /* RCTask.m in Sources */,
-				6EAB91F718FFCDA60087C20E /* RCStyleSheetsHelper.m in Sources */,
-				6E5FCD8218FCD43E0076D5C5 /* RCViewTask.m in Sources */,
-				6EAB91DA18FFA5060087C20E /* RCViewTaskOptions.m in Sources */,
 				6E5FCE5D18FE27DA0076D5C5 /* RCDisplayHelper.m in Sources */,
 				6E5FCD7618FCD4060076D5C5 /* RCMapLocationHelper.m in Sources */,
-				6E5FCD8318FCD4420076D5C5 /* RCControllerTask.m in Sources */,
-				6EAB91E218FFA7170087C20E /* RCControllerTaskOptions.m in Sources */,
 				6E5FCD7318FCD3540076D5C5 /* RCObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1008,26 +877,15 @@
 			files = (
 				6EAB918E18FED6400087C20E /* RCRecord.m in Sources */,
 				6EAB919018FED6400087C20E /* RCDisplayHelper.m in Sources */,
-				6EED80801906497000AF3DF0 /* RCWeather.m in Sources */,
-				6EAB91E518FFAA8C0087C20E /* RCViewTaskOptions.m in Sources */,
-				6EAB91E418FFAA880087C20E /* RCControllerTaskOptions.m in Sources */,
 				6EAB919818FED6400087C20E /* RCMapLocationHelper.m in Sources */,
 				6EAB91AF18FED6400087C20E /* RCHTTPClient.m in Sources */,
 				6EAB91E618FFAA8F0087C20E /* RCOptions.m in Sources */,
-				6EAB91D118FF860C0087C20E /* RCWeatherView.m in Sources */,
 				6E9BF6A71905041900DED4E2 /* RCModelHelper.m in Sources */,
-				6EAB91FC18FFD7D30087C20E /* RCStyleSheetsHelper.m in Sources */,
 				6EAB91B318FED6400087C20E /* RCObject.m in Sources */,
 				6EAB91B518FED6400087C20E /* RCModelTask.m in Sources */,
-				6EAB91B718FED6400087C20E /* RCViewTask.m in Sources */,
-				6EAB91B918FED6400087C20E /* RCControllerTask.m in Sources */,
 				6EAB91BB18FED6400087C20E /* RCTask.m in Sources */,
 				6EAB91BD18FED6400087C20E /* RCBot.m in Sources */,
-				6EAB918018FE6D5C0087C20E /* RCViewRecord.m in Sources */,
-				6EAB918318FE6D750087C20E /* RCControllerRecord.m in Sources */,
-				6EAB917D18FE6D430087C20E /* RCModelRecord.m in Sources */,
 				6EDEB44F18EA499300923C26 /* main.m in Sources */,
-				6EDEB4A618EA5D9700923C26 /* RCNewViewController.m in Sources */,
 				6EDEB45318EA499300923C26 /* RCAppDelegate.m in Sources */,
 				6EDEB45918EA499300923C26 /* RCViewController.m in Sources */,
 			);
@@ -1078,7 +936,6 @@
 /* Begin XCBuildConfiguration section */
 		6E4B540A18FCCA1200DA270A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 79EC0D202DD24712B890A49A /* Pods.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/RCHadot.dst;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
@@ -1096,7 +953,6 @@
 		};
 		6E4B540B18FCCA1200DA270A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 79EC0D202DD24712B890A49A /* Pods.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/RCHadot.dst;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
@@ -1110,7 +966,7 @@
 		};
 		6E4B540D18FCCA1200DA270A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 14AFAA95EBAF435999806950 /* Pods-RCHadotTests.xcconfig */;
+			baseConfigurationReference = 4CEBA4AF0773A1825D69EDD6 /* Pods-RCHadotTests.debug.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -1132,7 +988,7 @@
 		};
 		6E4B540E18FCCA1200DA270A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 14AFAA95EBAF435999806950 /* Pods-RCHadotTests.xcconfig */;
+			baseConfigurationReference = 336009F9385E820AB5442DC6 /* Pods-RCHadotTests.release.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -1150,7 +1006,6 @@
 		};
 		6EDEB46F18EA499300923C26 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 79EC0D202DD24712B890A49A /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1189,7 +1044,6 @@
 		};
 		6EDEB47018EA499300923C26 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 79EC0D202DD24712B890A49A /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1222,7 +1076,7 @@
 		};
 		6EDEB47218EA499300923C26 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 79EC0D202DD24712B890A49A /* Pods.xcconfig */;
+			baseConfigurationReference = 33447CEB17D58CBF5BD4A832 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1237,7 +1091,7 @@
 		};
 		6EDEB47318EA499300923C26 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 79EC0D202DD24712B890A49A /* Pods.xcconfig */;
+			baseConfigurationReference = B3BCC5D3D3DB3EBB95A5392A /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

@@ -8,7 +8,6 @@
 
 #import "RCModelHelper.h"
 #import <JSONModel.h>
-#import <Mantle.h>
 #import "RCLogger.h"
 #import "NSString+RCStorage.h"
 #import <NSObject+RCVerify.h>
@@ -24,8 +23,6 @@
     
     if ([cls isSubclassOfClass:[JSONModel class]]) {
         model = [[cls alloc] initWithDictionary:dict error:err];
-    } else if ([cls isSubclassOfClass:[MTLModel class]]) {
-        model = [MTLJSONAdapter modelOfClass:cls fromJSONDictionary:dict error:err];
     } else {
         *err = [NSError errorWithDomain:[NSStringFromClass(self.class) stringByAppendingString:@"_RCModelTaskError"] code:404 userInfo:@{NSLocalizedDescriptionKey: @"Model Class NOT Support"}];
     }

@@ -8,4 +8,3 @@
 
 #import "RCHTTPClient.h"
 #import "RCDefaultTasks.h"
-#import "RCDefaultTaskOptions.h"

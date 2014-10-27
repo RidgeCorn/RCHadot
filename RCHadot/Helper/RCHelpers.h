@@ -7,6 +7,5 @@
 //
 
 #import "RCModelHelper.h"
-#import "RCStyleSheetsHelper.h"
 #import "RCMapLocationHelper.h"
 #import "RCDisplayHelper.h"

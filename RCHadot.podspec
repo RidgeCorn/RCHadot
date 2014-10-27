@@ -12,11 +12,7 @@ Pod::Spec.new do |s|
   
   s.dependency 'RCKit'
   s.dependency 'ReactiveCocoa'
-  s.dependency 'Routable'
   s.dependency 'AFNetworking'
-  s.dependency 'NUI'
-  s.dependency 'Mantle'
   s.dependency 'JSONModel'
-  s.dependency 'Lockbox'
 
 end

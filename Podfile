@@ -1,14 +1,15 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
 platform :ios,'6.0'
 
 pod 'RCKit'
 
 pod 'ReactiveCocoa'
-pod 'Routable'
+#pod 'Routable'
 pod 'AFNetworking'
-pod 'NUI'
+#pod 'NUI'
 pod 'JSONModel'
-pod 'Mantle'
-pod 'Lockbox'
+#pod 'Mantle'
 
 target :RCHadotTests, :exclusive => true do
     pod 'Kiwi'
