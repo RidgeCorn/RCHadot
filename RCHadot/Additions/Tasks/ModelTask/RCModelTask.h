@@ -19,12 +19,12 @@ typedef NS_ENUM(NSUInteger, RCModelTaskType) {
 @interface RCModelTask : RCTask <RCTaskHandleDelegate>
 
 @property (nonatomic) RCModelTaskType type;
-@property (nonatomic) NSString *requestPath;
-@property (nonatomic) NSMutableDictionary *requestParams;
-@property (nonatomic) NSMutableDictionary *modelsMapping;
-@property (nonatomic) id responseData;
-@property (nonatomic) NSDictionary *responseJSONDict;
-@property (nonatomic) NSMutableDictionary *responseModels;
+@property (nonatomic, strong) NSString *requestPath;
+@property (nonatomic, strong) NSMutableDictionary *requestParams;
+@property (nonatomic, strong) NSMutableDictionary *modelsMapping;
+@property (nonatomic, strong) id responseData;
+@property (nonatomic, strong) NSDictionary *responseJSONDict;
+@property (nonatomic, strong) NSMutableDictionary *responseModels;
 
 - (id)initWithKey:(id)key type:(RCModelTaskType)type requestPath:(NSString *)requestPath;
 

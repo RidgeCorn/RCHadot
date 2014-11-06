@@ -18,7 +18,7 @@ typedef NS_ENUM(NSUInteger, RCBotRunErrorLevel) {
 
 @interface RCBot()
 
-@property (nonatomic) NSMutableDictionary *tasks;
+@property (nonatomic, strong) NSMutableDictionary *tasks;
 
 @end
 

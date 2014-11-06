@@ -40,11 +40,11 @@ typedef void (^RCTaskBlock)(id <RCTaskHandleDelegate> task_b);
     RCTaskBlock _runBlock;
 }
 
-@property (nonatomic) NSString *key;
+@property (nonatomic, strong) NSString *key;
 @property (nonatomic, weak) id <RCTaskHandleDelegate> delegate;
 @property (nonatomic) RCTaskState state;
-@property (nonatomic) NSError *error;
-@property (nonatomic) id refsObj;
+@property (nonatomic, strong) NSError *error;
+@property (nonatomic, strong) id refsObj;
 
 - (id)initWithKey:(NSString *)key;
 - (id)initWithKey:(NSString *)key runBlock:(RCTaskBlock)runBlock;
