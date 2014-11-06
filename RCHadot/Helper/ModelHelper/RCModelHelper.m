@@ -39,13 +39,11 @@
             
             if (model) {
                 [models addObject:model];
-                RCLog(@"Succeed! \nAdd %@ dict: %@\nmodel:%@", NSStringFromClass(cls), modelDict, model);
             } else {
                 RCLog(@"Failed! \nAdd %@ dict: %@\nmodel:%@\nerror: %@", NSStringFromClass(cls), modelDict, model, *err);
             }
         }
     }
-    RCLog(@"models: \n%@", models);
 
     return models;
 }

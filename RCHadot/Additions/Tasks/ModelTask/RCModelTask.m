@@ -178,8 +178,6 @@
     if (_currentHTTPRequestOperation.isExecuting) {
         [_currentHTTPRequestOperation cancel];
         
-        RCLog(@"Canceled current HTTP request operation:%@\n", _currentHTTPRequestOperation);
-        
         [UIApplication endNetworkTask];
     }
 
